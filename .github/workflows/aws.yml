@@ -66,5 +66,5 @@ jobs:
         with:
           task-definition: task-definition.json
           service: svg_portfolio_service
-          cluster: svg_portfolio_bayashi
+          cluster: svg_portfolio
           wait-for-service-stability: true
