@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: api_production
-#  password: Rails.application.credentials.aws.db_password
-#  host: Rails.application.credentials.aws.db_host
+  password: Rails.application.credentials.db[:password]
+  host: Rails.application.credentials.db[:host]
