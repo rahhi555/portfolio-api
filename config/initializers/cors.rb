@@ -7,7 +7,11 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:8080'
+    if Rails.env.production?
+      origins 'https://www.hirabayashi.work'
+    else
+      origins 'http://localhost:8080'
+    end
 
     resource '*',
              headers: :any,
