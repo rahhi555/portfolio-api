@@ -14,7 +14,7 @@ default: &default
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: <%= ENV.fetch("AWS_DB_PASSWORD") { "password" } %>
+  password: "password"
   host: db
 
 development:
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: api_production
-  username: api
-  password: <%= ENV['API_DATABASE_PASSWORD'] %>
+#  password: Rails.application.credentials.aws.db_password
+#  host: Rails.application.credentials.aws.db_host
