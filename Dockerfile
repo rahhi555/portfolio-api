@@ -9,7 +9,7 @@ ENV RUNTIME_PACKAGES="linux-headers libxml2-dev make gcc libc-dev nodejs tzdata 
 
 WORKDIR ${HOME}
 
-COPY . .
+COPY . ${WORKDIR}
 
 RUN apk update && \
     apk upgrade && \
