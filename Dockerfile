@@ -9,13 +9,14 @@ ENV RUNTIME_PACKAGES="linux-headers libxml2-dev make gcc libc-dev nodejs tzdata 
 
 WORKDIR ${HOME}
 
-COPY . ${WORKDIR}
+COPY . .
 
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache ${RUNTIME_PACKAGES} && \
     apk add --virtual build-dependencies --no-cache ${DEV_PACKAGES} && \
     bundle install -j4 && \
-    apk del build-dependencies
+    apk del build-dependencies && \
+    rm -f ${HOME}/tmp/pids/server.pid \
 
-ENTRYPOINT [ "/api/entrypoint.sh" ]
+EXPOSE 3000
