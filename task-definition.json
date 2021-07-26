@@ -23,7 +23,7 @@
         }
       ],
       "command": [
-        "bundle", "exec", "rails", "s", "-b", "0.0.0.0"
+        "rails", "s", "-b", "0.0.0.0"
       ],
       "linuxParameters": null,
       "cpu": 0,
@@ -72,7 +72,7 @@
   "placementConstraints": [],
   "memory": "1024",
   "taskRoleArn": "arn:aws:iam::299271904246:role/ecs-for-exec",
-  "family": "svg-portfolio",
+  "family": "svg_portfolio_web",
   "pidMode": null,
   "requiresCompatibilities": [
     "FARGATE"
