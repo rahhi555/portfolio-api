@@ -65,6 +65,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: task-definition.json
-          service: svg_portfolio_service
+          service: svg_portfolio_service_web
           cluster: svg_portfolio
           wait-for-service-stability: true
