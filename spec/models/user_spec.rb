@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
     end
 
     context "uidが重複している場合" do
-      let(:user) { create(:user) }
+      let!(:user) { create(:user) }
       let(:dup_user) { build(:user, uid: user.uid) }
 
       it "ユーザーが作成されない" do
