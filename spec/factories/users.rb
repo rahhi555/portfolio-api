@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :user do
-    name { "MyString" }
-    uid { "MyString" }
+    sequence(:name, 'user_1')
+    uid { SecureRandom.uuid }
   end
 end
