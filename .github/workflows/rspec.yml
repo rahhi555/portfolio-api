@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 10
     env:
       RAILS_ENV: test
-      RAILS_CI_DB_HOST: localhost
+      RAILS_CI_DB_HOST: 127.0.0.1
     services:
       db:
         image: mysql:8.0.23
