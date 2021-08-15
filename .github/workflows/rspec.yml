@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  pull_request:
+
+jobs:
+  rspec:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      RAILS_ENV: test
+      RAILS_CI_DB_HOST: 127.0.0.1
+    services:
+      db:
+        image: mysql:8.0.23
+        volumes:
+          - mysqlconf.d:/etc/mysql/conf.d
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_ROOT_PASSWORD: password
+          BIND-ADDRESS: 0.0.0.0
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.2
+          bundler-cache: true
+
+      - name: bundle install
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3 --path vendor/bundle
+
+      - name: migration
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:migrate
+
+      - name: run rspec
+        run:
+          bundle exec rspec
