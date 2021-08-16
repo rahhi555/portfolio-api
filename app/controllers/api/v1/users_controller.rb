@@ -3,7 +3,10 @@ module Api
     class UsersController < ApplicationController
       skip_before_action :authenticate_user, only: %i[create]
 
-      def show; end
+      def show
+        user = User.find(params[:id])
+        render json: user, status: :ok
+      end
 
       def create
         raise ArgumentError, 'BadRequest Parameter' if payload.blank?
