@@ -5,7 +5,7 @@
   "user_id" : "EiNNmmDl9mT8icKQDOga5VTSR0t1",
   "sub" : "EiNNmmDl9mT8icKQDOga5VTSR0t1",
   "iat" : 1629127928,
-  "exp" : 1629131528,
+  "exp" : 9999999999,
   "email" : "test1@example.com",
   "email_verified" : false,
   "firebase" : {
