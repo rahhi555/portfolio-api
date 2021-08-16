@@ -22,6 +22,9 @@ gem 'redis', '~> 4.0'
 # firebase jwt認証
 gem 'firebase-auth-rails'
 
+# google証明書を取得するtaskを定期的に実行
+gem 'whenever', require: false
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
