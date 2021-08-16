@@ -1,0 +1,19 @@
+{
+  "iss" : "https://securetoken.google.com/minimap-dadd2",
+  "aud" : "minimap-dadd2",
+  "auth_time" : 1629127928,
+  "user_id" : "EiNNmmDl9mT8icKQDOga5VTSR0t1",
+  "sub" : "EiNNmmDl9mT8icKQDOga5VTSR0t1",
+  "iat" : 1629127928,
+  "exp" : 1629131528,
+  "email" : "test1@example.com",
+  "email_verified" : false,
+  "firebase" : {
+  "identities" : {
+  "email" : [
+  "test1@example.com"
+  ]
+},
+"sign_in_provider" : "password"
+}
+}
