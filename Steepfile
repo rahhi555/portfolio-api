@@ -22,4 +22,5 @@ target :lib do
   library 'actionview'
   library 'activerecord'
   library 'railties'
+  library 'redis'
 end

@@ -1,5 +1,5 @@
 # ALBのヘルスチェック用コントローラー
-class HealthCheckController < ApplicationController
+class HealthCheckController < ActionController::API
   def health_check
     render plain: 'health check api ok', status: :ok
   end

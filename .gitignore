@@ -74,5 +74,6 @@ yarn-debug.log*
 .viminfo
 .vimrc
 
-# ash
+# history
 .ash_history
+.bash_history
