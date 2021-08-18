@@ -17,8 +17,6 @@ RUN apk update && \
     apk add --virtual build-dependencies --no-cache ${DEV_PACKAGES} && \
     bundle install -j4 && \
     apk del build-dependencies && \
-    rm -f ${HOME}/tmp/pids/server.pid && \
-    bundle exec whenever -i
-
+    rm -f ${HOME}/tmp/pids/server.pid
 
 EXPOSE 3000
