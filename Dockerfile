@@ -18,7 +18,6 @@ RUN apk update && \
     bundle install -j4 && \
     apk del build-dependencies && \
     rm -f ${HOME}/tmp/pids/server.pid && \
-    bundle exec whenever -i
 
 
 EXPOSE 3000
