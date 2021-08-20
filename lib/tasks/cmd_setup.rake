@@ -4,6 +4,7 @@ namespace :cmd do
     FirebaseIdToken::Certificates.request
     sh 'bundle exec whenever -i'
     sh 'crond -b'
+    sh 'rails db:setup'
     sh "bundle exec rails s -b '0.0.0.0'"
   end
 end

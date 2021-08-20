@@ -15,6 +15,10 @@ module Api
         render json: user, status: :ok
       end
 
+      def me
+        render json: current_user, status: :ok
+      end
+
       private
 
       def user_params
