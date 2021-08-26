@@ -15,8 +15,17 @@ module Api
         render json: user, status: :ok
       end
 
+      def destroy
+        ext_current_user.destroy!
+        render status: :ok
+      end
+
       def me
-        render json: current_user, status: :ok
+        if ext_current_user
+          render json: ext_current_user, status: :ok
+        else
+          render json: { message: "Current user not found" }, status: :unprocessable_entity
+        end
       end
 
       private
@@ -34,7 +43,11 @@ module Api
       end
 
       def payload
-        @payload ||= FirebaseIdToken::Signature.verify token
+        @payload ||= if Rails.env.production?
+                       FirebaseIdToken::Signature.verify token
+                     else
+                       JWT.decode(token, nil, false)[0]
+                     end
       end
     end
   end
