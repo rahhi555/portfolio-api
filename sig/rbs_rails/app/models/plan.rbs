@@ -1,5 +1,5 @@
-class User < ApplicationRecord
-  extend _ActiveRecord_Relation_ClassMethods[User, ActiveRecord_Relation, Integer]
+class Plan < ApplicationRecord
+  extend _ActiveRecord_Relation_ClassMethods[Plan, ActiveRecord_Relation, Integer]
 
   attr_accessor id(): Integer
   def id_changed?: () -> bool
@@ -35,22 +35,22 @@ class User < ApplicationRecord
   def restore_name!: () -> void
   def clear_name_change: () -> void
 
-  attr_accessor uid(): String
-  def uid_changed?: () -> bool
-  def uid_change: () -> [ String?, String? ]
-  def uid_will_change!: () -> void
-  def uid_was: () -> String?
-  def uid_previously_changed?: () -> bool
-  def uid_previous_change: () -> Array[String?]?
-  def uid_previously_was: () -> String?
-  def uid_before_last_save: () -> String?
-  def uid_change_to_be_saved: () -> Array[String?]?
-  def uid_in_database: () -> String?
-  def saved_change_to_uid: () -> Array[String?]?
-  def saved_change_to_uid?: () -> bool
-  def will_save_change_to_uid?: () -> bool
-  def restore_uid!: () -> void
-  def clear_uid_change: () -> void
+  attr_accessor user_id(): Integer?
+  def user_id_changed?: () -> bool
+  def user_id_change: () -> [ Integer?, Integer? ]
+  def user_id_will_change!: () -> void
+  def user_id_was: () -> Integer?
+  def user_id_previously_changed?: () -> bool
+  def user_id_previous_change: () -> Array[Integer?]?
+  def user_id_previously_was: () -> Integer?
+  def user_id_before_last_save: () -> Integer?
+  def user_id_change_to_be_saved: () -> Array[Integer?]?
+  def user_id_in_database: () -> Integer?
+  def saved_change_to_user_id: () -> Array[Integer?]?
+  def saved_change_to_user_id?: () -> bool
+  def will_save_change_to_user_id?: () -> bool
+  def restore_user_id!: () -> void
+  def clear_user_id_change: () -> void
 
   attr_accessor created_at(): ActiveSupport::TimeWithZone
   def created_at_changed?: () -> bool
@@ -86,14 +86,16 @@ class User < ApplicationRecord
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
 
-  def plans: () -> Plan::ActiveRecord_Associations_CollectionProxy
-  def plans=: (Plan::ActiveRecord_Associations_CollectionProxy | Array[Plan]) -> (Plan::ActiveRecord_Associations_CollectionProxy | Array[Plan])
-  def plan_ids: () -> Array[Integer]
-  def plan_ids=: (Array[Integer]) -> Array[Integer]
+  def user: () -> User
+  def user=: (User?) -> User?
+  def build_user: (untyped) -> User
+  def create_user: (untyped) -> User
+  def create_user!: (untyped) -> User
+  def reload_user: () -> User?
 
   class ActiveRecord_Relation < ActiveRecord::Relation
-    include _ActiveRecord_Relation[User, Integer]
-    include Enumerable[User]
+    include _ActiveRecord_Relation[Plan, Integer]
+    include Enumerable[Plan]
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy

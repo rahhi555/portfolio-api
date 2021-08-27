@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :plan do
-    name { "MyString" }
-    user { "" }
+    sequence(:name, 'plan_1')
+    user
   end
 end
