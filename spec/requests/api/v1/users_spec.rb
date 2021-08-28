@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Api::V1::Users", type: :request do
-  describe "Get api/v1/users/:id" do
+  describe "GET api/v1/users/:id" do
     let(:user) { create(:user) }
 
     before { stub_firebase(user) }
@@ -15,7 +15,7 @@ RSpec.describe "Api::V1::Users", type: :request do
     end
   end
 
-  describe "Post api/v1/users" do
+  describe "POST api/v1/users" do
     let(:user) { build(:user) }
 
     context "有効な属性値の場合" do
@@ -52,7 +52,7 @@ RSpec.describe "Api::V1::Users", type: :request do
     end
   end
 
-  describe "Get api/v1/me" do
+  describe "GET api/v1/me" do
     let!(:user) { create(:user) }
 
     context "ヘッダーに有効なトークンが存在する場合" do
@@ -72,7 +72,7 @@ RSpec.describe "Api::V1::Users", type: :request do
     end
   end
 
-  describe "Delete api/v1/me" do
+  describe "DELETE api/v1/me" do
     context "ヘッダーに有効なトークンが存在する場合" do
       let!(:user) { create(:user) }
 
