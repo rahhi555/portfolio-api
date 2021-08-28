@@ -6,9 +6,18 @@ RSpec.describe "Api::V1::Plans", type: :request do
 
     context 'ヘッダーに有効なトークンが存在する場合' do
       it '計画一覧が返ってくること' do
-        get api_v1_plans_path, headers: payload_headers
+        get api_v1_plans_path, headers: payload_headers(uid: plan_list[0].user.uid)
+
         expect(response).to have_http_status(200)
         expect(parsed_body.size).to eq plan_list.size
+      end
+    end
+
+    context 'ヘッダーにトークンが存在しない場合' do
+      it '401エラーが返ってくること' do
+        get api_v1_plans_path
+
+        expect(response).to have_http_status(401)
       end
     end
   end

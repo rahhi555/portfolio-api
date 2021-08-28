@@ -31,11 +31,10 @@ RSpec.describe "Api::V1::Users", type: :request do
     context "ヘッダーにトークンが無い場合" do
       it "401エラーが返ること" do
         expect{
-          post api_v1_users_path, params: { user: { name: 'テストネーム' } }, headers: { Authorization: "Bearer " }
+          post api_v1_users_path, params: { user: { name: 'テストネーム' } }
         }.to_not change{ User.count }
 
         expect(response).to have_http_status(401)
-        expect(parsed_body['message']).to eq 'Unauthorized'
       end
     end
 
@@ -66,8 +65,8 @@ RSpec.describe "Api::V1::Users", type: :request do
     context "ヘッダーにトークンが無い場合" do
       it "401エラーが返ること" do
         get api_v1_me_path
+
         expect(response).to have_http_status(401)
-        expect(parsed_body['message']).to eq 'Unauthorized'
       end
     end
   end
@@ -90,7 +89,6 @@ RSpec.describe "Api::V1::Users", type: :request do
       it "401エラーが返ること" do
         delete api_v1_me_path
         expect(response).to have_http_status(401)
-        expect(parsed_body['message']).to eq 'Unauthorized'
       end
     end
   end

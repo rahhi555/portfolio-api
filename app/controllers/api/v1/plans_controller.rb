@@ -2,8 +2,8 @@ module Api
   module V1
     class PlansController < ApplicationController
       def index
-        plans = Plan.all
-        render json: plans, status: :ok
+        @plans = Plan.all
+        render template: 'plans/index', status: :ok
       end
 
       def create

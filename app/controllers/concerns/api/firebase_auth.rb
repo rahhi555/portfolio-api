@@ -10,10 +10,7 @@ module Api::FirebaseAuth
   end
 
   def payload
-    @payload ||= if Rails.env.production?
-                   FirebaseIdToken::Signature.verify!(token)
-                 else
-                   JWT.decode(token, nil, false)[0]
-                 end
+    @payload ||= FirebaseIdToken::Signature.verify(token, raise_error: true)
   end
+
 end
