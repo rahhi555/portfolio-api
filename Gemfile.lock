@@ -89,6 +89,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    jb (0.8.0)
     jwt (2.2.3)
     language_server-protocol (3.16.0.1)
     listen (3.6.0)
@@ -224,6 +225,7 @@ DEPENDENCIES
   byebug
   factory_bot_rails
   firebase-auth-rails
+  jb
   listen (~> 3.2)
   mysql2 (>= 0.4.4)
   puma (~> 4.1)

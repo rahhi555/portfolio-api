@@ -58,6 +58,7 @@
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.5.2, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="httparty (v0.18.1, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.8.10, rbenv: 3.0.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jb (v0.8.0, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jwt (v2.2.3, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="language_server-protocol (v3.16.0.1, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.6.0, rbenv: 3.0.2) [gem]" level="application" />
@@ -129,6 +130,7 @@
         <option value="factory_bot:model" />
         <option value="generator" />
         <option value="integration_test" />
+        <option value="jb" />
         <option value="job" />
         <option value="mailbox" />
         <option value="mailer" />
@@ -179,6 +181,7 @@
         <option value="factory_bot:model" />
         <option value="generator" />
         <option value="integration_test" />
+        <option value="jb" />
         <option value="job" />
         <option value="mailbox" />
         <option value="mailer" />

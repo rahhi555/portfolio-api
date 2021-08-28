@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   namespace 'api', format: 'json' do
     namespace 'v1' do
       resources 'users', only: %i[index show create]
+      resource 'me', only: %i[destroy update], controller: 'users'
       get 'me', to: 'users#me'
-      delete 'users', to: 'users#destroy'
-      patch 'users', to: 'users#update'
+
+      resources 'plans', only: %i[index create]
     end
   end
 end

@@ -1,0 +1,9 @@
+@plans.map do |plan|
+  {
+    id: plan.id,
+    name: plan.name,
+    createdAt: plan.created_at,
+    updatedAt: plan.updated_at,
+    author: plan.user.name
+  }
+end
