@@ -12,5 +12,4 @@ module Api::FirebaseAuth
   def payload
     @payload ||= FirebaseIdToken::Signature.verify(token, raise_error: true)
   end
-
 end

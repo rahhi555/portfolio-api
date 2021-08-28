@@ -5,10 +5,6 @@ module Api
       include Api::ExceptionHandler
       include Api::FirebaseAuth
       before_action :authenticate_user
-
-      def ext_current_user
-        Rails.env.production? ? current_user : User.find_by!(uid: payload['sub'])
-      end
     end
   end
 end

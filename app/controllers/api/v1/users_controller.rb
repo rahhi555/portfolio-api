@@ -14,12 +14,12 @@ module Api
       end
 
       def destroy
-        user = ext_current_user.destroy!
+        user = current_user.destroy!
         render json: { message: 'User successfully deleted.', id: user.id, uid: user.uid, name: user.name }, status: :ok
       end
 
       def me
-        render json: ext_current_user, status: :ok
+        render json: current_user, status: :ok
       end
 
       private

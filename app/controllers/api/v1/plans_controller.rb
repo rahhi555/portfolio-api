@@ -7,8 +7,8 @@ module Api
       end
 
       def create
-        plan = Plan.create!(plan_params.merge(user_id: ext_current_user.id))
-        render json: plan, status: :ok
+        @plan = Plan.create!(plan_params.merge(user_id: current_user.id))
+        render template: 'plans/show', status: :ok
       end
 
       private
