@@ -9,13 +9,20 @@ module Api
       end
 
       def create
-        user = User.create!(user_params.merge(uid: payload['sub']))
+        user = User.create!(user_params.merge(uid: payload['sub'],
+                                              provider: sign_in_provider))
         render json: user, status: :ok
+      end
+
+      def update
+        current_user.update!(user_params.merge(provider: sign_in_provider))
+        render json: current_user, status: :ok
       end
 
       def destroy
         user = current_user.destroy!
         render json: { message: 'User successfully deleted.', id: user.id, uid: user.uid, name: user.name }, status: :ok
+
       end
 
       def me
@@ -26,6 +33,10 @@ module Api
 
       def user_params
         params.require(:user).permit(:name)
+      end
+
+      def sign_in_provider
+        payload['firebase']['sign_in_provider'].slice(/.*[^.com]/)
       end
     end
   end

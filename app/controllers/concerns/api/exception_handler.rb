@@ -2,7 +2,7 @@ module Api::ExceptionHandler
   extend ActiveSupport::Concern
 
   included do
-    rescue_from StandardError, with: :render_500
+    # rescue_from StandardError, with: :render_500
     rescue_from ActiveRecord::RecordNotFound, with: :render_404
     rescue_from JWT::DecodeError, with: :render_401
     rescue_from ActiveRecord::RecordInvalid, with: :render_400

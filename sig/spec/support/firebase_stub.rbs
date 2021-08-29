@@ -1,0 +1,5 @@
+module FirebaseStub
+  def stub_firebase: (untyped user) -> untyped
+
+  def payload_headers: (?uid: untyped? uid) -> { Authorization: ::String }
+end

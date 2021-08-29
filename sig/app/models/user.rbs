@@ -86,14 +86,45 @@ class User < ApplicationRecord
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
 
+  attr_accessor provider(): String
+  def provider_changed?: () -> bool
+  def provider_change: () -> [ String?, String? ]
+  def provider_will_change!: () -> void
+  def provider_was: () -> String?
+  def provider_previously_changed?: () -> bool
+  def provider_previous_change: () -> Array[String?]?
+  def provider_previously_was: () -> String?
+  def provider_before_last_save: () -> String?
+  def provider_change_to_be_saved: () -> Array[String?]?
+  def provider_in_database: () -> String?
+  def saved_change_to_provider: () -> Array[String?]?
+  def saved_change_to_provider?: () -> bool
+  def will_save_change_to_provider?: () -> bool
+  def restore_provider!: () -> void
+  def clear_provider_change: () -> void
+
   def plans: () -> Plan::ActiveRecord_Associations_CollectionProxy
   def plans=: (Plan::ActiveRecord_Associations_CollectionProxy | Array[Plan]) -> (Plan::ActiveRecord_Associations_CollectionProxy | Array[Plan])
   def plan_ids: () -> Array[Integer]
   def plan_ids=: (Array[Integer]) -> Array[Integer]
 
+  def anonymous!: () -> bool
+  def anonymous?: () -> bool
+  def password!: () -> bool
+  def password?: () -> bool
+  def google!: () -> bool
+  def google?: () -> bool
+  def self.anonymous: () -> ActiveRecord_Relation
+  def self.password: () -> ActiveRecord_Relation
+  def self.google: () -> ActiveRecord_Relation
+
   class ActiveRecord_Relation < ActiveRecord::Relation
     include _ActiveRecord_Relation[User, Integer]
     include Enumerable[User]
+
+    def anonymous: () -> ActiveRecord_Relation
+    def password: () -> ActiveRecord_Relation
+    def google: () -> ActiveRecord_Relation
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
