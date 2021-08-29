@@ -34,7 +34,7 @@ RSpec.describe "Api::V1::Plans", type: :request do
 
         expect(response).to have_http_status(200)
         expect(parsed_body['name']).to eq plan.name
-        expect(parsed_body['user_id']).to eq user.id
+        expect(parsed_body['author']).to eq user.name
       end
     end
   end

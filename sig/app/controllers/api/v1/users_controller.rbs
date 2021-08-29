@@ -1,0 +1,21 @@
+module Api
+  module V1
+    class UsersController < ApplicationController
+      def show: () -> untyped
+
+      def create: () -> untyped
+
+      def update: () -> untyped
+
+      def destroy: () -> untyped
+
+      def me: () -> untyped
+
+      private
+
+      def user_params: () -> untyped
+
+      def sign_in_provider: () -> untyped
+    end
+  end
+end

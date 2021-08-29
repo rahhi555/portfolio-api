@@ -21,17 +21,19 @@ RSpec.describe "Api::V1::Users", type: :request do
     context "有効な属性値の場合" do
       it "ユーザーを追加できること" do
         expect{
-          post api_v1_users_path, params: { user: { name: 'テストネーム' } }, headers: payload_headers
+          post api_v1_users_path,
+               params: { user: { name: user.name } },
+               headers: payload_headers
         }.to change{ User.count }.by(1)
         expect(response).to have_http_status(200)
-        expect(parsed_body['name']).to eq 'テストネーム'
+        expect(parsed_body['name']).to eq user.name
       end
     end
 
     context "ヘッダーにトークンが無い場合" do
       it "401エラーが返ること" do
         expect{
-          post api_v1_users_path, params: { user: { name: 'テストネーム' } }
+          post api_v1_users_path, params: { user: user.attributes }
         }.to_not change{ User.count }
 
         expect(response).to have_http_status(401)
@@ -47,6 +49,22 @@ RSpec.describe "Api::V1::Users", type: :request do
         expect(response).to have_http_status(400)
         expect(parsed_body['message']).to eq 'Bad Request'
         expect(parsed_body['errors'][0]).to eq "Validation failed: Name can't be blank"
+      end
+    end
+
+    describe 'PATCH /api/v1/me' do
+      context "有効な属性値の場合" do
+        let!(:user) { create(:user) }
+        let(:update_user) { build(:user, name: 'update_user') }
+
+        it "ユーザーを更新できること" do
+          patch api_v1_me_path,
+                params: { user: update_user.attributes },
+                headers: payload_headers(uid: user.uid)
+          expect(response).to have_http_status(200)
+          expect(parsed_body['provider']).to eq 'google'
+          expect(parsed_body['name']).to eq update_user.name
+        end
       end
     end
   end
