@@ -1,4 +1,4 @@
-target :lib do
+target :app do
   signature 'sig'
 
   check 'app'
@@ -12,15 +12,26 @@ target :lib do
   library 'monitor'
   library 'singleton'
   library 'tsort'
+  library 'railties'
+  library 'net-http'
+  library 'forwardable'
 
-  library 'rack'
-
-  library 'activesupport'
   library 'actionpack'
+  library 'actionview'
   library 'activejob'
   library 'activemodel'
-  library 'actionview'
   library 'activerecord'
-  library 'railties'
+  library 'activesupport'
+  library 'ast'
+  library 'chunky_png'
+  library 'httparty'
+  library 'listen'
+  library 'nokogiri'
+  library 'protobuf'
+  library 'rack'
   library 'redis'
+  library 'regexp_trie'
+  library 'retryable'
+  library 'sidekiq'
+  library 'ulid'
 end

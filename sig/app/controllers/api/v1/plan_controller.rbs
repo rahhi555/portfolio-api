@@ -1,0 +1,14 @@
+module Api
+  module V1
+    class PlansController < ApplicationController
+      @plans: untyped
+      @plan: untyped
+
+      def index: -> untyped
+      def create: -> untyped
+
+      private
+      def plan_params: -> untyped
+    end
+  end
+end

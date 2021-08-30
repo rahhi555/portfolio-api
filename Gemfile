@@ -43,6 +43,7 @@ group :development, :test do
   gem 'rbs', require: false
   gem 'rbs_rails', require: false
   gem 'steep', require: false
+  gem 'typeprof', require: false
 end
 
 group :development do

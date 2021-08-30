@@ -22,7 +22,6 @@ module Api
       def destroy
         user = current_user.destroy!
         render json: { message: 'User successfully deleted.', id: user.id, uid: user.uid, name: user.name }, status: :ok
-
       end
 
       def me

@@ -1,0 +1,9 @@
+module Api::FirebaseAuth
+  extend ActiveSupport::Concern
+
+  def token_from_request_headers: () -> String?
+ 
+  def token: () -> String?
+
+  def payload: () -> Hash[String, untyped]
+end

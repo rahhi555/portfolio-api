@@ -1,4 +1,5 @@
 AllCops:
+  NewCops: enable
   Exclude:
     - 'tmp/**/*'
     - 'vendor/**/*'
@@ -13,4 +14,11 @@ Style/AsciiComments:
 
 # frozen_string_literal: trueを無くす
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# メソッド名に数字を許可
+Naming/VariableNumber:
+  Enabled: false
+
+Style/Documentation:
   Enabled: false
