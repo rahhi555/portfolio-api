@@ -1,3 +1,5 @@
+D = Steep::Diagnostic
+
 target :app do
   signature 'sig'
 
@@ -16,6 +18,7 @@ target :app do
   library 'net-http'
   library 'forwardable'
 
+
   library 'actionpack'
   library 'actionview'
   library 'activejob'
@@ -26,12 +29,16 @@ target :app do
   library 'chunky_png'
   library 'httparty'
   library 'listen'
-  library 'nokogiri'
   library 'protobuf'
   library 'rack'
   library 'redis'
   library 'regexp_trie'
   library 'retryable'
-  library 'sidekiq'
   library 'ulid'
+
+  configure_code_diagnostics do |hash|
+    hash[D::Ruby::NoMethod] = :information
+    hash[D::Ruby::UnexpectedPositionalArgument] = :information
+    hash[D::Ruby::RequiredBlockMissing] = :information
+  end
 end

@@ -1,4 +1,0 @@
-# テストでよく使用する共通処理
-module SupportMethods
-  def parsed_body: () -> untyped
-end

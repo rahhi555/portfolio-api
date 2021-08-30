@@ -25,5 +25,13 @@ RSpec.describe Plan, type: :model do
         expect{ over_name.save }.to_not change{ Plan.count }
       end
     end
+
+    context "名前が空白の場合" do
+      let(:empty_name) { build(:plan, name: '') }
+
+      it "計画が作成されない" do
+        expect{ empty_name.save }.to_not change{ Plan.count }
+      end
+    end
   end
 end
