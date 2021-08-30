@@ -1,6 +1,8 @@
 module Api
   module V1
     class UsersController < ApplicationController
+      extend ActiveRecord::SpawnMethods
+
       def show: () -> untyped
 
       def create: () -> untyped
@@ -9,7 +11,7 @@ module Api
 
       def destroy: () -> untyped
 
-      def me: () -> untyped
+      def me: () -> void
 
       private
 

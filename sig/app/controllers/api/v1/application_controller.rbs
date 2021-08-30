@@ -1,7 +1,11 @@
 module Api
   module V1
     class ApplicationController < ActionController::API
-      def current_user: () -> User
+      include Firebase::Auth::Authenticable
+
+      include Api::ExceptionHandler
+
+      include Api::FirebaseAuth
     end
   end
 end

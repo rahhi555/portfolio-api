@@ -1,0 +1,17 @@
+module Api::ExceptionHandler
+  extend ActionController::Instrumentation
+  extend ActiveSupport::Rescuable::ClassMethods
+  extend ActiveSupport::Concern
+
+  private
+
+  def render_400: (?untyped? exception, ?untyped? messages) -> untyped
+
+  def render_401: (?untyped? exception, ?untyped? messages) -> untyped
+
+  def render_404: (?untyped? exception, ?untyped? messages) -> untyped
+
+  def render_500: (?untyped? exception, ?untyped? messages) -> untyped
+
+  def render_error: (untyped code, untyped message, *untyped error_messages) -> untyped
+end

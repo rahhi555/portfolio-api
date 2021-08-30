@@ -1,0 +1,9 @@
+module Firebase
+  module Auth
+    module Authenticable
+      def current_user: -> User
+                      
+      def authenticate_user: -> void
+    end
+  end
+end
