@@ -7,6 +7,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.7'
 gem 'mysql2', '>= 0.4.4'
 gem 'puma', '~> 4.1'
 gem 'redis', '~> 4.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
