@@ -19,7 +19,7 @@ module Api
       private
 
       def plan_params
-        params.require(:plan).permit(:name)
+        params.require(:plan).permit(:name, :published)
       end
     end
   end

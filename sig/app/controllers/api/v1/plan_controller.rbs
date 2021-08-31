@@ -4,8 +4,9 @@ module Api
       @plans: untyped
       @plan: untyped
 
-      def index: -> untyped
-      def create: -> untyped
+      def index: -> void
+      def create: -> void
+      def destroy: -> void
 
       private
       def plan_params: -> untyped

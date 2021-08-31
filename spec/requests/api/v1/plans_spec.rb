@@ -29,7 +29,7 @@ RSpec.describe "Api::V1::Plans", type: :request do
     context '有効な属性値の場合' do
       it '計画が追加されること' do
         expect {
-          post api_v1_plans_path, params: { plan: { name: plan.name } }, headers: payload_headers(uid: user.uid)
+          post api_v1_plans_path, params: { plan: { name: plan.name, published: plan.published } }, headers: payload_headers(uid: user.uid)
         }.to change{ User.count }.by(1)
 
         expect(response).to have_http_status(200)

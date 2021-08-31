@@ -86,6 +86,24 @@ class Plan < ApplicationRecord
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
 
+  attr_accessor published(): bool
+  def published_changed?: () -> bool
+  def published_change: () -> [ bool?, bool? ]
+  def published_will_change!: () -> void
+  def published_was: () -> bool?
+  def published_previously_changed?: () -> bool
+  def published_previous_change: () -> Array[bool?]?
+  def published_previously_was: () -> bool?
+  def published_before_last_save: () -> bool?
+  def published_change_to_be_saved: () -> Array[bool?]?
+  def published_in_database: () -> bool?
+  def saved_change_to_published: () -> Array[bool?]?
+  def saved_change_to_published?: () -> bool
+  def will_save_change_to_published?: () -> bool
+  def restore_published!: () -> void
+  def clear_published_change: () -> void
+  attr_accessor published?(): bool
+
   def user: () -> User
   def user=: (User?) -> User?
   def build_user: (untyped) -> User
