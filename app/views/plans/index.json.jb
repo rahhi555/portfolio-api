@@ -1,10 +1,13 @@
 @plans.map do |plan|
   author = plan.user.nil? ? '退会済み' : plan.user.name
+  userId = plan.user.nil? ? 0 : plan.user.id
   {
     id: plan.id,
+    userId: userId,
     name: plan.name,
-    createdAt: plan.created_at,
-    updatedAt: plan.updated_at,
-    author: author
+    author: author,
+    published: plan.published,
+    createdAt: plan.strf_created_at,
+    updatedAt: plan.strf_updated_at,
   }
 end
