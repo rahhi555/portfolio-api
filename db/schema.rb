@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2021_08_31_232838) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_roles_on_name", unique: true
     t.index ["plan_id"], name: "index_roles_on_plan_id"
   end
 

@@ -8,6 +8,8 @@ interface _RbsRailsPathHelpers
   def api_v1_me_path: (*untyped) -> String
   def api_v1_plans_path: (*untyped) -> String
   def api_v1_plan_path: (*untyped) -> String
+  def api_v1_roles_path: (*untyped) -> String
+  def api_v1_role_path: (*untyped) -> String
   def rails_service_blob_path: (*untyped) -> String
   def rails_blob_representation_path: (*untyped) -> String
   def rails_disk_service_path: (*untyped) -> String
@@ -24,6 +26,8 @@ interface _RbsRailsPathHelpers
   def api_v1_me_url: (*untyped) -> String
   def api_v1_plans_url: (*untyped) -> String
   def api_v1_plan_url: (*untyped) -> String
+  def api_v1_roles_url: (*untyped) -> String
+  def api_v1_role_url: (*untyped) -> String
   def rails_service_blob_url: (*untyped) -> String
   def rails_blob_representation_url: (*untyped) -> String
   def rails_disk_service_url: (*untyped) -> String

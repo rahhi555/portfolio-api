@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'me', to: 'users#me'
 
       resources 'plans', only: %i[index create destroy]
+      resources 'roles', only: %i[index create update destroy]
     end
   end
 end

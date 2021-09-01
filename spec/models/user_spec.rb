@@ -43,4 +43,17 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe 'ユーザー削除' do
+    context '計画に紐付いたユーザーを削除した場合' do
+      let!(:user) { create(:user) }
+      let!(:plan) { create(:plan, user: user) }
+
+      it 'ユーザーのみ削除され、計画は残ったままになること' do
+        expect{
+          user.destroy!
+        }.to change{ User.count }.by(-1).and change{ Plan.count }.by(0)
+      end
+    end
+  end
 end

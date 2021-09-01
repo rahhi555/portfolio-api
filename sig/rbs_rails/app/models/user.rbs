@@ -107,6 +107,10 @@ class User < ApplicationRecord
   def plans=: (Plan::ActiveRecord_Associations_CollectionProxy | Array[Plan]) -> (Plan::ActiveRecord_Associations_CollectionProxy | Array[Plan])
   def plan_ids: () -> Array[Integer]
   def plan_ids=: (Array[Integer]) -> Array[Integer]
+  def roles: () -> Role::ActiveRecord_Associations_CollectionProxy
+  def roles=: (Role::ActiveRecord_Associations_CollectionProxy | Array[Role]) -> (Role::ActiveRecord_Associations_CollectionProxy | Array[Role])
+  def role_ids: () -> Array[Integer]
+  def role_ids=: (Array[Integer]) -> Array[Integer]
 
   def anonymous!: () -> bool
   def anonymous?: () -> bool
