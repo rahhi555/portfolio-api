@@ -1,7 +1,15 @@
 module Api
   module V1
-    class RolesController < ApplicationController
-      def index: () -> untyped
+    class PlansController < ApplicationController
+      @plans: untyped
+      @plan: untyped
+
+      def index: -> void
+      def create: -> void
+      def destroy: -> void
+
+      private
+      def plan_params: -> untyped
     end
   end
 end

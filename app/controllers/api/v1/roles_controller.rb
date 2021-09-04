@@ -1,13 +1,15 @@
 module Api
   module V1
     class RolesController < ApplicationController
+      before_action :set_plan, only: %i[index create]
+
       def index
-        roles = Role.all
-        render json: roles, status: :ok
+        @roles = @plan.roles
+        render template: 'api/v1/roles/index', status: :ok
       end
 
       def create
-        role = Role.create!(role_params)
+        role = @plan.roles.create!(role_params)
         render json: role, status: :ok
       end
 
@@ -26,7 +28,11 @@ module Api
       private
 
       def role_params
-        params.require(:role).permit(:name, :plan_id)
+        params.require(:role).permit(:name, :description)
+      end
+
+      def set_plan
+        @plan = Plan.find(params[:plan_id])
       end
     end
   end

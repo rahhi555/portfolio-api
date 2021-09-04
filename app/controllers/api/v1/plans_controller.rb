@@ -3,12 +3,17 @@ module Api
     class PlansController < ApplicationController
       def index
         @plans = Plan.all.includes(:user)
-        render template: 'plans/index', status: :ok
+        render template: 'api/v1/plans/index', status: :ok
+      end
+
+      def show
+        @plan = Plan.find(params[:id])
+        render template: 'api/v1/plans/show', status: :ok
       end
 
       def create
         @plan = Plan.create!(plan_params.merge(user_id: current_user.id))
-        render template: 'plans/show', status: :ok
+        render template: 'api/v1/plans/show', status: :ok
       end
 
       def destroy

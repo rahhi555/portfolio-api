@@ -5,4 +5,5 @@
     updatedAt: @plan.strf_updated_at,
     author: @plan.user.name,
     published: @plan.published,
+    userId: @plan.user.id
 }

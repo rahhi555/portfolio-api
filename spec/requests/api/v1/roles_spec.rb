@@ -4,34 +4,37 @@ RSpec.describe "Api::V1::Roles", type: :request do
   let(:user) { create(:user) }
   let(:valid_headers) { payload_headers(uid: user.uid) }
 
-  describe "GET /api/v1/roles" do
-    let!(:role_list) { create_list(:role, 3) }
+  describe "GET /api/v1/:plan_id/roles" do
+    let(:plan) { create(:plan) }
+    let!(:role_list) { create_list(:role, 3, plan: plan) }
+    let!(:another_role_list) { create_list(:role, 3) }
+
     it "ヘッダーに有効なトークンが存在する場合、ロール一覧を取得できること" do
-      get api_v1_roles_path, headers: valid_headers
+      get api_v1_plan_roles_path(plan.id), headers: valid_headers
       expect(response).to have_http_status(200)
       expect(parsed_body[0]['name']).to eq role_list.first.name
       expect(parsed_body.size).to eq role_list.size
     end
 
     it "ヘッダーにトークンが存在しない場合、ロール一覧を取得できないこと" do
-      get api_v1_roles_path
+      get api_v1_plan_roles_path(plan.id)
       expect(response).to have_http_status(401)
     end
   end
 
-  describe "POST /api/v1/roles" do
+  describe "POST /api/v1/:plan_id/roles" do
     let(:plan) { create(:plan) }
     let(:role) { build(:role) }
 
     it "有効な属性値の場合、ロールを作成できること" do
       expect {
-        post api_v1_roles_path, params: { role: { name: role.name, plan_id: plan.id } }, headers: valid_headers
+        post api_v1_plan_roles_path(plan.id), params: { role: { name: role.name } }, headers: valid_headers
       }.to change{ Role.count }.by(1)
     end
 
     it "ヘッダーにトークンが存在しない場合、ロールを作成できないこと" do
       expect {
-        post api_v1_roles_path, params: { role: { name: role.name, plan_id: plan.id } }
+        post api_v1_plan_roles_path(plan.id), params: { role: { name: role.name } }
       }.to_not change{ Role.count }
     end
   end

@@ -1,0 +1,8 @@
+@roles.map do |role|
+  {
+    id: role.id,
+    planId: role.plan_id,
+    name: role.name,
+    description: role.description
+  }
+end
