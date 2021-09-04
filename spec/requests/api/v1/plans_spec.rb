@@ -85,5 +85,14 @@ RSpec.describe "Api::V1::Plans", type: :request do
       end
     end
   end
-  
+
+  describe 'GET /api/v1/plans/:id' do
+    let!(:plan) { create(:plan) }
+    it 'ヘッダーにトークンが存在する場合、計画を取得できること' do
+      get api_v1_plan_path(plan.id), headers: payload_headers(uid: plan.user.uid)
+      expect(response).to have_http_status(200)
+      expect(parsed_body['id']).to eq plan.id
+    end
+  end
+
 end

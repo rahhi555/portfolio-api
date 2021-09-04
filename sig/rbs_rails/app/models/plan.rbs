@@ -104,6 +104,11 @@ class Plan < ApplicationRecord
   def clear_published_change: () -> void
   attr_accessor published?(): bool
 
+  def roles: () -> Role::ActiveRecord_Associations_CollectionProxy
+  def roles=: (Role::ActiveRecord_Associations_CollectionProxy | Array[Role]) -> (Role::ActiveRecord_Associations_CollectionProxy | Array[Role])
+  def role_ids: () -> Array[Integer]
+  def role_ids=: (Array[Integer]) -> Array[Integer]
+
   def user: () -> User
   def user=: (User?) -> User?
   def build_user: (untyped) -> User

@@ -40,5 +40,6 @@ target :app do
     hash[D::Ruby::NoMethod] = :information
     hash[D::Ruby::UnexpectedPositionalArgument] = :information
     hash[D::Ruby::RequiredBlockMissing] = :information
+    hash[D::Ruby::MethodDefinitionMissing] = :hint
   end
 end
