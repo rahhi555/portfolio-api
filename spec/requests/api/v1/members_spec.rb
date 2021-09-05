@@ -69,4 +69,23 @@ RSpec.describe "Api::V1::Members", type: :request do
       end
     end
   end
+
+  describe 'PATCH /api/v1/members/:id' do
+    let!(:member) { create(:member, user_id: user.id) }
+    let!(:role) { create(:role, plan_id: member.plan_id) }
+
+    context '正常系' do
+      it 'ロールを更新できること' do
+        patch api_v1_member_path(member.id), params: { member: { roleId: role.id }}, headers: valid_header
+        expect(response).to have_http_status(200)
+        expect(parsed_body['roleId']).to eq role.id
+      end
+
+      it 'acceptを更新できること' do
+        patch api_v1_member_path(member.id), params: { member: { accept: !member.accept }}, headers: valid_header
+        expect(response).to have_http_status(200)
+        expect(parsed_body['accept']).to eq !member.accept
+      end
+    end
+  end
 end

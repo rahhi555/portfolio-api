@@ -13,6 +13,12 @@ module Api
         render json: member, status: :ok
       end
 
+      def update
+        @member = Member.find(params[:id])
+        @member.update!(member_params)
+        render template: 'api/v1/members/show', status: :ok
+      end
+
       def destroy
         member = current_user.members.find(params[:id]).destroy!
         render json: { message: 'Member successfully deleted.', id: member.id }, status: :ok
