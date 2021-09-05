@@ -37,13 +37,22 @@ RSpec.describe Plan, type: :model do
 
   describe '計画削除' do
     context 'ロールに紐付いた計画を削除した場合' do
-      let!(:plan) { create(:plan) }
-      let!(:role) { create(:role, plan: plan) }
+      let!(:role) { create(:role) }
 
       it 'ロールも一緒に削除されること' do
         expect{
-          plan.destroy!
+          role.plan.destroy!
         }.to change{ Plan.count }.by(-1).and change { Role.count }.by(-1)
+      end
+    end
+
+    context 'メンバーに紐付いた計画を削除した場合' do
+      let!(:member) { create(:member) }
+
+      it 'メンバーも一緒に削除されること' do
+        expect{
+          member.plan.destroy!
+        }.to change{ Plan.count }.by(-1).and change { Member.count }.by(-1)
       end
     end
   end

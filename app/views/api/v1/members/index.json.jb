@@ -1,0 +1,11 @@
+@members.map do |member|
+  {
+    id: member.id,
+    accept: member.accept,
+    planId: member.plan.id,
+    roleId: member.role&.id,
+    roleName: member.role&.name,
+    userId: member.user.id,
+    userName: member.user.name
+  }
+end

@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :plans, dependent: :nullify
   has_many :roles, through: :plans
+  has_many :members, dependent: :destroy
 
   enum provider: { anonymous: 0, password: 1, google: 2 }
 

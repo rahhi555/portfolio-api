@@ -31,4 +31,13 @@ RSpec.describe Role, type: :model do
       end
     end
   end
+
+  describe 'ロール削除' do
+    let!(:member) { create(:member) }
+    it 'メンバーに紐付いたロールを削除した場合、メンバーは残ったままになること' do
+      expect {
+        member.role.destroy
+      }.to change { Role.count }.by(-1).and change { Member.count }.by(0)
+    end
+  end
 end

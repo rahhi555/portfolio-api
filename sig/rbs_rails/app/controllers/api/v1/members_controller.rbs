@@ -1,0 +1,11 @@
+module Api
+  module V1
+    class MembersController
+      def index: -> untyped
+      def create: -> untyped
+
+      private
+      def member_params: -> untyped
+    end
+  end
+end

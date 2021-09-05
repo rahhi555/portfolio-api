@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_232838) do
+ActiveRecord::Schema.define(version: 2021_09_04_010150) do
+
+  create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "plan_id", null: false
+    t.bigint "role_id"
+    t.boolean "accept", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plan_id"], name: "index_members_on_plan_id"
+    t.index ["role_id"], name: "index_members_on_role_id"
+    t.index ["user_id", "plan_id"], name: "index_members_on_user_id_and_plan_id", unique: true
+    t.index ["user_id"], name: "index_members_on_user_id"
+  end
 
   create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -39,6 +52,9 @@ ActiveRecord::Schema.define(version: 2021_08_31_232838) do
     t.index ["uid"], name: "index_users_on_uid", unique: true
   end
 
+  add_foreign_key "members", "plans"
+  add_foreign_key "members", "roles"
+  add_foreign_key "members", "users"
   add_foreign_key "plans", "users"
   add_foreign_key "roles", "plans"
 end

@@ -1,5 +1,5 @@
-class Plan < ApplicationRecord
-  extend _ActiveRecord_Relation_ClassMethods[Plan, ActiveRecord_Relation, Integer]
+class Member < ApplicationRecord
+  extend _ActiveRecord_Relation_ClassMethods[Member, ActiveRecord_Relation, Integer]
 
   attr_accessor id(): Integer
   def id_changed?: () -> bool
@@ -18,24 +18,7 @@ class Plan < ApplicationRecord
   def restore_id!: () -> void
   def clear_id_change: () -> void
 
-  attr_accessor name(): String
-  def name_changed?: () -> bool
-  def name_change: () -> [ String?, String? ]
-  def name_will_change!: () -> void
-  def name_was: () -> String?
-  def name_previously_changed?: () -> bool
-  def name_previous_change: () -> Array[String?]?
-  def name_previously_was: () -> String?
-  def name_before_last_save: () -> String?
-  def name_change_to_be_saved: () -> Array[String?]?
-  def name_in_database: () -> String?
-  def saved_change_to_name: () -> Array[String?]?
-  def saved_change_to_name?: () -> bool
-  def will_save_change_to_name?: () -> bool
-  def restore_name!: () -> void
-  def clear_name_change: () -> void
-
-  attr_accessor user_id(): Integer?
+  attr_accessor user_id(): Integer
   def user_id_changed?: () -> bool
   def user_id_change: () -> [ Integer?, Integer? ]
   def user_id_will_change!: () -> void
@@ -51,6 +34,58 @@ class Plan < ApplicationRecord
   def will_save_change_to_user_id?: () -> bool
   def restore_user_id!: () -> void
   def clear_user_id_change: () -> void
+
+  attr_accessor plan_id(): Integer
+  def plan_id_changed?: () -> bool
+  def plan_id_change: () -> [ Integer?, Integer? ]
+  def plan_id_will_change!: () -> void
+  def plan_id_was: () -> Integer?
+  def plan_id_previously_changed?: () -> bool
+  def plan_id_previous_change: () -> Array[Integer?]?
+  def plan_id_previously_was: () -> Integer?
+  def plan_id_before_last_save: () -> Integer?
+  def plan_id_change_to_be_saved: () -> Array[Integer?]?
+  def plan_id_in_database: () -> Integer?
+  def saved_change_to_plan_id: () -> Array[Integer?]?
+  def saved_change_to_plan_id?: () -> bool
+  def will_save_change_to_plan_id?: () -> bool
+  def restore_plan_id!: () -> void
+  def clear_plan_id_change: () -> void
+
+  attr_accessor role_id(): Integer?
+  def role_id_changed?: () -> bool
+  def role_id_change: () -> [ Integer?, Integer? ]
+  def role_id_will_change!: () -> void
+  def role_id_was: () -> Integer?
+  def role_id_previously_changed?: () -> bool
+  def role_id_previous_change: () -> Array[Integer?]?
+  def role_id_previously_was: () -> Integer?
+  def role_id_before_last_save: () -> Integer?
+  def role_id_change_to_be_saved: () -> Array[Integer?]?
+  def role_id_in_database: () -> Integer?
+  def saved_change_to_role_id: () -> Array[Integer?]?
+  def saved_change_to_role_id?: () -> bool
+  def will_save_change_to_role_id?: () -> bool
+  def restore_role_id!: () -> void
+  def clear_role_id_change: () -> void
+
+  attr_accessor accept(): bool?
+  def accept_changed?: () -> bool
+  def accept_change: () -> [ bool?, bool? ]
+  def accept_will_change!: () -> void
+  def accept_was: () -> bool?
+  def accept_previously_changed?: () -> bool
+  def accept_previous_change: () -> Array[bool?]?
+  def accept_previously_was: () -> bool?
+  def accept_before_last_save: () -> bool?
+  def accept_change_to_be_saved: () -> Array[bool?]?
+  def accept_in_database: () -> bool?
+  def saved_change_to_accept: () -> Array[bool?]?
+  def saved_change_to_accept?: () -> bool
+  def will_save_change_to_accept?: () -> bool
+  def restore_accept!: () -> void
+  def clear_accept_change: () -> void
+  attr_accessor accept?(): bool
 
   attr_accessor created_at(): ActiveSupport::TimeWithZone
   def created_at_changed?: () -> bool
@@ -86,43 +121,28 @@ class Plan < ApplicationRecord
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
 
-  attr_accessor published(): bool
-  def published_changed?: () -> bool
-  def published_change: () -> [ bool?, bool? ]
-  def published_will_change!: () -> void
-  def published_was: () -> bool?
-  def published_previously_changed?: () -> bool
-  def published_previous_change: () -> Array[bool?]?
-  def published_previously_was: () -> bool?
-  def published_before_last_save: () -> bool?
-  def published_change_to_be_saved: () -> Array[bool?]?
-  def published_in_database: () -> bool?
-  def saved_change_to_published: () -> Array[bool?]?
-  def saved_change_to_published?: () -> bool
-  def will_save_change_to_published?: () -> bool
-  def restore_published!: () -> void
-  def clear_published_change: () -> void
-  attr_accessor published?(): bool
-
-  def roles: () -> Role::ActiveRecord_Associations_CollectionProxy
-  def roles=: (Role::ActiveRecord_Associations_CollectionProxy | Array[Role]) -> (Role::ActiveRecord_Associations_CollectionProxy | Array[Role])
-  def role_ids: () -> Array[Integer]
-  def role_ids=: (Array[Integer]) -> Array[Integer]
-  def members: () -> Member::ActiveRecord_Associations_CollectionProxy
-  def members=: (Member::ActiveRecord_Associations_CollectionProxy | Array[Member]) -> (Member::ActiveRecord_Associations_CollectionProxy | Array[Member])
-  def member_ids: () -> Array[Integer]
-  def member_ids=: (Array[Integer]) -> Array[Integer]
-
   def user: () -> User
   def user=: (User?) -> User?
   def build_user: (untyped) -> User
   def create_user: (untyped) -> User
   def create_user!: (untyped) -> User
   def reload_user: () -> User?
+  def plan: () -> Plan
+  def plan=: (Plan?) -> Plan?
+  def build_plan: (untyped) -> Plan
+  def create_plan: (untyped) -> Plan
+  def create_plan!: (untyped) -> Plan
+  def reload_plan: () -> Plan?
+  def role: () -> Role
+  def role=: (Role?) -> Role?
+  def build_role: (untyped) -> Role
+  def create_role: (untyped) -> Role
+  def create_role!: (untyped) -> Role
+  def reload_role: () -> Role?
 
   class ActiveRecord_Relation < ActiveRecord::Relation
-    include _ActiveRecord_Relation[Plan, Integer]
-    include Enumerable[Plan]
+    include _ActiveRecord_Relation[Member, Integer]
+    include Enumerable[Member]
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy

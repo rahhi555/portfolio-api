@@ -46,13 +46,22 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー削除' do
     context '計画に紐付いたユーザーを削除した場合' do
-      let!(:user) { create(:user) }
-      let!(:plan) { create(:plan, user: user) }
+      let!(:plan) { create(:plan) }
 
-      it 'ユーザーのみ削除され、計画は残ったままになること' do
+      it '計画は残ったままになること' do
         expect{
-          user.destroy!
+          plan.user.destroy!
         }.to change{ User.count }.by(-1).and change{ Plan.count }.by(0)
+      end
+    end
+
+    context 'メンバーに紐付いたユーザーを削除した場合' do
+      let!(:member) { create(:member) }
+
+      it 'メンバーも削除されること' do
+        expect{
+          member.user.destroy!
+        }.to change{ User.count }.by(-1).and change{ Member.count }.by(-1)
       end
     end
   end
