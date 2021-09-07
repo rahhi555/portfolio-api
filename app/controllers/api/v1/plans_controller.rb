@@ -2,7 +2,7 @@ module Api
   module V1
     class PlansController < ApplicationController
       def index
-        @plans = Plan.all.includes(:user)
+        @plans = Plan.all.includes(%i[user members])
         render template: 'api/v1/plans/index', status: :ok
       end
 
