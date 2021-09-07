@@ -8,9 +8,9 @@ module Api
       end
 
       def create
-        member = Plan.find(params[:plan_id]).members.build(member_params)
-        member.save!
-        render json: member, status: :ok
+        @member = Plan.find(params[:plan_id]).members.build(member_params)
+        @member.save!
+        render template: 'api/v1/members/show', status: :ok
       end
 
       def update
