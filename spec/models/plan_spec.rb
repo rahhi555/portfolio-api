@@ -55,5 +55,15 @@ RSpec.describe Plan, type: :model do
         }.to change{ Plan.count }.by(-1).and change { Member.count }.by(-1)
       end
     end
+
+    context 'マップに紐付いた計画を削除した場合' do
+      let!(:map) { create(:map) }
+
+      it 'マップも一緒に削除されること' do
+        expect{
+          map.plan.destroy!
+        }.to change{ Plan.count }.by(-1).and change { Map.count }.by(-1)
+      end
+    end
   end
 end
