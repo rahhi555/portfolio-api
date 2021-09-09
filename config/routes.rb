@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
       resources 'plans', only: %i[index create destroy show] do
         resources 'roles', only: %i[index create update destroy], shallow: true
-        resources 'members', only: %i[index create destroy update], shallow: true
+        resources 'members', only: %i[index create update destroy], shallow: true
+        resources 'maps', only: %i[index create update destroy], shallow: true
       end
     end
   end

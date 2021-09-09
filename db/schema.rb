@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_04_010150) do
+ActiveRecord::Schema.define(version: 2021_09_08_043353) do
+
+  create_table "maps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "plan_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plan_id", "name"], name: "index_maps_on_plan_id_and_name", unique: true
+    t.index ["plan_id"], name: "index_maps_on_plan_id"
+  end
 
   create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -52,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_09_04_010150) do
     t.index ["uid"], name: "index_users_on_uid", unique: true
   end
 
+  add_foreign_key "maps", "plans"
   add_foreign_key "members", "plans"
   add_foreign_key "members", "roles"
   add_foreign_key "members", "users"
