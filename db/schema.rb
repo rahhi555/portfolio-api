@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_08_043353) do
+ActiveRecord::Schema.define(version: 2021_09_09_075345) do
 
   create_table "maps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "plan_id", null: false
@@ -52,6 +52,24 @@ ActiveRecord::Schema.define(version: 2021_09_08_043353) do
     t.index ["plan_id"], name: "index_roles_on_plan_id"
   end
 
+  create_table "svgs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "type"
+    t.bigint "map_id", null: false
+    t.float "x", null: false
+    t.float "y", null: false
+    t.string "fill", null: false
+    t.string "stroke", null: false
+    t.string "name", null: false
+    t.float "width"
+    t.float "height"
+    t.integer "display_time"
+    t.text "draw_points"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["map_id"], name: "index_svgs_on_map_id"
+    t.index ["type"], name: "index_svgs_on_type"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "uid", null: false
@@ -67,4 +85,5 @@ ActiveRecord::Schema.define(version: 2021_09_08_043353) do
   add_foreign_key "members", "users"
   add_foreign_key "plans", "users"
   add_foreign_key "roles", "plans"
+  add_foreign_key "svgs", "maps"
 end

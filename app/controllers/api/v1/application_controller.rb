@@ -11,7 +11,6 @@ module Api
       def snakeize_params
         params.deep_snakeize!
       end
-
     end
   end
 end

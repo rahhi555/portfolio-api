@@ -38,4 +38,19 @@ RSpec.describe Map, type: :model do
       end
     end
   end
+
+  describe 'マップ削除' do
+    context 'SVGに紐付いた計画を削除した場合' do
+      let!(:map){ create(:map) }
+      let!(:rect) { create(:rect, map_id: map.id) }
+      let!(:path) { create(:path, map_id: map.id) }
+      let!(:polyline) { create(:polyline, map_id: map.id) }
+
+      it 'SVGも一緒に削除されること' do
+        expect{
+          map.destroy!
+        }.to change{ Map.count }.by(-1).and change { Svg.count }.by(-3)
+      end
+    end
+  end
 end

@@ -1,0 +1,256 @@
+class Svg < ApplicationRecord
+  extend _ActiveRecord_Relation_ClassMethods[Svg, ActiveRecord_Relation, Integer]
+
+  attr_accessor id(): Integer
+  def id_changed?: () -> bool
+  def id_change: () -> [ Integer?, Integer? ]
+  def id_will_change!: () -> void
+  def id_was: () -> Integer?
+  def id_previously_changed?: () -> bool
+  def id_previous_change: () -> Array[Integer?]?
+  def id_previously_was: () -> Integer?
+  def id_before_last_save: () -> Integer?
+  def id_change_to_be_saved: () -> Array[Integer?]?
+  def id_in_database: () -> Integer?
+  def saved_change_to_id: () -> Array[Integer?]?
+  def saved_change_to_id?: () -> bool
+  def will_save_change_to_id?: () -> bool
+  def restore_id!: () -> void
+  def clear_id_change: () -> void
+
+  attr_accessor type(): String?
+  def type_changed?: () -> bool
+  def type_change: () -> [ String?, String? ]
+  def type_will_change!: () -> void
+  def type_was: () -> String?
+  def type_previously_changed?: () -> bool
+  def type_previous_change: () -> Array[String?]?
+  def type_previously_was: () -> String?
+  def type_before_last_save: () -> String?
+  def type_change_to_be_saved: () -> Array[String?]?
+  def type_in_database: () -> String?
+  def saved_change_to_type: () -> Array[String?]?
+  def saved_change_to_type?: () -> bool
+  def will_save_change_to_type?: () -> bool
+  def restore_type!: () -> void
+  def clear_type_change: () -> void
+
+  attr_accessor map_id(): Integer
+  def map_id_changed?: () -> bool
+  def map_id_change: () -> [ Integer?, Integer? ]
+  def map_id_will_change!: () -> void
+  def map_id_was: () -> Integer?
+  def map_id_previously_changed?: () -> bool
+  def map_id_previous_change: () -> Array[Integer?]?
+  def map_id_previously_was: () -> Integer?
+  def map_id_before_last_save: () -> Integer?
+  def map_id_change_to_be_saved: () -> Array[Integer?]?
+  def map_id_in_database: () -> Integer?
+  def saved_change_to_map_id: () -> Array[Integer?]?
+  def saved_change_to_map_id?: () -> bool
+  def will_save_change_to_map_id?: () -> bool
+  def restore_map_id!: () -> void
+  def clear_map_id_change: () -> void
+
+  attr_accessor x(): Float
+  def x_changed?: () -> bool
+  def x_change: () -> [ Float?, Float? ]
+  def x_will_change!: () -> void
+  def x_was: () -> Float?
+  def x_previously_changed?: () -> bool
+  def x_previous_change: () -> Array[Float?]?
+  def x_previously_was: () -> Float?
+  def x_before_last_save: () -> Float?
+  def x_change_to_be_saved: () -> Array[Float?]?
+  def x_in_database: () -> Float?
+  def saved_change_to_x: () -> Array[Float?]?
+  def saved_change_to_x?: () -> bool
+  def will_save_change_to_x?: () -> bool
+  def restore_x!: () -> void
+  def clear_x_change: () -> void
+
+  attr_accessor y(): Float
+  def y_changed?: () -> bool
+  def y_change: () -> [ Float?, Float? ]
+  def y_will_change!: () -> void
+  def y_was: () -> Float?
+  def y_previously_changed?: () -> bool
+  def y_previous_change: () -> Array[Float?]?
+  def y_previously_was: () -> Float?
+  def y_before_last_save: () -> Float?
+  def y_change_to_be_saved: () -> Array[Float?]?
+  def y_in_database: () -> Float?
+  def saved_change_to_y: () -> Array[Float?]?
+  def saved_change_to_y?: () -> bool
+  def will_save_change_to_y?: () -> bool
+  def restore_y!: () -> void
+  def clear_y_change: () -> void
+
+  attr_accessor fill(): String
+  def fill_changed?: () -> bool
+  def fill_change: () -> [ String?, String? ]
+  def fill_will_change!: () -> void
+  def fill_was: () -> String?
+  def fill_previously_changed?: () -> bool
+  def fill_previous_change: () -> Array[String?]?
+  def fill_previously_was: () -> String?
+  def fill_before_last_save: () -> String?
+  def fill_change_to_be_saved: () -> Array[String?]?
+  def fill_in_database: () -> String?
+  def saved_change_to_fill: () -> Array[String?]?
+  def saved_change_to_fill?: () -> bool
+  def will_save_change_to_fill?: () -> bool
+  def restore_fill!: () -> void
+  def clear_fill_change: () -> void
+
+  attr_accessor stroke(): String
+  def stroke_changed?: () -> bool
+  def stroke_change: () -> [ String?, String? ]
+  def stroke_will_change!: () -> void
+  def stroke_was: () -> String?
+  def stroke_previously_changed?: () -> bool
+  def stroke_previous_change: () -> Array[String?]?
+  def stroke_previously_was: () -> String?
+  def stroke_before_last_save: () -> String?
+  def stroke_change_to_be_saved: () -> Array[String?]?
+  def stroke_in_database: () -> String?
+  def saved_change_to_stroke: () -> Array[String?]?
+  def saved_change_to_stroke?: () -> bool
+  def will_save_change_to_stroke?: () -> bool
+  def restore_stroke!: () -> void
+  def clear_stroke_change: () -> void
+
+  attr_accessor name(): String
+  def name_changed?: () -> bool
+  def name_change: () -> [ String?, String? ]
+  def name_will_change!: () -> void
+  def name_was: () -> String?
+  def name_previously_changed?: () -> bool
+  def name_previous_change: () -> Array[String?]?
+  def name_previously_was: () -> String?
+  def name_before_last_save: () -> String?
+  def name_change_to_be_saved: () -> Array[String?]?
+  def name_in_database: () -> String?
+  def saved_change_to_name: () -> Array[String?]?
+  def saved_change_to_name?: () -> bool
+  def will_save_change_to_name?: () -> bool
+  def restore_name!: () -> void
+  def clear_name_change: () -> void
+
+  attr_accessor width(): Float?
+  def width_changed?: () -> bool
+  def width_change: () -> [ Float?, Float? ]
+  def width_will_change!: () -> void
+  def width_was: () -> Float?
+  def width_previously_changed?: () -> bool
+  def width_previous_change: () -> Array[Float?]?
+  def width_previously_was: () -> Float?
+  def width_before_last_save: () -> Float?
+  def width_change_to_be_saved: () -> Array[Float?]?
+  def width_in_database: () -> Float?
+  def saved_change_to_width: () -> Array[Float?]?
+  def saved_change_to_width?: () -> bool
+  def will_save_change_to_width?: () -> bool
+  def restore_width!: () -> void
+  def clear_width_change: () -> void
+
+  attr_accessor height(): Float?
+  def height_changed?: () -> bool
+  def height_change: () -> [ Float?, Float? ]
+  def height_will_change!: () -> void
+  def height_was: () -> Float?
+  def height_previously_changed?: () -> bool
+  def height_previous_change: () -> Array[Float?]?
+  def height_previously_was: () -> Float?
+  def height_before_last_save: () -> Float?
+  def height_change_to_be_saved: () -> Array[Float?]?
+  def height_in_database: () -> Float?
+  def saved_change_to_height: () -> Array[Float?]?
+  def saved_change_to_height?: () -> bool
+  def will_save_change_to_height?: () -> bool
+  def restore_height!: () -> void
+  def clear_height_change: () -> void
+
+  attr_accessor display_time(): Integer?
+  def display_time_changed?: () -> bool
+  def display_time_change: () -> [ Integer?, Integer? ]
+  def display_time_will_change!: () -> void
+  def display_time_was: () -> Integer?
+  def display_time_previously_changed?: () -> bool
+  def display_time_previous_change: () -> Array[Integer?]?
+  def display_time_previously_was: () -> Integer?
+  def display_time_before_last_save: () -> Integer?
+  def display_time_change_to_be_saved: () -> Array[Integer?]?
+  def display_time_in_database: () -> Integer?
+  def saved_change_to_display_time: () -> Array[Integer?]?
+  def saved_change_to_display_time?: () -> bool
+  def will_save_change_to_display_time?: () -> bool
+  def restore_display_time!: () -> void
+  def clear_display_time_change: () -> void
+
+  attr_accessor draw_points(): String?
+  def draw_points_changed?: () -> bool
+  def draw_points_change: () -> [ String?, String? ]
+  def draw_points_will_change!: () -> void
+  def draw_points_was: () -> String?
+  def draw_points_previously_changed?: () -> bool
+  def draw_points_previous_change: () -> Array[String?]?
+  def draw_points_previously_was: () -> String?
+  def draw_points_before_last_save: () -> String?
+  def draw_points_change_to_be_saved: () -> Array[String?]?
+  def draw_points_in_database: () -> String?
+  def saved_change_to_draw_points: () -> Array[String?]?
+  def saved_change_to_draw_points?: () -> bool
+  def will_save_change_to_draw_points?: () -> bool
+  def restore_draw_points!: () -> void
+  def clear_draw_points_change: () -> void
+
+  attr_accessor created_at(): ActiveSupport::TimeWithZone
+  def created_at_changed?: () -> bool
+  def created_at_change: () -> [ ActiveSupport::TimeWithZone?, ActiveSupport::TimeWithZone? ]
+  def created_at_will_change!: () -> void
+  def created_at_was: () -> ActiveSupport::TimeWithZone?
+  def created_at_previously_changed?: () -> bool
+  def created_at_previous_change: () -> Array[ActiveSupport::TimeWithZone?]?
+  def created_at_previously_was: () -> ActiveSupport::TimeWithZone?
+  def created_at_before_last_save: () -> ActiveSupport::TimeWithZone?
+  def created_at_change_to_be_saved: () -> Array[ActiveSupport::TimeWithZone?]?
+  def created_at_in_database: () -> ActiveSupport::TimeWithZone?
+  def saved_change_to_created_at: () -> Array[ActiveSupport::TimeWithZone?]?
+  def saved_change_to_created_at?: () -> bool
+  def will_save_change_to_created_at?: () -> bool
+  def restore_created_at!: () -> void
+  def clear_created_at_change: () -> void
+
+  attr_accessor updated_at(): ActiveSupport::TimeWithZone
+  def updated_at_changed?: () -> bool
+  def updated_at_change: () -> [ ActiveSupport::TimeWithZone?, ActiveSupport::TimeWithZone? ]
+  def updated_at_will_change!: () -> void
+  def updated_at_was: () -> ActiveSupport::TimeWithZone?
+  def updated_at_previously_changed?: () -> bool
+  def updated_at_previous_change: () -> Array[ActiveSupport::TimeWithZone?]?
+  def updated_at_previously_was: () -> ActiveSupport::TimeWithZone?
+  def updated_at_before_last_save: () -> ActiveSupport::TimeWithZone?
+  def updated_at_change_to_be_saved: () -> Array[ActiveSupport::TimeWithZone?]?
+  def updated_at_in_database: () -> ActiveSupport::TimeWithZone?
+  def saved_change_to_updated_at: () -> Array[ActiveSupport::TimeWithZone?]?
+  def saved_change_to_updated_at?: () -> bool
+  def will_save_change_to_updated_at?: () -> bool
+  def restore_updated_at!: () -> void
+  def clear_updated_at_change: () -> void
+
+  def map: () -> Map
+  def map=: (Map?) -> Map?
+  def build_map: (untyped) -> Map
+  def create_map: (untyped) -> Map
+  def create_map!: (untyped) -> Map
+  def reload_map: () -> Map?
+
+  class ActiveRecord_Relation < ActiveRecord::Relation
+    include _ActiveRecord_Relation[Svg, Integer]
+    include Enumerable[Svg]
+  end
+
+  class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+  end
+end

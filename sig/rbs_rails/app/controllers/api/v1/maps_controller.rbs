@@ -1,0 +1,16 @@
+module Api
+  module V1
+    class MapsController
+      @maps: untyped
+      @map: untyped
+
+      def index: -> untyped
+      def create: -> untyped
+      def update: -> untyped
+      def destroy: -> untyped
+
+      private
+      def map_params: -> untyped
+    end
+  end
+end

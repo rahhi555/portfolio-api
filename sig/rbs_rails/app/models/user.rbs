@@ -107,14 +107,18 @@ class User < ApplicationRecord
   def plans=: (Plan::ActiveRecord_Associations_CollectionProxy | Array[Plan]) -> (Plan::ActiveRecord_Associations_CollectionProxy | Array[Plan])
   def plan_ids: () -> Array[Integer]
   def plan_ids=: (Array[Integer]) -> Array[Integer]
-  def roles: () -> Role::ActiveRecord_Associations_CollectionProxy
-  def roles=: (Role::ActiveRecord_Associations_CollectionProxy | Array[Role]) -> (Role::ActiveRecord_Associations_CollectionProxy | Array[Role])
-  def role_ids: () -> Array[Integer]
-  def role_ids=: (Array[Integer]) -> Array[Integer]
   def members: () -> Member::ActiveRecord_Associations_CollectionProxy
   def members=: (Member::ActiveRecord_Associations_CollectionProxy | Array[Member]) -> (Member::ActiveRecord_Associations_CollectionProxy | Array[Member])
   def member_ids: () -> Array[Integer]
   def member_ids=: (Array[Integer]) -> Array[Integer]
+  def roles: () -> Role::ActiveRecord_Associations_CollectionProxy
+  def roles=: (Role::ActiveRecord_Associations_CollectionProxy | Array[Role]) -> (Role::ActiveRecord_Associations_CollectionProxy | Array[Role])
+  def role_ids: () -> Array[Integer]
+  def role_ids=: (Array[Integer]) -> Array[Integer]
+  def maps: () -> Map::ActiveRecord_Associations_CollectionProxy
+  def maps=: (Map::ActiveRecord_Associations_CollectionProxy | Array[Map]) -> (Map::ActiveRecord_Associations_CollectionProxy | Array[Map])
+  def map_ids: () -> Array[Integer]
+  def map_ids=: (Array[Integer]) -> Array[Integer]
 
   def anonymous!: () -> bool
   def anonymous?: () -> bool
