@@ -137,6 +137,23 @@ class Svg < ApplicationRecord
   def restore_name!: () -> void
   def clear_name_change: () -> void
 
+  attr_accessor display_order(): Integer
+  def display_order_changed?: () -> bool
+  def display_order_change: () -> [ Integer?, Integer? ]
+  def display_order_will_change!: () -> void
+  def display_order_was: () -> Integer?
+  def display_order_previously_changed?: () -> bool
+  def display_order_previous_change: () -> Array[Integer?]?
+  def display_order_previously_was: () -> Integer?
+  def display_order_before_last_save: () -> Integer?
+  def display_order_change_to_be_saved: () -> Array[Integer?]?
+  def display_order_in_database: () -> Integer?
+  def saved_change_to_display_order: () -> Array[Integer?]?
+  def saved_change_to_display_order?: () -> bool
+  def will_save_change_to_display_order?: () -> bool
+  def restore_display_order!: () -> void
+  def clear_display_order_change: () -> void
+
   attr_accessor width(): Float?
   def width_changed?: () -> bool
   def width_change: () -> [ Float?, Float? ]
