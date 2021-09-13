@@ -5,7 +5,7 @@ class Svg < ApplicationRecord
   attribute :stroke, default: 'black'
 
   before_create do
-    self.display_order = map.svgs.count
+    self.display_order = map.svgs.maximum(:display_order).to_i + 1
   end
 
   validates :x, presence: true

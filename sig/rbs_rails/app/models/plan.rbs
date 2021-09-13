@@ -116,6 +116,10 @@ class Plan < ApplicationRecord
   def maps=: (Map::ActiveRecord_Associations_CollectionProxy | Array[Map]) -> (Map::ActiveRecord_Associations_CollectionProxy | Array[Map])
   def map_ids: () -> Array[Integer]
   def map_ids=: (Array[Integer]) -> Array[Integer]
+  def svgs: () -> Svg::ActiveRecord_Associations_CollectionProxy
+  def svgs=: (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg]) -> (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg])
+  def svg_ids: () -> Array[Integer]
+  def svg_ids=: (Array[Integer]) -> Array[Integer]
 
   def user: () -> User
   def user=: (User?) -> User?

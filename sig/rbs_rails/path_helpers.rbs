@@ -6,16 +6,13 @@ interface _RbsRailsPathHelpers
   def api_v1_users_path: (*untyped) -> String
   def api_v1_user_path: (*untyped) -> String
   def api_v1_me_path: (*untyped) -> String
+  def api_v1_plan_svgs_path: (*untyped) -> String
   def api_v1_plan_roles_path: (*untyped) -> String
   def api_v1_role_path: (*untyped) -> String
   def api_v1_plan_members_path: (*untyped) -> String
   def api_v1_member_path: (*untyped) -> String
-  def api_v1_map_rects_path: (*untyped) -> String
-  def api_v1_rect_path: (*untyped) -> String
-  def api_v1_map_paths_path: (*untyped) -> String
-  def api_v1_path_path: (*untyped) -> String
-  def api_v1_map_polylines_path: (*untyped) -> String
-  def api_v1_polyline_path: (*untyped) -> String
+  def api_v1_map_svgs_path: (*untyped) -> String
+  def api_v1_svg_path: (*untyped) -> String
   def api_v1_plan_maps_path: (*untyped) -> String
   def api_v1_map_path: (*untyped) -> String
   def api_v1_plans_path: (*untyped) -> String
@@ -34,16 +31,13 @@ interface _RbsRailsPathHelpers
   def api_v1_users_url: (*untyped) -> String
   def api_v1_user_url: (*untyped) -> String
   def api_v1_me_url: (*untyped) -> String
+  def api_v1_plan_svgs_url: (*untyped) -> String
   def api_v1_plan_roles_url: (*untyped) -> String
   def api_v1_role_url: (*untyped) -> String
   def api_v1_plan_members_url: (*untyped) -> String
   def api_v1_member_url: (*untyped) -> String
-  def api_v1_map_rects_url: (*untyped) -> String
-  def api_v1_rect_url: (*untyped) -> String
-  def api_v1_map_paths_url: (*untyped) -> String
-  def api_v1_path_url: (*untyped) -> String
-  def api_v1_map_polylines_url: (*untyped) -> String
-  def api_v1_polyline_url: (*untyped) -> String
+  def api_v1_map_svgs_url: (*untyped) -> String
+  def api_v1_svg_url: (*untyped) -> String
   def api_v1_plan_maps_url: (*untyped) -> String
   def api_v1_map_url: (*untyped) -> String
   def api_v1_plans_url: (*untyped) -> String
