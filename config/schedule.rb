@@ -9,5 +9,5 @@ every 1.hours do
 end
 
 every 1.hours do
-  command "echo $(date)"
+  command 'echo $(date)'
 end

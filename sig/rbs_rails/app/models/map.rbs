@@ -1,5 +1,5 @@
-class Plan < ApplicationRecord
-  extend _ActiveRecord_Relation_ClassMethods[Plan, ActiveRecord_Relation, Integer]
+class Map < ApplicationRecord
+  extend _ActiveRecord_Relation_ClassMethods[Map, ActiveRecord_Relation, Integer]
 
   attr_accessor id(): Integer
   def id_changed?: () -> bool
@@ -18,6 +18,23 @@ class Plan < ApplicationRecord
   def restore_id!: () -> void
   def clear_id_change: () -> void
 
+  attr_accessor plan_id(): Integer
+  def plan_id_changed?: () -> bool
+  def plan_id_change: () -> [ Integer?, Integer? ]
+  def plan_id_will_change!: () -> void
+  def plan_id_was: () -> Integer?
+  def plan_id_previously_changed?: () -> bool
+  def plan_id_previous_change: () -> Array[Integer?]?
+  def plan_id_previously_was: () -> Integer?
+  def plan_id_before_last_save: () -> Integer?
+  def plan_id_change_to_be_saved: () -> Array[Integer?]?
+  def plan_id_in_database: () -> Integer?
+  def saved_change_to_plan_id: () -> Array[Integer?]?
+  def saved_change_to_plan_id?: () -> bool
+  def will_save_change_to_plan_id?: () -> bool
+  def restore_plan_id!: () -> void
+  def clear_plan_id_change: () -> void
+
   attr_accessor name(): String
   def name_changed?: () -> bool
   def name_change: () -> [ String?, String? ]
@@ -34,23 +51,6 @@ class Plan < ApplicationRecord
   def will_save_change_to_name?: () -> bool
   def restore_name!: () -> void
   def clear_name_change: () -> void
-
-  attr_accessor user_id(): Integer?
-  def user_id_changed?: () -> bool
-  def user_id_change: () -> [ Integer?, Integer? ]
-  def user_id_will_change!: () -> void
-  def user_id_was: () -> Integer?
-  def user_id_previously_changed?: () -> bool
-  def user_id_previous_change: () -> Array[Integer?]?
-  def user_id_previously_was: () -> Integer?
-  def user_id_before_last_save: () -> Integer?
-  def user_id_change_to_be_saved: () -> Array[Integer?]?
-  def user_id_in_database: () -> Integer?
-  def saved_change_to_user_id: () -> Array[Integer?]?
-  def saved_change_to_user_id?: () -> bool
-  def will_save_change_to_user_id?: () -> bool
-  def restore_user_id!: () -> void
-  def clear_user_id_change: () -> void
 
   attr_accessor created_at(): ActiveSupport::TimeWithZone
   def created_at_changed?: () -> bool
@@ -86,47 +86,33 @@ class Plan < ApplicationRecord
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
 
-  attr_accessor published(): bool
-  def published_changed?: () -> bool
-  def published_change: () -> [ bool?, bool? ]
-  def published_will_change!: () -> void
-  def published_was: () -> bool?
-  def published_previously_changed?: () -> bool
-  def published_previous_change: () -> Array[bool?]?
-  def published_previously_was: () -> bool?
-  def published_before_last_save: () -> bool?
-  def published_change_to_be_saved: () -> Array[bool?]?
-  def published_in_database: () -> bool?
-  def saved_change_to_published: () -> Array[bool?]?
-  def saved_change_to_published?: () -> bool
-  def will_save_change_to_published?: () -> bool
-  def restore_published!: () -> void
-  def clear_published_change: () -> void
-  attr_accessor published?(): bool
+  def svgs: () -> Svg::ActiveRecord_Associations_CollectionProxy
+  def svgs=: (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg]) -> (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg])
+  def svg_ids: () -> Array[Integer]
+  def svg_ids=: (Array[Integer]) -> Array[Integer]
+  def rects: () -> Rect::ActiveRecord_Associations_CollectionProxy
+  def rects=: (Rect::ActiveRecord_Associations_CollectionProxy | Array[Rect]) -> (Rect::ActiveRecord_Associations_CollectionProxy | Array[Rect])
+  def rect_ids: () -> Array[Integer]
+  def rect_ids=: (Array[Integer]) -> Array[Integer]
+  def paths: () -> Path::ActiveRecord_Associations_CollectionProxy
+  def paths=: (Path::ActiveRecord_Associations_CollectionProxy | Array[Path]) -> (Path::ActiveRecord_Associations_CollectionProxy | Array[Path])
+  def path_ids: () -> Array[Integer]
+  def path_ids=: (Array[Integer]) -> Array[Integer]
+  def polylines: () -> Polyline::ActiveRecord_Associations_CollectionProxy
+  def polylines=: (Polyline::ActiveRecord_Associations_CollectionProxy | Array[Polyline]) -> (Polyline::ActiveRecord_Associations_CollectionProxy | Array[Polyline])
+  def polyline_ids: () -> Array[Integer]
+  def polyline_ids=: (Array[Integer]) -> Array[Integer]
 
-  def roles: () -> Role::ActiveRecord_Associations_CollectionProxy
-  def roles=: (Role::ActiveRecord_Associations_CollectionProxy | Array[Role]) -> (Role::ActiveRecord_Associations_CollectionProxy | Array[Role])
-  def role_ids: () -> Array[Integer]
-  def role_ids=: (Array[Integer]) -> Array[Integer]
-  def members: () -> Member::ActiveRecord_Associations_CollectionProxy
-  def members=: (Member::ActiveRecord_Associations_CollectionProxy | Array[Member]) -> (Member::ActiveRecord_Associations_CollectionProxy | Array[Member])
-  def member_ids: () -> Array[Integer]
-  def member_ids=: (Array[Integer]) -> Array[Integer]
-  def maps: () -> Map::ActiveRecord_Associations_CollectionProxy
-  def maps=: (Map::ActiveRecord_Associations_CollectionProxy | Array[Map]) -> (Map::ActiveRecord_Associations_CollectionProxy | Array[Map])
-  def map_ids: () -> Array[Integer]
-  def map_ids=: (Array[Integer]) -> Array[Integer]
-
-  def user: () -> User
-  def user=: (User?) -> User?
-  def build_user: (untyped) -> User
-  def create_user: (untyped) -> User
-  def create_user!: (untyped) -> User
-  def reload_user: () -> User?
+  def plan: () -> Plan
+  def plan=: (Plan?) -> Plan?
+  def build_plan: (untyped) -> Plan
+  def create_plan: (untyped) -> Plan
+  def create_plan!: (untyped) -> Plan
+  def reload_plan: () -> Plan?
 
   class ActiveRecord_Relation < ActiveRecord::Relation
-    include _ActiveRecord_Relation[Plan, Integer]
-    include Enumerable[Plan]
+    include _ActiveRecord_Relation[Map, Integer]
+    include Enumerable[Map]
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy

@@ -2,7 +2,7 @@ module Api
   module V1
     class MembersController < ApplicationController
       def index
-        @members = Plan.find(params[:plan_id]).members.includes(%i[user role])
+        @members = Plan.find(params[:plan_id]).members.includes(%i[user role]).order(:id)
 
         render template: 'api/v1/members/index', status: :ok
       end

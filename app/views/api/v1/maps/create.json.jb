@@ -1,5 +1,0 @@
-{
-  id: @map.id,
-  planId: @map.plan_id,
-  name: @map.name
-}

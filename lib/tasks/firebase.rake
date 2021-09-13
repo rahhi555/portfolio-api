@@ -5,7 +5,6 @@ namespace :firebase do
       FirebaseIdToken::Certificates.request
     end
 
-
     desc 'Redis内のx509証明書を上書きする'
     task force_request: :environment do
       FirebaseIdToken::Certificates.request!

@@ -2,19 +2,19 @@ module Api
   module V1
     class MapsController < ApplicationController
       def index
-        @maps = Plan.find(params[:plan_id]).maps
-        render template: 'api/v1/maps/index', status: :ok
+        maps = Plan.find(params[:plan_id]).maps.order(:id)
+        response_success(maps)
       end
 
       def create
-        @map = Plan.find(params[:plan_id]).maps.create!(map_params)
-        render template: 'api/v1/maps/create', status: :ok
+        map = Plan.find(params[:plan_id]).maps.create!(map_params)
+        response_success(map)
       end
 
       def update
         map = Map.find(params[:id])
         map.update!(map_params)
-        render json: map, status: :ok
+        response_success(map)
       end
 
       def destroy

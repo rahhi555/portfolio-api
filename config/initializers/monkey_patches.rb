@@ -1,3 +1,3 @@
-Dir[Rails.root.join('lib/monkey_patches/**/*.rb')].sort.each do |file|
+Dir[Rails.root.join('lib/monkey_patches/**/*.rb')].each do |file|
   require file
 end

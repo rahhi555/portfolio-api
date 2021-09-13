@@ -1,7 +1,7 @@
 @plans.map do |plan|
   author = plan.user.nil? ? '退会済み' : plan.user.name
   userId = plan.user.nil? ? 0 : plan.user.id
-  members = plan.members.map{|member| member.attributes.transform_keys!{|key| key.camelize(:lower)}}
+  members = plan.members.map { |member| member.attributes.transform_keys! { |key| key.camelize(:lower) } }
   {
     id: plan.id,
     userId: userId,
@@ -10,6 +10,6 @@
     published: plan.published,
     members: members,
     createdAt: plan.strf_created_at,
-    updatedAt: plan.strf_updated_at,
+    updatedAt: plan.strf_updated_at
   }
 end

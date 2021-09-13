@@ -18,7 +18,6 @@ target :app do
   library 'net-http'
   library 'forwardable'
 
-
   library 'actionpack'
   library 'actionview'
   library 'activejob'

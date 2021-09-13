@@ -13,8 +13,6 @@ class Member < ApplicationRecord
     return if plan.nil? || role_id.nil?
 
     plan.reload
-    unless plan.role_ids.include?(role_id)
-      errors.add(:role, 'do not exist in the plan')
-    end
+    errors.add(:role, 'do not exist in the plan') unless plan.role_ids.include?(role_id)
   end
 end

@@ -1,7 +1,0 @@
-@maps.map do |map|
-  {
-    id: map.id,
-    planId: map.plan_id,
-    name: map.name
-  }
-end

@@ -1,9 +1,9 @@
 {
-    id: @plan.id,
-    name: @plan.name,
-    createdAt: @plan.strf_created_at,
-    updatedAt: @plan.strf_updated_at,
-    author: @plan.user.name,
-    published: @plan.published,
-    userId: @plan.user.id
+  id: @plan.id,
+  name: @plan.name,
+  createdAt: @plan.strf_created_at,
+  updatedAt: @plan.strf_updated_at,
+  author: @plan.user.name,
+  published: @plan.published,
+  userId: @plan.user.id
 }

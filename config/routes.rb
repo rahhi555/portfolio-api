@@ -6,10 +6,13 @@ Rails.application.routes.draw do
       resource 'me', only: %i[destroy update], controller: 'users'
       get 'me', to: 'users#me'
 
-      resources 'plans', only: %i[index create destroy show] do
-        resources 'roles', only: %i[index create update destroy], shallow: true
-        resources 'members', only: %i[index create update destroy], shallow: true
-        resources 'maps', only: %i[index create update destroy], shallow: true
+      resources 'plans', only: %i[index create destroy show], shallow: true do
+        get 'svgs', to: 'svgs#index'
+        resources 'roles', only: %i[index create update destroy]
+        resources 'members', only: %i[index create update destroy]
+        resources 'maps', only: %i[index create update destroy] do
+          resources 'svgs', only: %i[create update destroy]
+        end
       end
     end
   end
