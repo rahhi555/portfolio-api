@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_09_09_075345) do
     t.string "fill", null: false
     t.string "stroke", null: false
     t.string "name", null: false
+    t.integer "display_order", null: false
     t.float "width"
     t.float "height"
     t.integer "display_time"

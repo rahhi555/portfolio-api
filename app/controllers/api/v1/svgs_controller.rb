@@ -2,41 +2,33 @@ module Api
   module V1
     class SvgsController < ApplicationController
       def index
-        svgs = set_map_svgs
-        render json: svgs, status: :ok
+        svgs = Plan.find(params[:plan_id]).svgs.order(:display_order)
+        response_success(svgs)
       end
 
       def create
-        svg = set_map_svgs.create!(svg_params)
-        render json: svg, status: :ok
+        map = Map.find(params[:map_id])
+        svg = map.svgs.create!(svg_params)
+        response_success(svg)
       end
 
       def update
-        svg = set_svg
+        svg = Svg.find(params[:id])
         svg.update!(svg_params)
-        render json: svg, status: :ok
+        response_success(svg)
       end
 
       def destroy
-        svg = set_svg.destroy!
+        svg = Svg.find(params[:id])
+        svg.destroy!
         render json: { message: 'SVG successfully deleted.', id: svg.id, name: svg.name }, status: :ok
       end
 
       private
 
-      def set_svg
-        type = params[:type].classify
-        type.constantize.find(params[:id])
-      end
-
-      def set_map_svgs
-        type = params[:type]
-        Map.find(params[:map_id]).send(type)
-      end
-
       def svg_params
-        type = params[:type].singularize
-        params.require(type).permit(:x, :y, :fill, :stroke, :name, :width, :height, :display_time, :draw_points)
+        params.require(:svg).permit(:id, :x, :y, :fill, :stroke, :name, :display_order, :width, :height, :display_time,
+                                    :draw_points, :type)
       end
     end
   end

@@ -5,13 +5,13 @@ module Api
 
       def show
         user = User.find(params[:id])
-        render json: user, status: :ok
+        response_success(user)
       end
 
       def create
         user = User.create!(user_params.merge(uid: payload['sub'],
                                               provider: sign_in_provider))
-        render json: user, status: :ok
+        response_success(user)
       end
 
       def update
@@ -25,7 +25,7 @@ module Api
       end
 
       def me
-        render json: current_user, status: :ok
+        response_success(current_user)
       end
 
       private

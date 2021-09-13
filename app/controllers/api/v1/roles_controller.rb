@@ -4,19 +4,19 @@ module Api
       before_action :set_plan, only: %i[index create]
 
       def index
-        @roles = @plan.roles
-        render template: 'api/v1/roles/index', status: :ok
+        roles = @plan.roles.order(:id)
+        response_success(roles)
       end
 
       def create
         role = @plan.roles.create!(role_params)
-        render json: role, status: :ok
+        response_success(role)
       end
 
       def update
         role = Role.find(params[:id])
         role.update!(role_params)
-        render json: role, status: :ok
+        response_success(role)
       end
 
       def destroy

@@ -8,6 +8,8 @@ class CreateSvgs < ActiveRecord::Migration[6.0]
       t.string :fill, null: false
       t.string :stroke, null: false
       t.string :name, null: false
+      t.integer :display_order, null: false
+
       t.float :width
       t.float :height
       t.integer :display_time

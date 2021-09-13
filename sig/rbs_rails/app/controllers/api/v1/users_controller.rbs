@@ -17,7 +17,7 @@ module Api
 
       def user_params: () -> untyped
 
-      def sign_in_provider: () -> untyped
+      def sign_in_provider: () -> String
     end
   end
 end

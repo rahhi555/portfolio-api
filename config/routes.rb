@@ -7,12 +7,11 @@ Rails.application.routes.draw do
       get 'me', to: 'users#me'
 
       resources 'plans', only: %i[index create destroy show], shallow: true do
+        get 'svgs', to: 'svgs#index'
         resources 'roles', only: %i[index create update destroy]
         resources 'members', only: %i[index create update destroy]
         resources 'maps', only: %i[index create update destroy] do
-          resources 'rects', controller: 'svgs', type: 'rects', only: %i[index create update destroy]
-          resources 'paths', controller: 'svgs', type: 'paths', only: %i[index create update destroy]
-          resources 'polylines', controller: 'svgs', type: 'polylines', only: %i[index create update destroy]
+          resources 'svgs', only: %i[create update destroy]
         end
       end
     end

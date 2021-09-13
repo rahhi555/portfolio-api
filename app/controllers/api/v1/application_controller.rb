@@ -6,6 +6,10 @@ module Api
       include Api::FirebaseAuth
       before_action :authenticate_user, :snakeize_params
 
+      def response_success(attr)
+        render json: attr.camelize_keys, status: :ok
+      end
+
       private
 
       def snakeize_params

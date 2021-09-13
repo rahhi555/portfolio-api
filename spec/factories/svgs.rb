@@ -2,14 +2,14 @@ FactoryBot.define do
   factory :svg, class: 'Svg' do
     type { "" }
     map
-    x { 1.5 }
-    y { 1.5 }
-    fill { "MyString" }
-    stroke { "MyString" }
-    name { "MyString" }
-    width { 1.5 }
-    height { 1.5 }
+    x { 30 }
+    y { 30 }
+    fill { "white" }
+    stroke { "black" }
+    name { "test svg" }
+    width { 300 }
+    height { 300 }
     display_time { 3000 }
-    draw_points { "MyText" }
+    draw_points { "10 20 30 30 20" }
   end
 end
