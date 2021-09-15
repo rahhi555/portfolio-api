@@ -36,6 +36,7 @@ RSpec.describe "Api::V1::Plans", type: :request do
         expect(parsed_body['name']).to eq plan.name
         expect(parsed_body['author']).to eq user.name
         expect(Member.last.user.id).to eq user.id
+        expect(Member.last.accept).to eq true
       end
     end
 

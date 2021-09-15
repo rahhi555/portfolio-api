@@ -7,9 +7,18 @@ class Member < ApplicationRecord
   validates :accept, inclusion: { in: [true, false] }
   validate :role_include_plan?
 
+  # メンバー参加者が作成者本人か判定
   def author?
     user.id == plan.user.id
   end
+
+  # メンバー参加者が作成者本人ならacceptはtrueになる
+  # plansのcreateで作成される都合上、コントローラーではなくコールバックで定義する
+  before_create do
+    self.accept = true if author?
+  end
+
+
 
   private
 
