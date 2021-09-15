@@ -20,7 +20,10 @@ module Api
       end
 
       def destroy
-        member = current_user.members.find(params[:id]).destroy!
+        member = current_user.members.find(params[:id])
+        raise ActiveRecord::RecordInvalid if member.author?
+
+        member.destroy!
         render json: { message: 'Member successfully deleted.', id: member.id }, status: :ok
       end
 

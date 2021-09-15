@@ -27,14 +27,16 @@ RSpec.describe "Api::V1::Plans", type: :request do
     let(:plan) { build(:plan) }
 
     context '有効な属性値の場合' do
-      it '計画が追加されること' do
+      it '作成者がメンバーとして登録された状態で計画が作成されること' do
         expect {
           post api_v1_plans_path, params: { plan: { name: plan.name, published: plan.published } }, headers: payload_headers(uid: user.uid)
-        }.to change{ User.count }.by(1)
+        }.to change{ User.count }.by(1).and change{ Member.count }.by(1)
 
         expect(response).to have_http_status(200)
         expect(parsed_body['name']).to eq plan.name
         expect(parsed_body['author']).to eq user.name
+        expect(Member.last.user.id).to eq user.id
+        expect(Member.last.accept).to eq true
       end
     end
 

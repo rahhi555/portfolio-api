@@ -8,12 +8,12 @@ RSpec.describe "Api::V1::Svgs Rect", type: :request do
   describe "POST /api/v1/maps/:map_id/svgs" do
     let(:rect) { attributes_for(:rect) }
 
-    it "有効な属性値の場合、四角形を作成できること" do
+    it "display_orderが自動入力されてrectが作成される" do
       expect {
         post api_v1_map_svgs_path(map.id), params: { svg: rect } ,headers: valid_headers
       }.to change{ Rect.count }.by(1)
       expect(response).to have_http_status(200)
-      ap parsed_body
+      expect(parsed_body['displayOrder']).to eq map.next_display_order - 1
     end
   end
 end
