@@ -12,7 +12,9 @@ module Api
       end
 
       def create
-        @plan = Plan.create!(plan_params.merge(user_id: current_user.id))
+        @plan = Plan.new(plan_params.merge(user_id: current_user.id))
+        @plan.members.build(user_id: current_user.id)
+        @plan.save!
         render template: 'api/v1/plans/show', status: :ok
       end
 
