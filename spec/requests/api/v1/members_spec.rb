@@ -104,5 +104,17 @@ RSpec.describe "Api::V1::Members", type: :request do
         expect(parsed_body['accept']).to eq !member.accept
       end
     end
+
+    context '異常系' do
+      let(:role) { create(:role, plan_id: plan.id) }
+      let!(:author_member) { create(:member, plan_id: plan.id, user_id: plan.user.id, role_id: role, accept: true) }
+
+      it '作成者はacceptをtrueから変更できない' do
+          expect {
+            patch api_v1_member_path(author_member.id), params: { member: { accept: false }}, headers: payload_headers(uid: author_member.user.uid)
+          }.to_not change{ author_member.accept }
+          expect(response).to have_http_status(400)
+      end
+    end
   end
 end
