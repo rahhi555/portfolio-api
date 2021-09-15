@@ -7,6 +7,10 @@ class Member < ApplicationRecord
   validates :accept, inclusion: { in: [true, false] }
   validate :role_include_plan?
 
+  def author?
+    user.id == plan.user.id
+  end
+
   private
 
   def role_include_plan?
