@@ -8,7 +8,7 @@ module Api
 
       def create
         map = Map.find(params[:map_id])
-        svg = map.svgs.create!(svg_params)
+        svg = map.svgs.create!(svg_params.merge(display_order: map.next_display_order))
         response_success(svg)
       end
 
