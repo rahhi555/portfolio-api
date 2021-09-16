@@ -65,4 +65,16 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe 'ユーザー更新' do
+    let(:user) { create(:user) }
+
+    fit 'アバター画像をアタッチできること' do
+      expect {
+        user.avatar.attach(io: file_fixture('test_img.png'),
+                                         filename: 'test_img.png',
+                                         content_type: 'image/png')
+      }.to change{ user.avatar.attached? }.from(false).to(true)
+    end
+  end
 end

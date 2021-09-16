@@ -9,7 +9,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.7'
 gem 'redis', '~> 4.0'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'firebase-auth-rails'

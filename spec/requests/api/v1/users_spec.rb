@@ -65,6 +65,13 @@ RSpec.describe "Api::V1::Users", type: :request do
           expect(parsed_body['provider']).to eq 'google'
           expect(parsed_body['name']).to eq update_user.name
         end
+
+        # it 'アバター画像をアタッチできること' do
+        #
+        #   expect{
+        #
+        #   }
+        # end
       end
     end
   end
