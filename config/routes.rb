@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         resources 'maps', only: %i[index create update destroy] do
           resources 'svgs', only: %i[create update destroy]
         end
+        resources 'todo_lists', only: %i[index create update destroy]
       end
     end
   end

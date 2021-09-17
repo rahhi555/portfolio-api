@@ -120,6 +120,10 @@ class Plan < ApplicationRecord
   def svgs=: (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg]) -> (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg])
   def svg_ids: () -> Array[Integer]
   def svg_ids=: (Array[Integer]) -> Array[Integer]
+  def todo_lists: () -> TodoList::ActiveRecord_Associations_CollectionProxy
+  def todo_lists=: (TodoList::ActiveRecord_Associations_CollectionProxy | Array[TodoList]) -> (TodoList::ActiveRecord_Associations_CollectionProxy | Array[TodoList])
+  def todo_list_ids: () -> Array[Integer]
+  def todo_list_ids=: (Array[Integer]) -> Array[Integer]
 
   def user: () -> User
   def user=: (User?) -> User?

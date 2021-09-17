@@ -256,12 +256,35 @@ class Svg < ApplicationRecord
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
 
+  attr_accessor todo_list_id(): Integer?
+  def todo_list_id_changed?: () -> bool
+  def todo_list_id_change: () -> [ Integer?, Integer? ]
+  def todo_list_id_will_change!: () -> void
+  def todo_list_id_was: () -> Integer?
+  def todo_list_id_previously_changed?: () -> bool
+  def todo_list_id_previous_change: () -> Array[Integer?]?
+  def todo_list_id_previously_was: () -> Integer?
+  def todo_list_id_before_last_save: () -> Integer?
+  def todo_list_id_change_to_be_saved: () -> Array[Integer?]?
+  def todo_list_id_in_database: () -> Integer?
+  def saved_change_to_todo_list_id: () -> Array[Integer?]?
+  def saved_change_to_todo_list_id?: () -> bool
+  def will_save_change_to_todo_list_id?: () -> bool
+  def restore_todo_list_id!: () -> void
+  def clear_todo_list_id_change: () -> void
+
   def map: () -> Map
   def map=: (Map?) -> Map?
   def build_map: (untyped) -> Map
   def create_map: (untyped) -> Map
   def create_map!: (untyped) -> Map
   def reload_map: () -> Map?
+  def todo_list: () -> TodoList
+  def todo_list=: (TodoList?) -> TodoList?
+  def build_todo_list: (untyped) -> TodoList
+  def create_todo_list: (untyped) -> TodoList
+  def create_todo_list!: (untyped) -> TodoList
+  def reload_todo_list: () -> TodoList?
 
   class ActiveRecord_Relation < ActiveRecord::Relation
     include _ActiveRecord_Relation[Svg, Integer]

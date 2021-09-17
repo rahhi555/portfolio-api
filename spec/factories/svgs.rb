@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :svg, class: 'Svg' do
     type { "" }
     map
+    todo_list
     x { 30 }
     y { 30 }
     fill { "white" }
