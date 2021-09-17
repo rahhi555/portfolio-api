@@ -7,10 +7,8 @@ gem 'mysql2', '>= 0.4.4'
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.7'
 gem 'redis', '~> 4.0'
-
-# Use Active Storage variant
 gem 'image_processing', '~> 1.2'
-
+gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'firebase-auth-rails'
 gem 'jb'

@@ -58,6 +58,22 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     ast (2.4.2)
     awesome_print (1.9.2)
+    aws-eventstream (1.2.0)
+    aws-partitions (1.502.0)
+    aws-sdk-core (3.121.0)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.239.0)
+      aws-sigv4 (~> 1.1)
+      jmespath (~> 1.0)
+    aws-sdk-kms (1.48.0)
+      aws-sdk-core (~> 3, >= 3.120.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.103.0)
+      aws-sdk-core (~> 3, >= 3.120.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.4)
+    aws-sigv4 (1.4.0)
+      aws-eventstream (~> 1, >= 1.0.2)
     bootsnap (1.8.1)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -96,6 +112,7 @@ GEM
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
     jb (0.8.0)
+    jmespath (1.4.0)
     jwt (2.2.3)
     language_server-protocol (3.16.0.3)
     listen (3.7.0)
@@ -233,6 +250,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  aws-sdk-s3
   bootsnap (>= 1.4.2)
   bullet
   byebug
