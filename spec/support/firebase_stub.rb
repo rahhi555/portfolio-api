@@ -5,7 +5,7 @@ module FirebaseStub
 
   def payload_headers(uid: nil)
     FirebaseIdToken.test!
-    payload = JSON.parse File.read("#{Rails.root}/spec/factories/files/payload.json")
+    payload = JSON.parse file_fixture('payload.json').read
     payload['sub'] = uid if uid
     payload = JWT.encode payload, OpenSSL::PKey::RSA.new(FirebaseIdToken::Testing::Certificates.private_key), 'RS256'
     { Authorization: "Bearer #{payload}" }

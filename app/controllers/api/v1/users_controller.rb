@@ -16,7 +16,7 @@ module Api
 
       def update
         current_user.update!(user_params.merge(provider: sign_in_provider))
-        render json: current_user, status: :ok
+        render template: 'api/v1/users/me', status: :ok
       end
 
       def destroy
@@ -25,13 +25,13 @@ module Api
       end
 
       def me
-        response_success(current_user)
+        render template: 'api/v1/users/me', status: :ok
       end
 
       private
 
       def user_params
-        params.require(:user).permit(:name)
+        params.require(:user).permit(:name, :avatar)
       end
 
       def sign_in_provider

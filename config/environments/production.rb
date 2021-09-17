@@ -29,7 +29,10 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
+  Rails.application.routes.default_url_options[:protocol] = 'https'
+  Rails.application.routes.default_url_options[:host] = 'www.hirabayashi.work'
+  Rails.application.routes.default_url_options[:port] = 3000
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
@@ -37,7 +40,10 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
+
+  # ヘルスチェック用のurlはhttps制限を解除する
+  config.ssl_options = { redirect: { exclude: ->(request) { /health_check/.match?(request.path) } } }
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -74,7 +80,7 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger           = ActiveSupport::Logger.new($stdout)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end

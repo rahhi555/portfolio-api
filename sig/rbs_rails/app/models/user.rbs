@@ -119,6 +119,18 @@ class User < ApplicationRecord
   def maps=: (Map::ActiveRecord_Associations_CollectionProxy | Array[Map]) -> (Map::ActiveRecord_Associations_CollectionProxy | Array[Map])
   def map_ids: () -> Array[Integer]
   def map_ids=: (Array[Integer]) -> Array[Integer]
+  def avatar_attachment: () -> ActiveStorage::Attachment
+  def avatar_attachment=: (ActiveStorage::Attachment?) -> ActiveStorage::Attachment?
+  def build_avatar_attachment: (untyped) -> ActiveStorage::Attachment
+  def create_avatar_attachment: (untyped) -> ActiveStorage::Attachment
+  def create_avatar_attachment!: (untyped) -> ActiveStorage::Attachment
+  def reload_avatar_attachment: () -> ActiveStorage::Attachment?
+  def avatar_blob: () -> ActiveStorage::Blob
+  def avatar_blob=: (ActiveStorage::Blob?) -> ActiveStorage::Blob?
+  def build_avatar_blob: (untyped) -> ActiveStorage::Blob
+  def create_avatar_blob: (untyped) -> ActiveStorage::Blob
+  def create_avatar_blob!: (untyped) -> ActiveStorage::Blob
+  def reload_avatar_blob: () -> ActiveStorage::Blob?
 
   def anonymous!: () -> bool
   def anonymous?: () -> bool
