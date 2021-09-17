@@ -1,0 +1,7 @@
+{
+  id: @_current_user.id,
+  name: @_current_user.name,
+  provider: @_current_user.provider,
+  uid: @_current_user.uid,
+  avatar: @_current_user.avatar_url
+}

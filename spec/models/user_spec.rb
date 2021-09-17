@@ -69,12 +69,28 @@ RSpec.describe User, type: :model do
   describe 'ユーザー更新' do
     let(:user) { create(:user) }
 
-    fit 'アバター画像をアタッチできること' do
+    it 'アバター画像をアタッチできること' do
       expect {
-        user.avatar.attach(io: file_fixture('test_img.png'),
+        user.avatar.attach(io: File.open("#{Rails.root}/spec/fixtures/files/test_img.png"),
                                          filename: 'test_img.png',
                                          content_type: 'image/png')
       }.to change{ user.avatar.attached? }.from(false).to(true)
+    end
+
+    it '10MiBより大きい画像は添付できないこと' do
+      user.avatar.attach(io: File.open("#{Rails.root}/spec/fixtures/files/test_img_10MB.png"),
+                         filename: 'test_img_10MB.png',
+                         content_type: 'image/png')
+      expect(user.errors.full_messages[0]).to match '10 MB以下にしてください'
+      expect(user.reload.avatar.attached?).to eq false
+    end
+
+    it '画像以外は添付できないこと' do
+      user.avatar.attach(io: File.open("#{Rails.root}/spec/fixtures/files/test_zip.zip"),
+                         filename: 'test_zip.zip',
+                         content_type: 'application/zip')
+      expect(user.errors.full_messages[0]).to match 'zipは対応できないファイル形式です'
+      expect(user.reload.avatar.attached?).to eq false
     end
   end
 end
