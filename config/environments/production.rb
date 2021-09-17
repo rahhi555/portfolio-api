@@ -43,7 +43,7 @@ Rails.application.configure do
   config.force_ssl = true
 
   # ヘルスチェック用のurlはhttps制限を解除する
-  config.ssl_options = { redirect: { exclude: ->(request) { /health_check/.match?(request.path) } } }
+  config.ssl_options = { redirect: { exclude: ->(request) { /health-check/.match?(request.path) } } }
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
