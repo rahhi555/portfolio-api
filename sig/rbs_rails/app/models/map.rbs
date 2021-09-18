@@ -110,6 +110,8 @@ class Map < ApplicationRecord
   def create_plan!: (untyped) -> Plan
   def reload_plan: () -> Plan?
 
+  def next_display_order: () -> Integer
+
   class ActiveRecord_Relation < ActiveRecord::Relation
     include _ActiveRecord_Relation[Map, Integer]
     include Enumerable[Map]
