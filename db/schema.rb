@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_16_022400) do
+ActiveRecord::Schema.define(version: 2021_09_17_163717) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -88,8 +88,18 @@ ActiveRecord::Schema.define(version: 2021_09_16_022400) do
     t.text "draw_points"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "todo_list_id"
     t.index ["map_id"], name: "index_svgs_on_map_id"
+    t.index ["todo_list_id"], name: "index_svgs_on_todo_list_id"
     t.index ["type"], name: "index_svgs_on_type"
+  end
+
+  create_table "todo_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "plan_id", null: false
+    t.string "title", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plan_id"], name: "index_todo_lists_on_plan_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -109,4 +119,6 @@ ActiveRecord::Schema.define(version: 2021_09_16_022400) do
   add_foreign_key "plans", "users"
   add_foreign_key "roles", "plans"
   add_foreign_key "svgs", "maps"
+  add_foreign_key "svgs", "todo_lists"
+  add_foreign_key "todo_lists", "plans"
 end

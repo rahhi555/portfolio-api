@@ -65,5 +65,15 @@ RSpec.describe Plan, type: :model do
         }.to change{ Plan.count }.by(-1).and change { Map.count }.by(-1)
       end
     end
+
+    context 'Todoリストに紐付いた計画を削除した場合' do
+      let!(:todo_list) { create(:todo_list) }
+
+      it 'Todoリストも一緒に削除されること' do
+        expect{
+          todo_list.plan.destroy!
+        }.to change{ Plan.count }.by(-1).and change { TodoList.count }.by(-1)
+      end
+    end
   end
 end

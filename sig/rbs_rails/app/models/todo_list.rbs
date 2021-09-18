@@ -1,5 +1,5 @@
-class Map < ApplicationRecord
-  extend _ActiveRecord_Relation_ClassMethods[Map, ActiveRecord_Relation, Integer]
+class TodoList < ApplicationRecord
+  extend _ActiveRecord_Relation_ClassMethods[TodoList, ActiveRecord_Relation, Integer]
 
   attr_accessor id(): Integer
   def id_changed?: () -> bool
@@ -35,22 +35,22 @@ class Map < ApplicationRecord
   def restore_plan_id!: () -> void
   def clear_plan_id_change: () -> void
 
-  attr_accessor name(): String
-  def name_changed?: () -> bool
-  def name_change: () -> [ String?, String? ]
-  def name_will_change!: () -> void
-  def name_was: () -> String?
-  def name_previously_changed?: () -> bool
-  def name_previous_change: () -> Array[String?]?
-  def name_previously_was: () -> String?
-  def name_before_last_save: () -> String?
-  def name_change_to_be_saved: () -> Array[String?]?
-  def name_in_database: () -> String?
-  def saved_change_to_name: () -> Array[String?]?
-  def saved_change_to_name?: () -> bool
-  def will_save_change_to_name?: () -> bool
-  def restore_name!: () -> void
-  def clear_name_change: () -> void
+  attr_accessor title(): String
+  def title_changed?: () -> bool
+  def title_change: () -> [ String?, String? ]
+  def title_will_change!: () -> void
+  def title_was: () -> String?
+  def title_previously_changed?: () -> bool
+  def title_previous_change: () -> Array[String?]?
+  def title_previously_was: () -> String?
+  def title_before_last_save: () -> String?
+  def title_change_to_be_saved: () -> Array[String?]?
+  def title_in_database: () -> String?
+  def saved_change_to_title: () -> Array[String?]?
+  def saved_change_to_title?: () -> bool
+  def will_save_change_to_title?: () -> bool
+  def restore_title!: () -> void
+  def clear_title_change: () -> void
 
   attr_accessor created_at(): ActiveSupport::TimeWithZone
   def created_at_changed?: () -> bool
@@ -90,18 +90,6 @@ class Map < ApplicationRecord
   def svgs=: (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg]) -> (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg])
   def svg_ids: () -> Array[Integer]
   def svg_ids=: (Array[Integer]) -> Array[Integer]
-  def rects: () -> Rect::ActiveRecord_Associations_CollectionProxy
-  def rects=: (Rect::ActiveRecord_Associations_CollectionProxy | Array[Rect]) -> (Rect::ActiveRecord_Associations_CollectionProxy | Array[Rect])
-  def rect_ids: () -> Array[Integer]
-  def rect_ids=: (Array[Integer]) -> Array[Integer]
-  def paths: () -> Path::ActiveRecord_Associations_CollectionProxy
-  def paths=: (Path::ActiveRecord_Associations_CollectionProxy | Array[Path]) -> (Path::ActiveRecord_Associations_CollectionProxy | Array[Path])
-  def path_ids: () -> Array[Integer]
-  def path_ids=: (Array[Integer]) -> Array[Integer]
-  def polylines: () -> Polyline::ActiveRecord_Associations_CollectionProxy
-  def polylines=: (Polyline::ActiveRecord_Associations_CollectionProxy | Array[Polyline]) -> (Polyline::ActiveRecord_Associations_CollectionProxy | Array[Polyline])
-  def polyline_ids: () -> Array[Integer]
-  def polyline_ids=: (Array[Integer]) -> Array[Integer]
 
   def plan: () -> Plan
   def plan=: (Plan?) -> Plan?
@@ -110,11 +98,9 @@ class Map < ApplicationRecord
   def create_plan!: (untyped) -> Plan
   def reload_plan: () -> Plan?
 
-  def next_display_order: () -> Integer
-
   class ActiveRecord_Relation < ActiveRecord::Relation
-    include _ActiveRecord_Relation[Map, Integer]
-    include Enumerable[Map]
+    include _ActiveRecord_Relation[TodoList, Integer]
+    include Enumerable[TodoList]
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
