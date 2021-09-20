@@ -90,19 +90,29 @@ class TodoList < ApplicationRecord
   def svgs=: (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg]) -> (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg])
   def svg_ids: () -> Array[Integer]
   def svg_ids=: (Array[Integer]) -> Array[Integer]
+  def todos: () -> Todo::ActiveRecord_Associations_CollectionProxy
+  def todos=: (Todo::ActiveRecord_Associations_CollectionProxy | Array[Todo]) -> (Todo::ActiveRecord_Associations_CollectionProxy | Array[Todo])
+  def todo_ids: () -> Array[Integer]
+  def todo_ids=: (Array[Integer]) -> Array[Integer]
 
   def plan: () -> Plan
   def plan=: (Plan?) -> Plan?
+  def reload_plan: () -> Plan?
   def build_plan: (untyped) -> Plan
   def create_plan: (untyped) -> Plan
   def create_plan!: (untyped) -> Plan
-  def reload_plan: () -> Plan?
+
+  module GeneratedRelationMethods
+  end
 
   class ActiveRecord_Relation < ActiveRecord::Relation
+    include GeneratedRelationMethods
     include _ActiveRecord_Relation[TodoList, Integer]
     include Enumerable[TodoList]
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+    include GeneratedRelationMethods
+    include _ActiveRecord_Relation[TodoList, Integer]
   end
 end

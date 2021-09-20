@@ -1,0 +1,6 @@
+class ApplicationRecord < ActiveRecord::Base
+  def strf_created_at: -> string
+  def strf_updated_at: -> string
+  def camelize_keys: -> void
+  def self.camelize_keys: -> void
+end

@@ -1,0 +1,201 @@
+class Todo < ApplicationRecord
+  extend _ActiveRecord_Relation_ClassMethods[Todo, ActiveRecord_Relation, Integer]
+
+  attr_accessor id(): Integer
+  def id_changed?: () -> bool
+  def id_change: () -> [ Integer?, Integer? ]
+  def id_will_change!: () -> void
+  def id_was: () -> Integer?
+  def id_previously_changed?: () -> bool
+  def id_previous_change: () -> Array[Integer?]?
+  def id_previously_was: () -> Integer?
+  def id_before_last_save: () -> Integer?
+  def id_change_to_be_saved: () -> Array[Integer?]?
+  def id_in_database: () -> Integer?
+  def saved_change_to_id: () -> Array[Integer?]?
+  def saved_change_to_id?: () -> bool
+  def will_save_change_to_id?: () -> bool
+  def restore_id!: () -> void
+  def clear_id_change: () -> void
+
+  attr_accessor todo_list_id(): Integer
+  def todo_list_id_changed?: () -> bool
+  def todo_list_id_change: () -> [ Integer?, Integer? ]
+  def todo_list_id_will_change!: () -> void
+  def todo_list_id_was: () -> Integer?
+  def todo_list_id_previously_changed?: () -> bool
+  def todo_list_id_previous_change: () -> Array[Integer?]?
+  def todo_list_id_previously_was: () -> Integer?
+  def todo_list_id_before_last_save: () -> Integer?
+  def todo_list_id_change_to_be_saved: () -> Array[Integer?]?
+  def todo_list_id_in_database: () -> Integer?
+  def saved_change_to_todo_list_id: () -> Array[Integer?]?
+  def saved_change_to_todo_list_id?: () -> bool
+  def will_save_change_to_todo_list_id?: () -> bool
+  def restore_todo_list_id!: () -> void
+  def clear_todo_list_id_change: () -> void
+
+  attr_accessor title(): String
+  def title_changed?: () -> bool
+  def title_change: () -> [ String?, String? ]
+  def title_will_change!: () -> void
+  def title_was: () -> String?
+  def title_previously_changed?: () -> bool
+  def title_previous_change: () -> Array[String?]?
+  def title_previously_was: () -> String?
+  def title_before_last_save: () -> String?
+  def title_change_to_be_saved: () -> Array[String?]?
+  def title_in_database: () -> String?
+  def saved_change_to_title: () -> Array[String?]?
+  def saved_change_to_title?: () -> bool
+  def will_save_change_to_title?: () -> bool
+  def restore_title!: () -> void
+  def clear_title_change: () -> void
+
+  attr_accessor body(): String?
+  def body_changed?: () -> bool
+  def body_change: () -> [ String?, String? ]
+  def body_will_change!: () -> void
+  def body_was: () -> String?
+  def body_previously_changed?: () -> bool
+  def body_previous_change: () -> Array[String?]?
+  def body_previously_was: () -> String?
+  def body_before_last_save: () -> String?
+  def body_change_to_be_saved: () -> Array[String?]?
+  def body_in_database: () -> String?
+  def saved_change_to_body: () -> Array[String?]?
+  def saved_change_to_body?: () -> bool
+  def will_save_change_to_body?: () -> bool
+  def restore_body!: () -> void
+  def clear_body_change: () -> void
+
+  attr_accessor begin_time(): Time?
+  def begin_time_changed?: () -> bool
+  def begin_time_change: () -> [ Time?, Time? ]
+  def begin_time_will_change!: () -> void
+  def begin_time_was: () -> Time?
+  def begin_time_previously_changed?: () -> bool
+  def begin_time_previous_change: () -> Array[Time?]?
+  def begin_time_previously_was: () -> Time?
+  def begin_time_before_last_save: () -> Time?
+  def begin_time_change_to_be_saved: () -> Array[Time?]?
+  def begin_time_in_database: () -> Time?
+  def saved_change_to_begin_time: () -> Array[Time?]?
+  def saved_change_to_begin_time?: () -> bool
+  def will_save_change_to_begin_time?: () -> bool
+  def restore_begin_time!: () -> void
+  def clear_begin_time_change: () -> void
+
+  attr_accessor end_time(): Time?
+  def end_time_changed?: () -> bool
+  def end_time_change: () -> [ Time?, Time? ]
+  def end_time_will_change!: () -> void
+  def end_time_was: () -> Time?
+  def end_time_previously_changed?: () -> bool
+  def end_time_previous_change: () -> Array[Time?]?
+  def end_time_previously_was: () -> Time?
+  def end_time_before_last_save: () -> Time?
+  def end_time_change_to_be_saved: () -> Array[Time?]?
+  def end_time_in_database: () -> Time?
+  def saved_change_to_end_time: () -> Array[Time?]?
+  def saved_change_to_end_time?: () -> bool
+  def will_save_change_to_end_time?: () -> bool
+  def restore_end_time!: () -> void
+  def clear_end_time_change: () -> void
+
+  attr_accessor status(): String?
+  def status_changed?: () -> bool
+  def status_change: () -> [ String?, String? ]
+  def status_will_change!: () -> void
+  def status_was: () -> String?
+  def status_previously_changed?: () -> bool
+  def status_previous_change: () -> Array[String?]?
+  def status_previously_was: () -> String?
+  def status_before_last_save: () -> String?
+  def status_change_to_be_saved: () -> Array[String?]?
+  def status_in_database: () -> String?
+  def saved_change_to_status: () -> Array[String?]?
+  def saved_change_to_status?: () -> bool
+  def will_save_change_to_status?: () -> bool
+  def restore_status!: () -> void
+  def clear_status_change: () -> void
+
+  attr_accessor created_at(): ActiveSupport::TimeWithZone
+  def created_at_changed?: () -> bool
+  def created_at_change: () -> [ ActiveSupport::TimeWithZone?, ActiveSupport::TimeWithZone? ]
+  def created_at_will_change!: () -> void
+  def created_at_was: () -> ActiveSupport::TimeWithZone?
+  def created_at_previously_changed?: () -> bool
+  def created_at_previous_change: () -> Array[ActiveSupport::TimeWithZone?]?
+  def created_at_previously_was: () -> ActiveSupport::TimeWithZone?
+  def created_at_before_last_save: () -> ActiveSupport::TimeWithZone?
+  def created_at_change_to_be_saved: () -> Array[ActiveSupport::TimeWithZone?]?
+  def created_at_in_database: () -> ActiveSupport::TimeWithZone?
+  def saved_change_to_created_at: () -> Array[ActiveSupport::TimeWithZone?]?
+  def saved_change_to_created_at?: () -> bool
+  def will_save_change_to_created_at?: () -> bool
+  def restore_created_at!: () -> void
+  def clear_created_at_change: () -> void
+
+  attr_accessor updated_at(): ActiveSupport::TimeWithZone
+  def updated_at_changed?: () -> bool
+  def updated_at_change: () -> [ ActiveSupport::TimeWithZone?, ActiveSupport::TimeWithZone? ]
+  def updated_at_will_change!: () -> void
+  def updated_at_was: () -> ActiveSupport::TimeWithZone?
+  def updated_at_previously_changed?: () -> bool
+  def updated_at_previous_change: () -> Array[ActiveSupport::TimeWithZone?]?
+  def updated_at_previously_was: () -> ActiveSupport::TimeWithZone?
+  def updated_at_before_last_save: () -> ActiveSupport::TimeWithZone?
+  def updated_at_change_to_be_saved: () -> Array[ActiveSupport::TimeWithZone?]?
+  def updated_at_in_database: () -> ActiveSupport::TimeWithZone?
+  def saved_change_to_updated_at: () -> Array[ActiveSupport::TimeWithZone?]?
+  def saved_change_to_updated_at?: () -> bool
+  def will_save_change_to_updated_at?: () -> bool
+  def restore_updated_at!: () -> void
+  def clear_updated_at_change: () -> void
+
+  def images_attachments: () -> ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy
+  def images_attachments=: (ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy | Array[ActiveStorage::Attachment]) -> (ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy | Array[ActiveStorage::Attachment])
+  def images_attachment_ids: () -> Array[Integer]
+  def images_attachment_ids=: (Array[Integer]) -> Array[Integer]
+  def images_blobs: () -> ActiveStorage::Blob::ActiveRecord_Associations_CollectionProxy
+  def images_blobs=: (ActiveStorage::Blob::ActiveRecord_Associations_CollectionProxy | Array[ActiveStorage::Blob]) -> (ActiveStorage::Blob::ActiveRecord_Associations_CollectionProxy | Array[ActiveStorage::Blob])
+  def images_blob_ids: () -> Array[Integer]
+  def images_blob_ids=: (Array[Integer]) -> Array[Integer]
+
+  def todo_list: () -> TodoList
+  def todo_list=: (TodoList?) -> TodoList?
+  def reload_todo_list: () -> TodoList?
+  def build_todo_list: (untyped) -> TodoList
+  def create_todo_list: (untyped) -> TodoList
+  def create_todo_list!: (untyped) -> TodoList
+
+  def todo!: () -> bool
+  def todo?: () -> bool
+  def doing!: () -> bool
+  def doing?: () -> bool
+  def done!: () -> bool
+  def done?: () -> bool
+  def self.todo: () -> ActiveRecord_Relation
+  def self.doing: () -> ActiveRecord_Relation
+  def self.done: () -> ActiveRecord_Relation
+
+  module GeneratedRelationMethods
+    def todo: () -> ActiveRecord_Relation
+
+    def doing: () -> ActiveRecord_Relation
+
+    def done: () -> ActiveRecord_Relation
+  end
+
+  class ActiveRecord_Relation < ActiveRecord::Relation
+    include GeneratedRelationMethods
+    include _ActiveRecord_Relation[Todo, Integer]
+    include Enumerable[Todo]
+  end
+
+  class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+    include GeneratedRelationMethods
+    include _ActiveRecord_Relation[Todo, Integer]
+  end
+end

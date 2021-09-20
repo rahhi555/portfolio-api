@@ -5,7 +5,7 @@ target :app do
 
   check 'app'
 
-  repo_path 'vendor/rbs/gem_rbs/gems'
+  repo_path 'vendor/rbs/gem_rbs_collection/gems'
 
   library 'pathname'
   library 'logger'
@@ -23,16 +23,20 @@ target :app do
   library 'activejob'
   library 'activemodel'
   library 'activerecord'
+  library 'activestorage'
   library 'activesupport'
   library 'ast'
-  library 'chunky_png'
   library 'httparty'
+  library 'httpclient'
   library 'listen'
-  library 'protobuf'
+  library 'nokogiri'
+  library 'parallel'
   library 'rack'
+  library 'railties'
   library 'redis'
   library 'regexp_trie'
   library 'retryable'
+  library 'scanf'
   library 'ulid'
 
   configure_code_diagnostics do |hash|

@@ -105,18 +105,22 @@ class Map < ApplicationRecord
 
   def plan: () -> Plan
   def plan=: (Plan?) -> Plan?
+  def reload_plan: () -> Plan?
   def build_plan: (untyped) -> Plan
   def create_plan: (untyped) -> Plan
   def create_plan!: (untyped) -> Plan
-  def reload_plan: () -> Plan?
 
-  def next_display_order: () -> Integer
+  module GeneratedRelationMethods
+  end
 
   class ActiveRecord_Relation < ActiveRecord::Relation
+    include GeneratedRelationMethods
     include _ActiveRecord_Relation[Map, Integer]
     include Enumerable[Map]
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+    include GeneratedRelationMethods
+    include _ActiveRecord_Relation[Map, Integer]
   end
 end

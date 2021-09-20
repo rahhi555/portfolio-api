@@ -142,25 +142,31 @@ module ActiveStorage
     def attachments=: (ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy | Array[ActiveStorage::Attachment]) -> (ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy | Array[ActiveStorage::Attachment])
     def attachment_ids: () -> Array[Integer]
     def attachment_ids=: (Array[Integer]) -> Array[Integer]
-    def preview_image_attachment: () -> ActiveStorage::Attachment
+    def preview_image_attachment: () -> ActiveStorage::Attachment?
     def preview_image_attachment=: (ActiveStorage::Attachment?) -> ActiveStorage::Attachment?
     def build_preview_image_attachment: (untyped) -> ActiveStorage::Attachment
     def create_preview_image_attachment: (untyped) -> ActiveStorage::Attachment
     def create_preview_image_attachment!: (untyped) -> ActiveStorage::Attachment
     def reload_preview_image_attachment: () -> ActiveStorage::Attachment?
-    def preview_image_blob: () -> ActiveStorage::Blob
+    def preview_image_blob: () -> ActiveStorage::Blob?
     def preview_image_blob=: (ActiveStorage::Blob?) -> ActiveStorage::Blob?
     def build_preview_image_blob: (untyped) -> ActiveStorage::Blob
     def create_preview_image_blob: (untyped) -> ActiveStorage::Blob
     def create_preview_image_blob!: (untyped) -> ActiveStorage::Blob
     def reload_preview_image_blob: () -> ActiveStorage::Blob?
 
+    module GeneratedRelationMethods
+    end
+
     class ActiveRecord_Relation < ActiveRecord::Relation
+      include GeneratedRelationMethods
       include _ActiveRecord_Relation[ActiveStorage::Blob, Integer]
       include Enumerable[ActiveStorage::Blob]
     end
 
     class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+      include GeneratedRelationMethods
+      include _ActiveRecord_Relation[ActiveStorage::Blob, Integer]
     end
   end
 end

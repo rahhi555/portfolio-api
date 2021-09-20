@@ -5,15 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed3806dc-63da-4f42-b198-ce1dad6d202b" name="変更" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/rbs/gem_rbs_collection" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.irb_history" beforeDir="false" afterPath="$PROJECT_DIR$/.irb_history" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.local/share/gem/specs/rubygems.org%443/specs.4.8" beforeDir="false" afterPath="$PROJECT_DIR$/.local/share/gem/specs/rubygems.org%443/specs.4.8" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/todo_list.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/todo_list.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Steepfile" beforeDir="false" afterPath="$PROJECT_DIR$/Steepfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/todos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/todos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/plan.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/plan.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/todo.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/todo.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/controllers/api/v1/application_controller.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/controllers/api/v1/application_controller.rbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/models/active_storage/attachment.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/models/active_storage/attachment.rbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/models/active_storage/blob.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/models/active_storage/blob.rbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/models/map.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/models/map.rbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/models/member.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/models/member.rbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/models/plan.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/models/plan.rbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/models/role.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/models/role.rbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/models/svg.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/models/svg.rbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/models/todo_list.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/models/todo_list.rbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/models/user.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/models/user.rbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/path_helpers.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/path_helpers.rbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/spec/examples.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/rails_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/models/todo_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/todo_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/requests/api/v1/todos_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/api/v1/todos_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/.keep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rbs/gem_rbs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +59,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -163,7 +183,8 @@
       <updated>1631940244194</updated>
       <workItem from="1631940246536" duration="3216000" />
       <workItem from="1631991846832" duration="5754000" />
-      <workItem from="1632106803292" duration="419000" />
+      <workItem from="1632106803292" duration="10934000" />
+      <workItem from="1632122608095" duration="2483000" />
     </task>
     <servers />
   </component>

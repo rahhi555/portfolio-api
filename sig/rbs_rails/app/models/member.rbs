@@ -123,28 +123,34 @@ class Member < ApplicationRecord
 
   def user: () -> User
   def user=: (User?) -> User?
+  def reload_user: () -> User?
   def build_user: (untyped) -> User
   def create_user: (untyped) -> User
   def create_user!: (untyped) -> User
-  def reload_user: () -> User?
   def plan: () -> Plan
   def plan=: (Plan?) -> Plan?
+  def reload_plan: () -> Plan?
   def build_plan: (untyped) -> Plan
   def create_plan: (untyped) -> Plan
   def create_plan!: (untyped) -> Plan
-  def reload_plan: () -> Plan?
   def role: () -> Role
   def role=: (Role?) -> Role?
+  def reload_role: () -> Role?
   def build_role: (untyped) -> Role
   def create_role: (untyped) -> Role
   def create_role!: (untyped) -> Role
-  def reload_role: () -> Role?
+
+  module GeneratedRelationMethods
+  end
 
   class ActiveRecord_Relation < ActiveRecord::Relation
+    include GeneratedRelationMethods
     include _ActiveRecord_Relation[Member, Integer]
     include Enumerable[Member]
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+    include GeneratedRelationMethods
+    include _ActiveRecord_Relation[Member, Integer]
   end
 end

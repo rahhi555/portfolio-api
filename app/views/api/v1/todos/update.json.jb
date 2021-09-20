@@ -1,0 +1,10 @@
+{
+  id: @todo.id,
+  todoListId: @todo.todo_list_id,
+  title: @todo.title,
+  body: @todo.body,
+  beginTime: @todo.begin_time,
+  endTime: @todo.end_time,
+  status: @todo.status,
+  images: @todo.image_urls
+}

@@ -15,6 +15,8 @@ interface _RbsRailsPathHelpers
   def api_v1_svg_path: (*untyped) -> String
   def api_v1_plan_maps_path: (*untyped) -> String
   def api_v1_map_path: (*untyped) -> String
+  def api_v1_todo_list_todos_path: (*untyped) -> String
+  def api_v1_todo_path: (*untyped) -> String
   def api_v1_plan_todo_lists_path: (*untyped) -> String
   def api_v1_todo_list_path: (*untyped) -> String
   def api_v1_plans_path: (*untyped) -> String
@@ -42,6 +44,8 @@ interface _RbsRailsPathHelpers
   def api_v1_svg_url: (*untyped) -> String
   def api_v1_plan_maps_url: (*untyped) -> String
   def api_v1_map_url: (*untyped) -> String
+  def api_v1_todo_list_todos_url: (*untyped) -> String
+  def api_v1_todo_url: (*untyped) -> String
   def api_v1_plan_todo_lists_url: (*untyped) -> String
   def api_v1_todo_list_url: (*untyped) -> String
   def api_v1_plans_url: (*untyped) -> String

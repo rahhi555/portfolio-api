@@ -106,23 +106,26 @@ module ActiveStorage
 
     def record: () -> untyped
     def record=: (untyped?) -> untyped?
-    def build_record: (untyped) -> untyped
-    def create_record: (untyped) -> untyped
-    def create_record!: (untyped) -> untyped
     def reload_record: () -> untyped?
     def blob: () -> ActiveStorage::Blob
     def blob=: (ActiveStorage::Blob?) -> ActiveStorage::Blob?
+    def reload_blob: () -> ActiveStorage::Blob?
     def build_blob: (untyped) -> ActiveStorage::Blob
     def create_blob: (untyped) -> ActiveStorage::Blob
     def create_blob!: (untyped) -> ActiveStorage::Blob
-    def reload_blob: () -> ActiveStorage::Blob?
+
+    module GeneratedRelationMethods
+    end
 
     class ActiveRecord_Relation < ActiveRecord::Relation
+      include GeneratedRelationMethods
       include _ActiveRecord_Relation[ActiveStorage::Attachment, Integer]
       include Enumerable[ActiveStorage::Attachment]
     end
 
     class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+      include GeneratedRelationMethods
+      include _ActiveRecord_Relation[ActiveStorage::Attachment, Integer]
     end
   end
 end

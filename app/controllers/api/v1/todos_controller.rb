@@ -2,8 +2,12 @@ module Api
   module V1
     class TodosController < ApplicationController
       def index
-        todos = TodoList.find(params[:todo_list_id]).todos
-        response_success(todos)
+        @todos = TodoList
+                 .find(params[:todo_list_id])
+                 .todos
+                 .with_attached_images
+                 .order(:id)
+        render template: 'api/v1/todos/index', status: :ok
       end
 
       def create
@@ -12,9 +16,9 @@ module Api
       end
 
       def update
-        todo = Todo.find(params[:id])
-        todo.update!(todo_params)
-        response_success(todo)
+        @todo = Todo.find(params[:id])
+        @todo.update!(todo_params)
+        render template: 'api/v1/todos/update', status: :ok
       end
 
       def destroy
@@ -26,7 +30,7 @@ module Api
       private
 
       def todo_params
-        params.require(:todo).permit(:title, :body, :begin_time, :end_time, :status)
+        params.require(:todo).permit(:title, :body, :begin_time, :end_time, :status, images: [])
       end
     end
   end

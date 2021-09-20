@@ -275,22 +275,28 @@ class Svg < ApplicationRecord
 
   def map: () -> Map
   def map=: (Map?) -> Map?
+  def reload_map: () -> Map?
   def build_map: (untyped) -> Map
   def create_map: (untyped) -> Map
   def create_map!: (untyped) -> Map
-  def reload_map: () -> Map?
   def todo_list: () -> TodoList
   def todo_list=: (TodoList?) -> TodoList?
+  def reload_todo_list: () -> TodoList?
   def build_todo_list: (untyped) -> TodoList
   def create_todo_list: (untyped) -> TodoList
   def create_todo_list!: (untyped) -> TodoList
-  def reload_todo_list: () -> TodoList?
+
+  module GeneratedRelationMethods
+  end
 
   class ActiveRecord_Relation < ActiveRecord::Relation
+    include GeneratedRelationMethods
     include _ActiveRecord_Relation[Svg, Integer]
     include Enumerable[Svg]
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+    include GeneratedRelationMethods
+    include _ActiveRecord_Relation[Svg, Integer]
   end
 end
