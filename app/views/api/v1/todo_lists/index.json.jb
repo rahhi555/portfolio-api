@@ -1,0 +1,20 @@
+@todo_lists.map do |todo_list|
+  todos = todo_list.todos.map do |todo|
+    {
+      id: todo.id,
+      todoListId: todo.todo_list_id,
+      title: todo.title,
+      body: todo.body,
+      beginTime: todo.begin_time,
+      endTime: todo.end_time,
+      status: todo.status,
+      images: todo.image_urls(70,40)
+    }
+  end
+  {
+    id: todo_list.id,
+    planId: todo_list.plan_id,
+    title: todo_list.title,
+    todos: todos
+  }
+end

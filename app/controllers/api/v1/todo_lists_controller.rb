@@ -2,19 +2,19 @@ module Api
   module V1
     class TodoListsController < ApplicationController
       def index
-        todo_lists = Plan.find(params[:plan_id]).todo_lists
-        response_success(todo_lists)
+        @todo_lists = Plan.find(params[:plan_id]).todo_lists.includes(:todos)
+        render template: 'api/v1/todo_lists/index', status: :ok
       end
 
       def create
-        todo_list = Plan.find(params[:plan_id]).todo_lists.create!(todo_list_params)
-        response_success(todo_list)
+        @todo_list = Plan.find(params[:plan_id]).todo_lists.create!(todo_list_params)
+        render template: 'api/v1/todo_lists/create', status: :ok
       end
 
       def update
-        todo_list = TodoList.find(params[:id])
-        todo_list.update!(todo_list_params)
-        response_success(todo_list)
+        @todo_list = TodoList.find(params[:id])
+        @todo_list.update!(todo_list_params)
+        render template: 'api/v1/todo_lists/update', status: :ok
       end
 
       def destroy

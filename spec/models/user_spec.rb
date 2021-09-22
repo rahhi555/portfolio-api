@@ -71,9 +71,7 @@ RSpec.describe User, type: :model do
 
     it 'アバター画像をアタッチできること' do
       expect {
-        user.avatar.attach(io: File.open("#{Rails.root}/spec/fixtures/files/test_img.png"),
-                                         filename: 'test_img.png',
-                                         content_type: 'image/png')
+        attach_file(user)
       }.to change{ user.avatar.attached? }.from(false).to(true)
     end
 

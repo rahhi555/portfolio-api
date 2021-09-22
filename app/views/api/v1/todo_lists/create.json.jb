@@ -1,0 +1,6 @@
+{
+  id: @todo_list.id,
+  planId: @todo_list.plan_id,
+  title: @todo_list.title,
+  todos: []
+}

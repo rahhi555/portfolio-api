@@ -6,6 +6,11 @@ module Api
       include Api::ExceptionHandler
 
       include Api::FirebaseAuth
+
+      def response_success: (untyped attr) -> void
+
+      private
+      def snakeize_params: -> untyped
     end
   end
 end

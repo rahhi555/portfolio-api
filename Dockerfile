@@ -1,7 +1,7 @@
 FROM ruby:3.0.2-alpine
 ARG WORKDIR
 
-ENV RUNTIME_PACKAGES="linux-headers libxml2-dev make gcc libc-dev nodejs tzdata git mysql-dev mariadb-client bash" \
+ENV RUNTIME_PACKAGES="linux-headers libxml2-dev make gcc libc-dev nodejs tzdata git mysql-dev mariadb-client bash imagemagick" \
     DEV_PACKAGES="build-base curl-dev" \
     HOME=/api \
     LANG=C.UTF-8 \

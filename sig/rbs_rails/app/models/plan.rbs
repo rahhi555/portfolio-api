@@ -127,16 +127,22 @@ class Plan < ApplicationRecord
 
   def user: () -> User
   def user=: (User?) -> User?
+  def reload_user: () -> User?
   def build_user: (untyped) -> User
   def create_user: (untyped) -> User
   def create_user!: (untyped) -> User
-  def reload_user: () -> User?
+
+  module GeneratedRelationMethods
+  end
 
   class ActiveRecord_Relation < ActiveRecord::Relation
+    include GeneratedRelationMethods
     include _ActiveRecord_Relation[Plan, Integer]
     include Enumerable[Plan]
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+    include GeneratedRelationMethods
+    include _ActiveRecord_Relation[Plan, Integer]
   end
 end

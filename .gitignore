@@ -79,5 +79,5 @@ yarn-debug.log*
 .bash_history
 
 # 重いので除外
-spec/fixtures/files/test_img_10MB.png
+/spec/fixtures/files/test_img_10MB.png
 /config/master.key

@@ -65,4 +65,15 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include FirebaseStub
   config.include SupportMethods
+
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
+  end
+
+  config.after(:suite) do
+    FileUtils.rm_rf("#{Rails.root}/tmp/storage")
+  end
 end

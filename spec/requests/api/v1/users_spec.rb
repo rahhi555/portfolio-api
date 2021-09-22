@@ -75,7 +75,7 @@ RSpec.describe "Api::V1::Users", type: :request do
           user.reload
           expect(user.avatar.attached?).to eq true
           expect(response).to have_http_status(200)
-          expect(parsed_body['avatar']).to eq user.avatar_url
+          expect(parsed_body['avatar']).to be_present
         end
       end
     end
@@ -92,9 +92,8 @@ RSpec.describe "Api::V1::Users", type: :request do
       end
 
       context 'アバター画像がアタッチされている場合' do
-        before { user.avatar.attach(io: File.open("#{Rails.root}/spec/fixtures/files/test_img.png"),
-                                    filename: 'test_img.png',
-                                    content_type: 'image/png') }
+        before { attach_file(user) }
+
         it 'アバター画像を返すこと' do
           get api_v1_me_path, headers: payload_headers(uid: user.uid)
           expect(response).to have_http_status(200)
