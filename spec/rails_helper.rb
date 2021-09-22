@@ -72,4 +72,8 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+
+  config.after(:suite) do
+    FileUtils.rm_rf("#{Rails.root}/tmp/storage")
+  end
 end

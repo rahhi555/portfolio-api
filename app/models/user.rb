@@ -12,7 +12,12 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
   validates :avatar, attachment: true
 
-  def avatar_url
-    avatar.attached? ? Rails.application.routes.url_helpers.url_for(avatar) : nil
+  def avatar_url(*size)
+    if avatar.attached?
+      resize_avatar = size.blank? ? avatar : avatar.variant(resize_to_limit: [size[0], size[1]]).processed
+      Rails.application.routes.url_helpers.url_for(resize_avatar)
+    else
+      nil
+    end
   end
 end

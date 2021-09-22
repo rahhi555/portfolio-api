@@ -21,11 +21,7 @@ RSpec.describe Todo, type: :model do
     let(:todo) { create(:todo) }
 
     it '画像をアタッチできること' do
-      expect {
-        todo.images.attach(io: File.open("#{Rails.root}/spec/fixtures/files/test_img.png"),
-                           filename: 'test_img.png',
-                           content_type: 'image/png')
-      }.to change{ todo.images.attached? }.from(false).to(true)
+      expect { attach_file(todo) }.to change{ todo.images.attached? }.from(false).to(true)
     end
 
     it '10MiBより大きい画像は添付できないこと' do

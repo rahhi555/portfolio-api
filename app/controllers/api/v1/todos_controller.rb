@@ -10,9 +10,15 @@ module Api
         render template: 'api/v1/todos/index', status: :ok
       end
 
+      def show
+        @todo = Todo.with_attached_images.find(params[:id])
+        @column = params[:column]
+        render template: 'api/v1/todos/show', status: :ok
+      end
+
       def create
-        todo = TodoList.find(params[:todo_list_id]).todos.create!(todo_params)
-        response_success(todo)
+        @todo = TodoList.find(params[:todo_list_id]).todos.create!(todo_params)
+        render template: 'api/v1/todos/update', status: :ok
       end
 
       def update

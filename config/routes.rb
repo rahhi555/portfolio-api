@@ -14,7 +14,7 @@ Rails.application.routes.draw do
           resources 'svgs', only: %i[create update destroy]
         end
         resources 'todo_lists', only: %i[index create update destroy] do
-          resources 'todos', only: %i[index create update destroy]
+          resources 'todos', only: %i[index create update destroy show]
         end
       end
     end

@@ -16,18 +16,34 @@ RSpec.describe "Api::V1::Todos", type: :request do
 
     context '画像が複数アタッチされている場合' do
       let(:todo) { create(:todo) }
-      before {
-        2.times do
-          todo.images.attach(io: File.open("#{Rails.root}/spec/fixtures/files/test_img.png"),
-                                      filename: 'test_img.png',
-                                      content_type: 'image/png')
-        end
-      }
+      before do
+        2.times { attach_file(todo) }
+      end
+
       it 'すべての画像を返すこと' do
         get api_v1_todo_list_todos_path(todo.todo_list_id), headers: payload_headers(uid: user.uid)
         expect(response).to have_http_status(200)
         expect(parsed_body[0]['images'].size).to eq 2
       end
+    end
+  end
+
+  describe "GET /api/v1/todo/:id" do
+    let!(:todo) { create(:todo) }
+    before do
+      2.times { attach_file(todo) }
+    end
+
+    it 'columnに何も指定しなければ全カラムが返ってくること' do
+      get api_v1_todo_path(todo.id), headers: valid_header
+      expect(response).to have_http_status(200)
+      expect(parsed_body.keys.size).to eq 8
+    end
+
+    it 'columnにimagesを指定するとimagesの配列が返ってくること' do
+      get api_v1_todo_path(todo.id), params: { column: 'images' }, headers: valid_header
+      expect(response).to have_http_status(200)
+      expect(parsed_body.size).to eq 2
     end
   end
 

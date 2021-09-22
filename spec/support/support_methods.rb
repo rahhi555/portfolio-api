@@ -12,4 +12,19 @@ module SupportMethods
       attr
     }
   end
+
+  def attach_file(record)
+    setting = { io: File.open("#{Rails.root}/spec/fixtures/files/test_img.png"),
+                filename: 'test_img.png',
+                content_type: 'image/png' }
+
+    case record
+    when User
+      record.avatar.attach(setting)
+    when Todo
+      record.images.attach(setting)
+    else
+      nil
+    end
+  end
 end
