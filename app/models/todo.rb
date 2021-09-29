@@ -9,6 +9,14 @@ class Todo < ApplicationRecord
   validates :title, presence: true, length: { maximum: 50 }
   validates :images, attachment: true
 
+  def self.reset_status
+    update_all(status: :todo)
+  end
+
+  def self.doing_status
+    update_all(status: :doing)
+  end
+
   def image_urls(*size)
     if images.attached?
       images.map do |image|
@@ -18,5 +26,13 @@ class Todo < ApplicationRecord
     else
       nil
     end
+  end
+
+  def strf_begin_time
+    begin_time&.strftime('%H:%M')
+  end
+
+  def strf_end_time
+    end_time&.strftime('%H:%M')
   end
 end

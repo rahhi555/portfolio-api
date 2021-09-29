@@ -18,6 +18,12 @@ module Api
         render template: 'api/v1/plans/show', status: :ok
       end
 
+      def update
+        @plan = Plan.find(params[:id])
+        @plan.custom_update!(plan_params)
+        render template: 'api/v1/plans/show', status: :ok
+      end
+
       def destroy
         plan = current_user.plans.find(params[:id]).destroy!
         render json: { message: 'Plan successfully deleted.', id: plan.id, name: plan.name }, status: :ok
@@ -26,7 +32,7 @@ module Api
       private
 
       def plan_params
-        params.require(:plan).permit(:name, :published)
+        params.require(:plan).permit(:name, :published, :active)
       end
     end
   end
