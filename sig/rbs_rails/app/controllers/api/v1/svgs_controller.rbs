@@ -8,8 +8,6 @@ module Api
       def destroy: -> untyped
 
       private
-      def set_svg: -> untyped
-      def set_map_svgs: -> untyped
       def svg_params: -> untyped
     end
   end

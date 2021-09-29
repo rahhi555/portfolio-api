@@ -4,8 +4,8 @@ todos = @todo_list.todos.map do |todo|
     todoListId: todo.todo_list_id,
     title: todo.title,
     body: todo.body,
-    beginTime: todo.begin_time,
-    endTime: todo.end_time,
+    beginTime: todo.strf_begin_time,
+    endTime: todo.strf_end_time,
     status: todo.status,
     images: todo.image_urls
   }

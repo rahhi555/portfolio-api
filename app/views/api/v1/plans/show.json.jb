@@ -1,9 +1,10 @@
 {
   id: @plan.id,
   name: @plan.name,
-  createdAt: @plan.strf_created_at,
-  updatedAt: @plan.strf_updated_at,
+  createdAt: @plan.created_at.strftime('%Y-%m-%d %H:%M'),
+  updatedAt: @plan.updated_at.strftime('%Y-%m-%d %H:%M'),
   author: @plan.user.name,
   published: @plan.published,
+  active: @plan.active,
   userId: @plan.user.id
 }

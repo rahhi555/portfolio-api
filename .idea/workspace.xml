@@ -5,26 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed3806dc-63da-4f42-b198-ce1dad6d202b" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.irb_history" beforeDir="false" afterPath="$PROJECT_DIR$/.irb_history" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mysql_history" beforeDir="false" afterPath="$PROJECT_DIR$/.mysql_history" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/todo_lists_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/todo_lists_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/todos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/todos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/plans_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/plans_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/svgs_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/svgs_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/application_record.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/application_record.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/plan.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/plan.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/todo.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/todo.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/todo_list.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/todo_list.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/api/v1/users/me.json.jb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/users/me.json.jb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/members/index.json.jb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/members/index.json.jb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/plans/index.json.jb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/plans/index.json.jb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/plans/show.json.jb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/plans/show.json.jb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/todo_lists/index.json.jb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/todo_lists/index.json.jb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/todo_lists/update.json.jb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/todo_lists/update.json.jb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/todos/index.json.jb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/todos/index.json.jb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/todos/show.json.jb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/todos/show.json.jb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/todos/update.json.jb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/todos/update.json.jb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/controllers/api/v1/svgs_controller.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/controllers/api/v1/svgs_controller.rbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sig/rbs_rails/app/models/plan.rbs" beforeDir="false" afterPath="$PROJECT_DIR$/sig/rbs_rails/app/models/plan.rbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/spec/examples.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/todo_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/todo_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/user_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/user_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/rails_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/requests/api/v1/todo_lists_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/api/v1/todo_lists_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/requests/api/v1/todos_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/api/v1/todos_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/requests/api/v1/users_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/api/v1/users_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/support/support_methods.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/support/support_methods.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/requests/api/v1/plans_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/api/v1/plans_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +60,12 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sig/rbs_rails/app/controllers/concerns/api" />
+    </key>
   </component>
   <component name="RunManager" selected="Rails.Development: api">
     <configuration name="Development: api" type="RailsRunConfigurationType" factoryName="Rails">
@@ -179,6 +185,9 @@
       <workItem from="1632122608095" duration="3590000" />
       <workItem from="1632126295153" duration="9099000" />
       <workItem from="1632150957243" duration="15885000" />
+      <workItem from="1632500316585" duration="1933000" />
+      <workItem from="1632751063535" duration="6437000" />
+      <workItem from="1632884594739" duration="8040000" />
     </task>
     <servers />
   </component>
