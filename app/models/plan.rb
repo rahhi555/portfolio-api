@@ -11,9 +11,6 @@ class Plan < ApplicationRecord
 
   # activeが変更されていればtodoのstatusも合わせて変更する
   def custom_update!(params)
-    logger.ap params
-    logger.ap params.include?(:active)
-    logger.ap params[:active] == false
     ActiveRecord::Base.transaction do
       if params.include?(:active) && params[:active] == false
         todos.reset_status
