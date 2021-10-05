@@ -5,5 +5,6 @@
   roleId: @member.role&.id,
   roleName: @member.role&.name,
   userId: @member.user.id,
-  userName: @member.user.name
+  userName: @member.user.name,
+  avatar: @member.user.avatar_url(300,300)
 }

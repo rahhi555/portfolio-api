@@ -81,3 +81,5 @@ yarn-debug.log*
 # 重いので除外
 /spec/fixtures/files/test_img_10MB.png
 /config/master.key
+
+.gem_rbs_collection

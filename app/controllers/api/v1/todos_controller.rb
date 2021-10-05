@@ -22,7 +22,7 @@ module Api
       end
 
       def update
-        @todo = Todo.find(params[:id])
+        @todo = Todo.with_attached_images.find(params[:id])
         @todo.update!(todo_params)
         render template: 'api/v1/todos/update', status: :ok
       end

@@ -14,6 +14,7 @@ gem 'firebase-auth-rails'
 gem 'jb'
 gem 'rack-cors'
 gem 'whenever', require: false
+gem 'oj'
 
 group :development, :test do
   gem 'awesome_print'

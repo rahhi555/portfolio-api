@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed3806dc-63da-4f42-b198-ce1dad6d202b" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/app/models/plan.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/plan.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.irb_history" beforeDir="false" afterPath="$PROJECT_DIR$/.irb_history" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Steepfile" beforeDir="false" afterPath="$PROJECT_DIR$/Steepfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/todos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/todos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/members/show.json.jb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/members/show.json.jb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cable.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/cable.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/spec/examples.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rbs/gem_rbs_collection" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +56,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sig/rbs_rails/app" />
       <recent name="$PROJECT_DIR$/sig/rbs_rails/app/controllers/concerns/api" />
     </key>
   </component>
@@ -168,6 +181,9 @@
       <workItem from="1632500316585" duration="1933000" />
       <workItem from="1632751063535" duration="6437000" />
       <workItem from="1632884594739" duration="8040000" />
+      <workItem from="1633364641916" duration="1370000" />
+      <workItem from="1633374608277" duration="11885000" />
+      <workItem from="1633425807384" duration="15985000" />
     </task>
     <servers />
   </component>
