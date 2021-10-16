@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :members, dependent: :destroy
   has_many :roles, through: :plans
   has_many :maps, through: :plans
+  has_many :svgs, dependent: :nullify
 
   enum provider: { anonymous: 0, password: 1, google: 2 }
 

@@ -9,12 +9,6 @@ RSpec.describe Polyline, type: :model do
       it '有効な属性値の場合、マーカーが作成される' do
         expect{ polyline.save! }.to change{ Polyline.count }.by(1)
       end
-
-      it "display_timeがない場合、デフォルト値として3000が入っていること" do
-        attr.delete(:display_time)
-        expect{ Polyline.create!(attr) }.to change{ Polyline.count }.by(1)
-        expect(Polyline.last.display_time).to eq 3000
-      end
     end
 
     context '異常系' do

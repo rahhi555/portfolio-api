@@ -3,9 +3,11 @@ class PlanChannel < ApplicationCable::Channel
 
   def unsubscribed: () -> void
 
-  def toggle_todo_status: (Hash hash) -> void
+  def toggleTodoStatus: (Hash req) -> void
 
-  def begin_plan: () -> void
+  def beginPlan: (Hash req) -> void
 
-  def end_plan: () -> void
+  def endPlan: (Hash req) -> void
+
+  def sendActiveSvg: (Hash req) -> void
 end

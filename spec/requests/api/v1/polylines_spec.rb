@@ -13,7 +13,7 @@ RSpec.describe "Api::V1::Svgs Polyline", type: :request do
         post api_v1_map_svgs_path(map.id), params: { svg: polyline } ,headers: valid_headers
       }.to change{ Polyline.count }.by(1)
       expect(response).to have_http_status(200)
-      expect(parsed_body['displayOrder']).to eq map.next_display_order - 1
+      expect(parsed_body['displayOrder']).to eq map.svgs.maximum(:display_order).to_i
     end
   end
 end

@@ -16,34 +16,59 @@ RSpec.describe PlanChannel, type: :channel do
   describe '各種メソッド' do
     before { subscribe plan_id: plan.id }
 
-    context 'toggle_todo_status' do
+    context 'toggleTodoStatus' do
       it 'todoのステータスがブロードキャストされること' do
         expect {
-          perform :toggle_todo_status, { id: 1, status: 'done' }
+          perform :toggleTodoStatus, { id: 1, status: 'done' }
         }.to have_broadcasted_to(@subscription.instance_variable_get(:@_streams)[0]).with { |data|
-          expect(data['trigger']).to eq 'toggleTodoStatus'
+          expect(data['action']).to eq 'toggleTodoStatus'
           expect(data['id']).to eq 1
           expect(data['status']).to eq 'done'
         }
       end
     end
 
-    context 'begin_plan' do
-      it 'status => beginPlanがブロードキャストされること' do
+    context 'beginPlan' do
+      it 'action => begin_planがブロードキャストされること' do
         expect {
-          perform :begin_plan
+          perform :beginPlan
         }.to have_broadcasted_to(@subscription.instance_variable_get(:@_streams)[0]).with { |data|
-          expect(data['trigger']).to eq 'beginPlan'
+          expect(data['action']).to eq 'beginPlan'
         }
       end
     end
 
     context 'end_plan' do
-      it 'status => endPlanがブロードキャストされること' do
+      it 'action => endPlanがブロードキャストされること' do
         expect {
-          perform :end_plan
+          perform :endPlan
         }.to have_broadcasted_to(@subscription.instance_variable_get(:@_streams)[0]).with { |data|
-          expect(data['trigger']).to eq 'endPlan'
+          expect(data['action']).to eq 'endPlan'
+        }
+      end
+    end
+
+    context 'sendActiveSvg' do
+      let(:user) { create(:user) }
+
+      it 'pathがブロードキャストされること' do
+        MAX_SAFE_INTEGER = 9_007_199_254_740_991
+        MIN_ACTIVE_PATH_ID = 1_000_000_000_000_000
+        path = {
+          "id" => rand(MAX_SAFE_INTEGER..MAX_SAFE_INTEGER),
+          "type" => 'Path',
+          "userId" => user.id,
+          "x" => 100,
+          "y" => 100,
+          "displayTime" => 4000,
+          "drawPoints" =>
+            "M44.5 15c0-8.271-6.729-15-15-15s-15 6.729-15 15c0 7.934 6.195 14.431 14 14.949v4.429c0 .553.448 3.56 1 3.56s1-3.007 1-3.56v-4.429c7.805-.518 14-7.015 14-14.949Z",
+        }
+        expect {
+          perform :sendActiveSvg, { svg: path }
+        }.to have_broadcasted_to(@subscription.instance_variable_get(:@_streams)[0]).with { |data|
+          expect(data['action']).to eq 'sendActiveSvg'
+          expect(data['svg']).to eq path
         }
       end
     end

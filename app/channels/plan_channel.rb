@@ -11,15 +11,19 @@ class PlanChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def toggle_todo_status(hash)
-    PlanChannel.broadcast_to(@plan, { trigger: 'toggleTodoStatus', id: hash['id'], status: hash['status'] })
+  def toggleTodoStatus(req)
+    PlanChannel.broadcast_to(@plan, { action: req['action'], id: req['id'], status: req['status'] })
   end
 
-  def begin_plan
-    PlanChannel.broadcast_to(@plan, { trigger: 'beginPlan' })
+  def beginPlan(req)
+    PlanChannel.broadcast_to(@plan, { action: req['action'] })
   end
 
-  def end_plan
-    PlanChannel.broadcast_to(@plan, { trigger: 'endPlan' })
+  def endPlan(req)
+    PlanChannel.broadcast_to(@plan, { action: req['action'] })
+  end
+
+  def sendActiveSvg(req)
+    PlanChannel.broadcast_to(@plan, { action: req['action'], svg: req['svg'] })
   end
 end
