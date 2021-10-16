@@ -10,7 +10,7 @@ FactoryBot.define do
     name { "test svg" }
     width { 300 }
     height { 300 }
-    display_time { 3000 }
+    display_time { nil }
     draw_points { "10 20 30 30 20" }
   end
 end

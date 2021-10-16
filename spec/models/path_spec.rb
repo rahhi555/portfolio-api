@@ -9,12 +9,6 @@ RSpec.describe Path, type: :model do
       it '有効な属性値の場合、ピンが作成される' do
         expect{ path.save }.to change{ Path.count }.by(1)
       end
-
-      it "display_timeがない場合、デフォルト値として3000が入っていること" do
-        attr.delete(:display_time)
-        expect{ Path.create(attr) }.to change{ Path.count }.by(1)
-        expect(Path.last.display_time).to eq 3000
-      end
     end
 
     context '異常系' do
