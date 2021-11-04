@@ -89,3 +89,4 @@ yarn-debug.log*
 .DS_Store
 .irb_history
 .mysql_history
+spec/examples.txt

@@ -26,7 +26,7 @@ module Api
       private
 
       def map_params
-        params.require(:map).permit(:name)
+        params.require(:map).permit(:name, :is_google_map, :address, :lat, :lng, :zoom)
       end
     end
   end
