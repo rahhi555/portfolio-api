@@ -15,6 +15,7 @@ gem 'jb'
 gem 'rack-cors'
 gem 'whenever', require: false
 gem 'oj'
+gem 'json-schema'
 
 group :development, :test do
   gem 'awesome_print'

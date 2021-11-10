@@ -1,0 +1,7 @@
+class JsonValidator < ActiveModel::EachValidator
+  def validate_each: (Map record, Symbol attribute, Hash[String, Integer] value) -> void
+
+  private
+
+  def length_validate: (Map record, Hash[String, Integer] value) -> void
+end

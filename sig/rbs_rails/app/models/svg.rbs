@@ -273,6 +273,23 @@ class Svg < ApplicationRecord
   def restore_todo_list_id!: () -> void
   def clear_todo_list_id_change: () -> void
 
+  attr_accessor user_id(): Integer?
+  def user_id_changed?: () -> bool
+  def user_id_change: () -> [ Integer?, Integer? ]
+  def user_id_will_change!: () -> void
+  def user_id_was: () -> Integer?
+  def user_id_previously_changed?: () -> bool
+  def user_id_previous_change: () -> Array[Integer?]?
+  def user_id_previously_was: () -> Integer?
+  def user_id_before_last_save: () -> Integer?
+  def user_id_change_to_be_saved: () -> Array[Integer?]?
+  def user_id_in_database: () -> Integer?
+  def saved_change_to_user_id: () -> Array[Integer?]?
+  def saved_change_to_user_id?: () -> bool
+  def will_save_change_to_user_id?: () -> bool
+  def restore_user_id!: () -> void
+  def clear_user_id_change: () -> void
+
   def map: () -> Map
   def map=: (Map?) -> Map?
   def reload_map: () -> Map?
@@ -285,6 +302,12 @@ class Svg < ApplicationRecord
   def build_todo_list: (untyped) -> TodoList
   def create_todo_list: (untyped) -> TodoList
   def create_todo_list!: (untyped) -> TodoList
+  def user: () -> User
+  def user=: (User?) -> User?
+  def reload_user: () -> User?
+  def build_user: (untyped) -> User
+  def create_user: (untyped) -> User
+  def create_user!: (untyped) -> User
 
   module GeneratedRelationMethods
   end
