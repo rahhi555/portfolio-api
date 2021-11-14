@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_12_094405) do
+ActiveRecord::Schema.define(version: 2021_11_04_101424) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,10 @@ ActiveRecord::Schema.define(version: 2021_10_12_094405) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_google_map", default: false, comment: "グーグルマップ使用フラグ"
+    t.string "address", comment: "住所文字列"
+    t.integer "heading", comment: "マップの回転度数。0~360を範囲とする"
+    t.json "bounds", comment: "マップの表示範囲。typescriptのgoogle.maps.LatLngBoundsLiteralと同様"
     t.index ["plan_id", "name"], name: "index_maps_on_plan_id_and_name", unique: true
     t.index ["plan_id"], name: "index_maps_on_plan_id"
   end
