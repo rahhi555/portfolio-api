@@ -1,4 +1,4 @@
-class AddIsGoogleMapAddressLatLngZoomToMap < ActiveRecord::Migration[6.0]
+class AddColumnIsGoogleMapAddressHeadingBoundsToMaps < ActiveRecord::Migration[6.0]
   def change
     add_column :maps, :is_google_map, :boolean, default: false, comment: 'グーグルマップ使用フラグ'
     add_column :maps, :address, :string, comment: '住所文字列'

@@ -10,7 +10,7 @@ FactoryBot.define do
     trait :use_google_map do
       is_google_map { true }
       address { '東京都千代田区丸の内１丁目９ JR 東京駅' }
-      bounds { { north: 90, south: -90, east: 180, west: 180 } }
+      bounds { { north: 36.164233296653045, south: 36.16299249843693, east: 140.37886504843758, west: 140.3772721515624 } }
       heading { 30 }
     end
 

@@ -8,10 +8,10 @@ class Map < ApplicationRecord
   MAPS_SCHEMA = {
     type: 'object',
     properties: {
-      north: { type: 'integer' },
-      east: { type: 'integer' },
-      south: { type: 'integer' },
-      west: { type: 'integer' }
+      north: { type: 'float' },
+      east: { type: 'float' },
+      south: { type: 'float' },
+      west: { type: 'float' }
     },
   }.freeze
 
