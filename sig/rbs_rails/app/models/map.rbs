@@ -155,6 +155,40 @@ class Map < ApplicationRecord
   def restore_bounds!: () -> void
   def clear_bounds_change: () -> void
 
+  attr_accessor width(): Float?
+  def width_changed?: () -> bool
+  def width_change: () -> [ Float?, Float? ]
+  def width_will_change!: () -> void
+  def width_was: () -> Float?
+  def width_previously_changed?: () -> bool
+  def width_previous_change: () -> Array[Float?]?
+  def width_previously_was: () -> Float?
+  def width_before_last_save: () -> Float?
+  def width_change_to_be_saved: () -> Array[Float?]?
+  def width_in_database: () -> Float?
+  def saved_change_to_width: () -> Array[Float?]?
+  def saved_change_to_width?: () -> bool
+  def will_save_change_to_width?: () -> bool
+  def restore_width!: () -> void
+  def clear_width_change: () -> void
+
+  attr_accessor height(): Float?
+  def height_changed?: () -> bool
+  def height_change: () -> [ Float?, Float? ]
+  def height_will_change!: () -> void
+  def height_was: () -> Float?
+  def height_previously_changed?: () -> bool
+  def height_previous_change: () -> Array[Float?]?
+  def height_previously_was: () -> Float?
+  def height_before_last_save: () -> Float?
+  def height_change_to_be_saved: () -> Array[Float?]?
+  def height_in_database: () -> Float?
+  def saved_change_to_height: () -> Array[Float?]?
+  def saved_change_to_height?: () -> bool
+  def will_save_change_to_height?: () -> bool
+  def restore_height!: () -> void
+  def clear_height_change: () -> void
+
   def svgs: () -> Svg::ActiveRecord_Associations_CollectionProxy
   def svgs=: (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg]) -> (Svg::ActiveRecord_Associations_CollectionProxy | Array[Svg])
   def svg_ids: () -> Array[Integer]
