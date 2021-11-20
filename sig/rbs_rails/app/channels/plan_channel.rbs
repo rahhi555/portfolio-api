@@ -10,4 +10,6 @@ class PlanChannel < ApplicationCable::Channel
   def endPlan: (Hash req) -> void
 
   def sendActiveSvg: (Hash req) -> void
+
+  def sendCurrentPosition: (Hash req) -> void
 end

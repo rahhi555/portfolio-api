@@ -26,4 +26,8 @@ class PlanChannel < ApplicationCable::Channel
   def sendActiveSvg(req)
     PlanChannel.broadcast_to(@plan, { action: req['action'], svg: req['svg'] })
   end
+
+  def sendCurrentPosition(req)
+    PlanChannel.broadcast_to(@plan, { action: req['action'], userId: req['userId'], lat: req['lat'], lng: req['lng'] })
+  end
 end
