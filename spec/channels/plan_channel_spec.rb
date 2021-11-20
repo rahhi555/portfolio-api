@@ -76,12 +76,13 @@ RSpec.describe PlanChannel, type: :channel do
     context 'sendCurrentPosition' do
       it 'lat,lng及びuserIdがブロードキャストされること' do
         expect {
-          perform :sendCurrentPosition, { userId: 1, lat: 90, lng: 180 }
+          perform :sendCurrentPosition, { userId: 1, lat: 90, lng: 180, name: 'user_1' }
         }.to have_broadcasted_to(@subscription.instance_variable_get(:@_streams)[0]).with { |data|
           expect(data['action']).to eq 'sendCurrentPosition'
           expect(data['userId']).to eq 1
           expect(data['lat']).to eq 90
           expect(data['lng']).to eq 180
+          expect(data['name']).to eq 'user_1'
         }
       end
     end
