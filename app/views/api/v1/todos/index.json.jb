@@ -6,7 +6,6 @@
   body: todo.body,
   beginTime: todo.strf_begin_time,
   endTime: todo.strf_end_time,
-  status: todo.status,
   images: todo.image_urls
 }
 end

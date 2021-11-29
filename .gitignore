@@ -90,3 +90,4 @@ yarn-debug.log*
 .irb_history
 .mysql_history
 /spec/examples.txt
+.rediscli_history
