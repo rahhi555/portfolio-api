@@ -76,4 +76,26 @@ RSpec.describe Plan, type: :model do
       end
     end
   end
+
+  describe '計画開始・終了' do
+    include_context 'Plan Activate default values setup'
+
+    it '計画開始メソッドを実行した場合、activeはtrueに更新されTodoStatusがsvg * todo分作成されること' do
+      expect{
+        plan.activate
+      }.to change{ plan.active }.from(false).to(true)
+       .and change{ TodoStatus.count }.to(todo_statuses_length)
+    end
+
+    it '計画終了メソッドを実行した場合、activeはfalseに更新され計画に関連するTodoStatusが全削除されること' do
+      todo_statues = plan.activate
+      another_todo_statues = another_plan.activate
+      expect{
+        plan.inactivate
+      }.to change{ plan.active }.from(true).to(false)
+       .and change{ TodoStatus.count }.by(-todo_statues.count)
+      expect( TodoStatus.where(svg_id: plan.svg_ids).count ).to eq 0
+      expect( TodoStatus.where(svg_id: another_plan.svg_ids).count ).to eq another_todo_statues.count
+    end
+  end
 end

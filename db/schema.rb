@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_134002) do
+ActiveRecord::Schema.define(version: 2021_11_29_140730) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -111,6 +111,16 @@ ActiveRecord::Schema.define(version: 2021_11_29_134002) do
     t.index ["plan_id"], name: "index_todo_lists_on_plan_id"
   end
 
+  create_table "todo_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "svg_id", null: false
+    t.bigint "todo_id", null: false
+    t.integer "status", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["svg_id"], name: "index_todo_statuses_on_svg_id"
+    t.index ["todo_id"], name: "index_todo_statuses_on_todo_id"
+  end
+
   create_table "todos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "todo_list_id", null: false
     t.string "title", null: false
@@ -142,5 +152,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_134002) do
   add_foreign_key "svgs", "todo_lists"
   add_foreign_key "svgs", "users"
   add_foreign_key "todo_lists", "plans"
+  add_foreign_key "todo_statuses", "svgs"
+  add_foreign_key "todo_statuses", "todos"
   add_foreign_key "todos", "todo_lists"
 end

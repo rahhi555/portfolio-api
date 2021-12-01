@@ -96,4 +96,15 @@ RSpec.describe "Api::V1::Plans", type: :request do
     end
   end
 
+  describe 'PATCH /api/v1/plans/:id' do
+    let!(:plan) { create(:plan) }
+    it 'ヘッダーにトークンが存在する場合、計画を更新できること' do
+      expect {
+        patch api_v1_plan_path(plan),
+              params: { plan: { name: 'new title' } },
+              headers: payload_headers(uid: plan.user.uid)
+      }.to change{ plan.reload.name }.to('new title')
+    end
+  end
+
 end

@@ -290,6 +290,11 @@ class Svg < ApplicationRecord
   def restore_user_id!: () -> void
   def clear_user_id_change: () -> void
 
+  def todo_statuses: () -> TodoStatus::ActiveRecord_Associations_CollectionProxy
+  def todo_statuses=: (TodoStatus::ActiveRecord_Associations_CollectionProxy | Array[TodoStatus]) -> (TodoStatus::ActiveRecord_Associations_CollectionProxy | Array[TodoStatus])
+  def todo_status_ids: () -> Array[Integer]
+  def todo_status_ids=: (Array[Integer]) -> Array[Integer]
+
   def map: () -> Map
   def map=: (Map?) -> Map?
   def reload_map: () -> Map?

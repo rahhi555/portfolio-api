@@ -16,6 +16,7 @@ gem 'rack-cors'
 gem 'whenever', require: false
 gem 'oj'
 gem 'json-schema'
+gem 'activerecord-import'
 
 group :development, :test do
   gem 'awesome_print'

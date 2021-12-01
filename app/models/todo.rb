@@ -1,5 +1,6 @@
 class Todo < ApplicationRecord
   belongs_to :todo_list
+  has_many :todo_statuses, dependent: :destroy
   has_many_attached :images
 
   validates :title, presence: true, length: { maximum: 50 }

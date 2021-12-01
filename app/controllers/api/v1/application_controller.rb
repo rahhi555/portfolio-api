@@ -6,6 +6,7 @@ module Api
       include Api::FirebaseAuth
       before_action :authenticate_user, :snakeize_params
 
+      # キーをキャメルケースに変更し、ステータス200のjson形式でレスポンスを返す
       def response_success(attr)
         render json: attr.camelize_keys, status: :ok
       end
