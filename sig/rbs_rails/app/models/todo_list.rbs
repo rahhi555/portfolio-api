@@ -102,7 +102,10 @@ class TodoList < ApplicationRecord
   def create_plan: (untyped) -> Plan
   def create_plan!: (untyped) -> Plan
 
+  def self.get_svg_and_todo_ids: (untyped _plan_id) -> ActiveRecord_Relation
+
   module GeneratedRelationMethods
+    def get_svg_and_todo_ids: (untyped _plan_id) -> ActiveRecord_Relation
   end
 
   class ActiveRecord_Relation < ActiveRecord::Relation

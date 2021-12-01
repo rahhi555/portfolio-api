@@ -16,34 +16,39 @@ RSpec.describe PlanChannel, type: :channel do
   describe '各種メソッド' do
     before { subscribe plan_id: plan.id }
 
-    context 'toggleTodoStatus' do
-      it 'todoのステータスがブロードキャストされること' do
+    context 'changeTodoStatus' do
+      let!(:todo_status) { create(:todo_status) }
+
+      it 'todoステータスが更新され、ブロードキャストされること' do
         expect {
-          perform :toggleTodoStatus, { id: 1, status: 'done' }
+          perform :changeTodoStatus, { id: todo_status.id, status: 'done' }
         }.to have_broadcasted_to(@subscription.instance_variable_get(:@_streams)[0]).with { |data|
-          expect(data['action']).to eq 'toggleTodoStatus'
-          expect(data['id']).to eq 1
+          expect(data['action']).to eq 'changeTodoStatus'
+          expect(data['id']).to eq todo_status.id
           expect(data['status']).to eq 'done'
+        }.and change{ todo_status.reload.status }.to('done')
+      end
+    end
+
+    context 'activatePlan' do
+      include_context 'Plan Activate default values setup'
+
+      it 'action => activatePlan及びtodoStatusesがブロードキャストされること' do
+        expect {
+          perform :activatePlan
+        }.to have_broadcasted_to(@subscription.instance_variable_get(:@_streams)[0]).with { |data|
+          expect(data['action']).to eq 'activatePlan'
+          expect(data['todoStatuses'].length).to eq todo_statuses_length
         }
       end
     end
 
-    context 'beginPlan' do
-      it 'action => begin_planがブロードキャストされること' do
+    context 'inactivatePlan' do
+      it 'action => inactivatePlanがブロードキャストされること' do
         expect {
-          perform :beginPlan
+          perform :inactivatePlan
         }.to have_broadcasted_to(@subscription.instance_variable_get(:@_streams)[0]).with { |data|
-          expect(data['action']).to eq 'beginPlan'
-        }
-      end
-    end
-
-    context 'end_plan' do
-      it 'action => endPlanがブロードキャストされること' do
-        expect {
-          perform :endPlan
-        }.to have_broadcasted_to(@subscription.instance_variable_get(:@_streams)[0]).with { |data|
-          expect(data['action']).to eq 'endPlan'
+          expect(data['action']).to eq 'inactivatePlan'
         }
       end
     end

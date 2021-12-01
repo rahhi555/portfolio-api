@@ -7,7 +7,6 @@ RSpec.describe Todo, type: :model do
     it { is_expected.to be_valid }
     it { is_expected.to validate_presence_of(:title) }
     it { is_expected.to validate_length_of(:title) }
-    it { is_expected.to define_enum_for(:status).with_values(todo: 0, doing: 1, done: 2) }
     it { is_expected.to have_many_attached(:images) }
   end
 

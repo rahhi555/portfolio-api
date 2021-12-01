@@ -37,7 +37,7 @@ RSpec.describe "Api::V1::Todos", type: :request do
     it 'columnに何も指定しなければ全カラムが返ってくること' do
       get api_v1_todo_path(todo.id), headers: valid_header
       expect(response).to have_http_status(200)
-      expect(parsed_body.keys.size).to eq 8
+      expect(parsed_body.keys.size).to eq 7
     end
 
     it 'columnにimagesを指定するとimagesの配列が返ってくること' do

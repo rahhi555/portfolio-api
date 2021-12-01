@@ -36,7 +36,7 @@ module Api
       private
 
       def todo_params
-        params.require(:todo).permit(:title, :body, :begin_time, :end_time, :status, images: [])
+        params.require(:todo).permit(:title, :body, :begin_time, :end_time, images: [])
       end
     end
   end

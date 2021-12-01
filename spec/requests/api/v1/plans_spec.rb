@@ -62,40 +62,6 @@ RSpec.describe "Api::V1::Plans", type: :request do
     end
   end
 
-  describe "PATCH /api/v1/plans/:id" do
-    let(:user) { create(:user) }
-
-    context 'activeをfalseにするの場合' do
-      let(:plan) { create(:plan, active: true) }
-      let(:todo_list) { create(:todo_list, plan_id: plan.id) }
-      let!(:todos) { create_list(:todo, 3, todo_list_id: todo_list.id, status: 'done' ) }
-
-      it 'todosのステータスが全てtodoになること' do
-        patch api_v1_plan_path(plan.id),
-              params: { plan: { active: false } }.to_json,
-              headers: payload_headers(uid: user.uid).merge({ "Content-Type" => "application/json" })
-        todos.map(&:reload)
-        expect(todos.all?{|todo| todo.status == 'todo'}).to eq true
-        expect(plan.reload.active).to eq false
-      end
-    end
-
-    context 'activeをtrueにする場合' do
-      let(:plan) { create(:plan, active: false) }
-      let(:todo_list) { create(:todo_list, plan_id: plan.id) }
-      let!(:todos) { create_list(:todo, 3, todo_list_id: todo_list.id, status: 'todo' ) }
-
-      it 'todosのステータスが全てdoingになること' do
-        patch api_v1_plan_path(plan.id),
-              params: { plan: { active: true } }.to_json,
-              headers: payload_headers(uid: user.uid).merge({ "Content-Type" => "application/json" })
-        todos.map(&:reload)
-        expect(todos.all?{|todo| todo.status == 'doing'}).to eq true
-        expect(plan.reload.active).to eq true
-      end
-    end
-  end
-
   describe "DELETE /api/v1/plans/:id" do
     let(:another_user) { create(:user) }
     let!(:plan) { create(:plan) }
@@ -127,6 +93,17 @@ RSpec.describe "Api::V1::Plans", type: :request do
       get api_v1_plan_path(plan.id), headers: payload_headers(uid: plan.user.uid)
       expect(response).to have_http_status(200)
       expect(parsed_body['id']).to eq plan.id
+    end
+  end
+
+  describe 'PATCH /api/v1/plans/:id' do
+    let!(:plan) { create(:plan) }
+    it 'ヘッダーにトークンが存在する場合、計画を更新できること' do
+      expect {
+        patch api_v1_plan_path(plan),
+              params: { plan: { name: 'new title' } },
+              headers: payload_headers(uid: plan.user.uid)
+      }.to change{ plan.reload.name }.to('new title')
     end
   end
 

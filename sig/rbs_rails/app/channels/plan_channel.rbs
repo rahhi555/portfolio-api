@@ -3,7 +3,7 @@ class PlanChannel < ApplicationCable::Channel
 
   def unsubscribed: () -> void
 
-  def toggleTodoStatus: (Hash req) -> void
+  def changeTodoStatus: (Hash req) -> void
 
   def beginPlan: (Hash req) -> void
 

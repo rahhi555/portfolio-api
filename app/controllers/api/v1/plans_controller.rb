@@ -20,7 +20,7 @@ module Api
 
       def update
         @plan = Plan.find(params[:id])
-        @plan.custom_update!(plan_params)
+        @plan.update(plan_params)
         render template: 'api/v1/plans/show', status: :ok
       end
 

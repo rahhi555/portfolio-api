@@ -10,15 +10,21 @@ class PlanChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def toggleTodoStatus(req)
+  def changeTodoStatus(req)
+    todo_status = TodoStatus.find(req['id'])
+    todo_status.update!(status: req['status'])
     PlanChannel.broadcast_to(@plan, { action: req['action'], id: req['id'], status: req['status'] })
   end
 
-  def beginPlan(req)
-    PlanChannel.broadcast_to(@plan, { action: req['action'] })
+  def activatePlan(req)
+    return if @plan.active?
+
+    todo_statuses = @plan.activate
+    PlanChannel.broadcast_to(@plan, { action: req['action'], todoStatuses: todo_statuses })
   end
 
-  def endPlan(req)
+  def inactivatePlan(req)
+    @plan.inactivate
     PlanChannel.broadcast_to(@plan, { action: req['action'] })
   end
 

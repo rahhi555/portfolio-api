@@ -103,23 +103,6 @@ class Todo < ApplicationRecord
   def restore_end_time!: () -> void
   def clear_end_time_change: () -> void
 
-  attr_accessor status(): String?
-  def status_changed?: () -> bool
-  def status_change: () -> [ String?, String? ]
-  def status_will_change!: () -> void
-  def status_was: () -> String?
-  def status_previously_changed?: () -> bool
-  def status_previous_change: () -> Array[String?]?
-  def status_previously_was: () -> String?
-  def status_before_last_save: () -> String?
-  def status_change_to_be_saved: () -> Array[String?]?
-  def status_in_database: () -> String?
-  def saved_change_to_status: () -> Array[String?]?
-  def saved_change_to_status?: () -> bool
-  def will_save_change_to_status?: () -> bool
-  def restore_status!: () -> void
-  def clear_status_change: () -> void
-
   attr_accessor created_at(): ActiveSupport::TimeWithZone
   def created_at_changed?: () -> bool
   def created_at_change: () -> [ ActiveSupport::TimeWithZone?, ActiveSupport::TimeWithZone? ]
@@ -154,6 +137,10 @@ class Todo < ApplicationRecord
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
 
+  def todo_statuses: () -> TodoStatus::ActiveRecord_Associations_CollectionProxy
+  def todo_statuses=: (TodoStatus::ActiveRecord_Associations_CollectionProxy | Array[TodoStatus]) -> (TodoStatus::ActiveRecord_Associations_CollectionProxy | Array[TodoStatus])
+  def todo_status_ids: () -> Array[Integer]
+  def todo_status_ids=: (Array[Integer]) -> Array[Integer]
   def images_attachments: () -> ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy
   def images_attachments=: (ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy | Array[ActiveStorage::Attachment]) -> (ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy | Array[ActiveStorage::Attachment])
   def images_attachment_ids: () -> Array[Integer]
@@ -170,22 +157,7 @@ class Todo < ApplicationRecord
   def create_todo_list: (untyped) -> TodoList
   def create_todo_list!: (untyped) -> TodoList
 
-  def todo!: () -> bool
-  def todo?: () -> bool
-  def doing!: () -> bool
-  def doing?: () -> bool
-  def done!: () -> bool
-  def done?: () -> bool
-  def self.todo: () -> ActiveRecord_Relation
-  def self.doing: () -> ActiveRecord_Relation
-  def self.done: () -> ActiveRecord_Relation
-
   module GeneratedRelationMethods
-    def todo: () -> ActiveRecord_Relation
-
-    def doing: () -> ActiveRecord_Relation
-
-    def done: () -> ActiveRecord_Relation
   end
 
   class ActiveRecord_Relation < ActiveRecord::Relation
