@@ -112,4 +112,9 @@ Rails.application.configure do
 
   config.hosts << 'www.hirabayashi.work'
   config.hosts << IPAddr.new('10.0.0.0/16')
+
+  # Lograge設定
+  # config.lograge.base_controller_class = 'ActionController::API'
+  # config.lograge.enabled = true
+  # config.lograge.ignore_actions = ['HealthCheckController#health_check']
 end

@@ -17,6 +17,7 @@ gem 'whenever', require: false
 gem 'oj'
 gem 'json-schema'
 gem 'activerecord-import'
+gem 'silencer'
 
 group :development, :test do
   gem 'awesome_print'
