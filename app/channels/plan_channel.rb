@@ -2,7 +2,6 @@ class PlanChannel < ApplicationCable::Channel
   def subscribed
     @plan = Plan.find(params[:plan_id])
     stream_for @plan
-    Rails.logger.info @plan
   rescue ActiveRecord::RecordNotFound
     reject
   end

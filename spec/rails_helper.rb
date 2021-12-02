@@ -65,6 +65,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include FirebaseStub
   config.include SupportMethods
+  config.include ActiveSupport::Testing::TimeHelpers
 
   Shoulda::Matchers.configure do |config|
     config.integrate do |with|
