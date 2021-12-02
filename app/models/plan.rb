@@ -6,6 +6,7 @@ class Plan < ApplicationRecord
   has_many :svgs, -> { select 'svgs.*, plan_id' }, through: :maps
   has_many :todo_lists, dependent: :destroy
   has_many :todos, through: :todo_lists
+  has_many :todo_statuses, through: :svgs
 
   validates :name, presence: true, length: { maximum: 50 }
 
