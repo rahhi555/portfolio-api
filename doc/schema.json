@@ -1,0 +1,4043 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "api",
+    "version": "1.0.0"
+  },
+  "servers": [
+
+  ],
+  "paths": {
+    "/api/v1/plans/{plan_id}/maps": {
+      "get": {
+        "summary": "index",
+        "tags": [
+          "Api::V1::Map"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2207
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "マップを取得できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "planId": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      },
+                      "isGoogleMap": {
+                        "type": "boolean"
+                      },
+                      "address": {
+                        "nullable": true
+                      },
+                      "heading": {
+                        "nullable": true
+                      },
+                      "bounds": {
+                        "nullable": true
+                      },
+                      "width": {
+                        "nullable": true
+                      },
+                      "height": {
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": 646,
+                    "planId": 2207,
+                    "name": "map_47",
+                    "createdAt": "2021-12-18T11:14:51.192+09:00",
+                    "updatedAt": "2021-12-18T11:14:51.192+09:00",
+                    "isGoogleMap": false,
+                    "address": null,
+                    "heading": null,
+                    "bounds": null,
+                    "width": null,
+                    "height": null
+                  },
+                  {
+                    "id": 647,
+                    "planId": 2207,
+                    "name": "map_48",
+                    "createdAt": "2021-12-18T11:14:51.210+09:00",
+                    "updatedAt": "2021-12-18T11:14:51.210+09:00",
+                    "isGoogleMap": false,
+                    "address": null,
+                    "heading": null,
+                    "bounds": null,
+                    "width": null,
+                    "height": null
+                  },
+                  {
+                    "id": 648,
+                    "planId": 2207,
+                    "name": "map_49",
+                    "createdAt": "2021-12-18T11:14:51.225+09:00",
+                    "updatedAt": "2021-12-18T11:14:51.225+09:00",
+                    "isGoogleMap": false,
+                    "address": null,
+                    "heading": null,
+                    "bounds": null,
+                    "width": null,
+                    "height": null
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create",
+        "tags": [
+          "Api::V1::Map"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2211
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "map": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "is_google_map": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "nullable": true
+                      },
+                      "bounds": {
+                        "nullable": true
+                      },
+                      "heading": {
+                        "nullable": true
+                      },
+                      "height": {
+                        "nullable": true
+                      },
+                      "width": {
+                        "nullable": true
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "map": {
+                  "name": "map_53",
+                  "is_google_map": "false",
+                  "address": null,
+                  "bounds": null,
+                  "heading": null,
+                  "height": null,
+                  "width": null
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "マップを作成できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "planId": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "isGoogleMap": {
+                      "type": "boolean"
+                    },
+                    "address": {
+                      "nullable": true
+                    },
+                    "heading": {
+                      "nullable": true
+                    },
+                    "bounds": {
+                      "nullable": true
+                    },
+                    "width": {
+                      "nullable": true
+                    },
+                    "height": {
+                      "nullable": true
+                    }
+                  }
+                },
+                "example": {
+                  "id": 652,
+                  "planId": 2211,
+                  "name": "map_53",
+                  "createdAt": "2021-12-18T11:14:51.539+09:00",
+                  "updatedAt": "2021-12-18T11:14:51.539+09:00",
+                  "isGoogleMap": false,
+                  "address": null,
+                  "heading": null,
+                  "bounds": null,
+                  "width": null,
+                  "height": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/maps/{id}": {
+      "delete": {
+        "summary": "destroy",
+        "tags": [
+          "Api::V1::Map"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 653
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 654
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "作成者本人の場合削除できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Map successfully deleted.",
+                  "id": 653,
+                  "name": "map_54"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "作成者以外のマップは削除できないこと",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Record Not Found",
+                  "errors": [
+                    "Couldn't find Map with 'id'=654 [WHERE `plans`.`user_id` = ?]"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "update",
+        "tags": [
+          "Api::V1::Map"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 655
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "map": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "map": {
+                  "name": "new map name"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "マップを更新できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "planId": {
+                      "type": "integer"
+                    },
+                    "heading": {
+                      "nullable": true
+                    },
+                    "bounds": {
+                      "nullable": true
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "isGoogleMap": {
+                      "type": "boolean"
+                    },
+                    "address": {
+                      "nullable": true
+                    },
+                    "width": {
+                      "nullable": true
+                    },
+                    "height": {
+                      "nullable": true
+                    }
+                  }
+                },
+                "example": {
+                  "id": 655,
+                  "name": "new map name",
+                  "planId": 2214,
+                  "heading": null,
+                  "bounds": null,
+                  "createdAt": "2021-12-18T11:14:51.819+09:00",
+                  "updatedAt": "2021-12-18T11:14:51.882+09:00",
+                  "isGoogleMap": false,
+                  "address": null,
+                  "width": null,
+                  "height": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/plans/{plan_id}/members": {
+      "get": {
+        "summary": "index",
+        "tags": [
+          "Api::V1::Member"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2216
+          },
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2217
+          },
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2218
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ヘッダーに有効なトークンが存在する場合、メンバー一覧が返ること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "accept": {
+                        "type": "boolean"
+                      },
+                      "planId": {
+                        "type": "integer"
+                      },
+                      "roleId": {
+                        "type": "integer"
+                      },
+                      "roleName": {
+                        "type": "string"
+                      },
+                      "userId": {
+                        "type": "integer"
+                      },
+                      "userName": {
+                        "type": "string"
+                      },
+                      "avatar": {
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": 357,
+                    "accept": false,
+                    "planId": 2216,
+                    "roleId": 619,
+                    "roleName": "name_20",
+                    "userId": 3035,
+                    "userName": "user_144",
+                    "avatar": null
+                  },
+                  {
+                    "id": 358,
+                    "accept": false,
+                    "planId": 2216,
+                    "roleId": 620,
+                    "roleName": "name_21",
+                    "userId": 3036,
+                    "userName": "user_145",
+                    "avatar": null
+                  },
+                  {
+                    "id": 359,
+                    "accept": false,
+                    "planId": 2216,
+                    "roleId": 621,
+                    "roleName": "name_22",
+                    "userId": 3037,
+                    "userName": "user_146",
+                    "avatar": null
+                  }
+                ]
+              }
+            }
+          },
+          "401": {
+            "description": "ヘッダーにトークンが存在しない場合、401が返ること",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create",
+        "tags": [
+          "Api::V1::Member"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2219
+          },
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2220
+          },
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2221
+          },
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2222
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "member": {
+                    "type": "object",
+                    "properties": {
+                      "role": {
+                        "nullable": true
+                      },
+                      "accept": {
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "member": {
+                  "role": null,
+                  "accept": "false",
+                  "user_id": "3048"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "有効な属性値の場合メンバーが作成されること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "accept": {
+                      "type": "boolean"
+                    },
+                    "planId": {
+                      "type": "integer"
+                    },
+                    "roleId": {
+                      "nullable": true
+                    },
+                    "roleName": {
+                      "nullable": true
+                    },
+                    "userId": {
+                      "type": "integer"
+                    },
+                    "userName": {
+                      "type": "string"
+                    },
+                    "avatar": {
+                      "nullable": true
+                    }
+                  }
+                },
+                "example": {
+                  "id": 366,
+                  "accept": false,
+                  "planId": 2219,
+                  "roleId": null,
+                  "roleName": null,
+                  "userId": 3048,
+                  "userName": "user_157",
+                  "avatar": null
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "ヘッダーにトークンが存在しない場合、401が返ること",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/members/{id}": {
+      "delete": {
+        "summary": "destroy",
+        "tags": [
+          "Api::V1::Member"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 367
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 369
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "メンバーを削除できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Member successfully deleted.",
+                  "id": 367
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "作成者本人は削除できないこと",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Bad Request",
+                  "errors": [
+                    "Record invalid"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "update",
+        "tags": [
+          "Api::V1::Member"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 370
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 371
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 373
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "member": {
+                    "type": "object",
+                    "properties": {
+                      "roleId": {
+                        "type": "string"
+                      },
+                      "accept": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "member": {
+                  "roleId": "632",
+                  "accept": "true"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ロールを更新できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "accept": {
+                      "type": "boolean"
+                    },
+                    "planId": {
+                      "type": "integer"
+                    },
+                    "roleId": {
+                      "type": "integer"
+                    },
+                    "roleName": {
+                      "type": "string"
+                    },
+                    "userId": {
+                      "type": "integer"
+                    },
+                    "userName": {
+                      "type": "string"
+                    },
+                    "avatar": {
+                      "nullable": true
+                    }
+                  }
+                },
+                "example": {
+                  "id": 370,
+                  "accept": false,
+                  "planId": 2228,
+                  "roleId": 632,
+                  "roleName": "name_33",
+                  "userId": 3062,
+                  "userName": "user_171",
+                  "avatar": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "作成者はacceptをtrueから変更できない",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Bad Request",
+                  "errors": [
+                    "Record invalid"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/maps/{map_id}/svgs": {
+      "post": {
+        "summary": "create",
+        "tags": [
+          "Api::V1::Svg"
+        ],
+        "parameters": [
+          {
+            "name": "map_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 656
+          },
+          {
+            "name": "map_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 657
+          },
+          {
+            "name": "map_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 658
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "svg": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "x": {
+                        "type": "string"
+                      },
+                      "y": {
+                        "type": "string"
+                      },
+                      "fill": {
+                        "type": "string"
+                      },
+                      "stroke": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "width": {
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "height": {
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "display_time": {
+                        "nullable": true
+                      },
+                      "draw_points": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "svg": {
+                  "type": "Path",
+                  "x": "30",
+                  "y": "30",
+                  "fill": "white",
+                  "stroke": "black",
+                  "name": "test svg",
+                  "width": null,
+                  "height": null,
+                  "display_time": null,
+                  "draw_points": "10 20 30 30 20"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "display_orderが自動入力されてピンが作成されること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "mapId": {
+                      "type": "integer"
+                    },
+                    "x": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "y": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "fill": {
+                      "type": "string"
+                    },
+                    "stroke": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "displayOrder": {
+                      "type": "integer"
+                    },
+                    "width": {
+                      "nullable": true,
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "height": {
+                      "nullable": true,
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "displayTime": {
+                      "nullable": true
+                    },
+                    "drawPoints": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "todoListId": {
+                      "nullable": true
+                    },
+                    "userId": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 1058,
+                  "type": "Path",
+                  "mapId": 656,
+                  "x": 30.0,
+                  "y": 30.0,
+                  "fill": "white",
+                  "stroke": "black",
+                  "name": "test svg",
+                  "displayOrder": 1,
+                  "width": null,
+                  "height": null,
+                  "displayTime": null,
+                  "drawPoints": "10 20 30 30 20",
+                  "createdAt": "2021-12-18T11:14:53.631+09:00",
+                  "updatedAt": "2021-12-18T11:14:53.631+09:00",
+                  "todoListId": null,
+                  "userId": 3071
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/plans": {
+      "get": {
+        "summary": "index",
+        "tags": [
+          "Api::V1::Plan"
+        ],
+        "responses": {
+          "200": {
+            "description": "計画一覧が返ってくること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "userId": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "author": {
+                        "type": "string"
+                      },
+                      "published": {
+                        "type": "boolean"
+                      },
+                      "members": {
+                        "type": "array",
+                        "items": {
+                          "nullable": true
+                        }
+                      },
+                      "active": {
+                        "type": "boolean"
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": 2234,
+                    "userId": 3072,
+                    "name": "plan_138",
+                    "author": "user_181",
+                    "published": false,
+                    "members": [
+
+                    ],
+                    "active": false,
+                    "createdAt": "2021-12-18 11:14",
+                    "updatedAt": "2021-12-18 11:14"
+                  },
+                  {
+                    "id": 2235,
+                    "userId": 3073,
+                    "name": "plan_139",
+                    "author": "user_182",
+                    "published": false,
+                    "members": [
+
+                    ],
+                    "active": false,
+                    "createdAt": "2021-12-18 11:14",
+                    "updatedAt": "2021-12-18 11:14"
+                  },
+                  {
+                    "id": 2236,
+                    "userId": 3074,
+                    "name": "plan_140",
+                    "author": "user_183",
+                    "published": false,
+                    "members": [
+
+                    ],
+                    "active": false,
+                    "createdAt": "2021-12-18 11:14",
+                    "updatedAt": "2021-12-18 11:14"
+                  }
+                ]
+              }
+            }
+          },
+          "401": {
+            "description": "401エラーが返ってくること",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create",
+        "tags": [
+          "Api::V1::Plan"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "plan": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "published": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "plan": {
+                  "name": "plan_144",
+                  "published": "false"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "作成者がメンバーとして登録された状態で計画が作成されること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "author": {
+                      "type": "string"
+                    },
+                    "published": {
+                      "type": "boolean"
+                    },
+                    "active": {
+                      "type": "boolean"
+                    },
+                    "userId": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 2240,
+                  "name": "plan_144",
+                  "createdAt": "2021-12-18 11:14",
+                  "updatedAt": "2021-12-18 11:14",
+                  "author": "user_188",
+                  "published": false,
+                  "active": false,
+                  "userId": 3078
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "バリデーションエラーが返ること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Bad Request",
+                  "errors": [
+                    "Validation failed: Name can't be blank"
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401エラーが返ること",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/plans/{id}": {
+      "delete": {
+        "summary": "destroy",
+        "tags": [
+          "Api::V1::Plan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2241
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2242
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "計画を削除できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Plan successfully deleted.",
+                  "id": 2241,
+                  "name": "plan_146"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "計画を削除できないこと",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Record Not Found",
+                  "errors": [
+                    "Couldn't find Plan with 'id'=2242 [WHERE `plans`.`user_id` = ?]"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "show",
+        "tags": [
+          "Api::V1::Plan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2243
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ヘッダーにトークンが存在する場合、計画を取得できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "author": {
+                      "type": "string"
+                    },
+                    "published": {
+                      "type": "boolean"
+                    },
+                    "active": {
+                      "type": "boolean"
+                    },
+                    "userId": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 2243,
+                  "name": "plan_148",
+                  "createdAt": "2021-12-18 11:14",
+                  "updatedAt": "2021-12-18 11:14",
+                  "author": "user_194",
+                  "published": false,
+                  "active": false,
+                  "userId": 3083
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "update",
+        "tags": [
+          "Api::V1::Plan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2244
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "plan": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "plan": {
+                  "name": "new title"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ヘッダーにトークンが存在する場合、計画を更新できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "author": {
+                      "type": "string"
+                    },
+                    "published": {
+                      "type": "boolean"
+                    },
+                    "active": {
+                      "type": "boolean"
+                    },
+                    "userId": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 2244,
+                  "name": "new title",
+                  "createdAt": "2021-12-18 11:14",
+                  "updatedAt": "2021-12-18 11:14",
+                  "author": "user_195",
+                  "published": false,
+                  "active": false,
+                  "userId": 3084
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/plans/{plan_id}/roles": {
+      "get": {
+        "summary": "index",
+        "tags": [
+          "Api::V1::Role"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2247
+          },
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2251
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ヘッダーに有効なトークンが存在する場合、ロール一覧を取得できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "planId": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "nullable": true
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": 637,
+                    "planId": 2247,
+                    "name": "name_38",
+                    "description": null,
+                    "createdAt": "2021-12-18T11:14:54.489+09:00",
+                    "updatedAt": "2021-12-18T11:14:54.489+09:00"
+                  },
+                  {
+                    "id": 638,
+                    "planId": 2247,
+                    "name": "name_39",
+                    "description": null,
+                    "createdAt": "2021-12-18T11:14:54.500+09:00",
+                    "updatedAt": "2021-12-18T11:14:54.500+09:00"
+                  },
+                  {
+                    "id": 639,
+                    "planId": 2247,
+                    "name": "name_40",
+                    "description": null,
+                    "createdAt": "2021-12-18T11:14:54.509+09:00",
+                    "updatedAt": "2021-12-18T11:14:54.509+09:00"
+                  }
+                ]
+              }
+            }
+          },
+          "401": {
+            "description": "ヘッダーにトークンが存在しない場合、ロール一覧を取得できないこと",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create",
+        "tags": [
+          "Api::V1::Role"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2255
+          },
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2256
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "role": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "role": {
+                  "name": "name_50"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "有効な属性値の場合、ロールを作成できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "planId": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "nullable": true
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 649,
+                  "planId": 2255,
+                  "name": "name_50",
+                  "description": null,
+                  "createdAt": "2021-12-18T11:14:54.866+09:00",
+                  "updatedAt": "2021-12-18T11:14:54.866+09:00"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "ヘッダーにトークンが存在しない場合、ロールを作成できないこと",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/roles/{id}": {
+      "patch": {
+        "summary": "update",
+        "tags": [
+          "Api::V1::Role"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 650
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 651
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "role": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "role": {
+                  "name": "updated_name"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "有効な属性値の場合ロールを更新できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "planId": {
+                      "type": "integer"
+                    },
+                    "description": {
+                      "nullable": true
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 650,
+                  "name": "updated_name",
+                  "planId": 2257,
+                  "description": null,
+                  "createdAt": "2021-12-18T11:14:54.959+09:00",
+                  "updatedAt": "2021-12-18T11:14:55.003+09:00"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "ヘッダーにトークンが存在しない場合、ロールを更新できないこと",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "destroy",
+        "tags": [
+          "Api::V1::Role"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 652
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ロールを削除できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Role successfully deleted.",
+                  "id": 652,
+                  "name": "name_54"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/plans/{plan_id}/svgs": {
+      "get": {
+        "summary": "index",
+        "tags": [
+          "Api::V1::Svg"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2260
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ヘッダーに有効なトークンが存在する場合、すべての図形を取得できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "mapId": {
+                        "type": "integer"
+                      },
+                      "x": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "y": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "fill": {
+                        "type": "string"
+                      },
+                      "stroke": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "displayOrder": {
+                        "type": "integer"
+                      },
+                      "width": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "height": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "displayTime": {
+                        "nullable": true
+                      },
+                      "drawPoints": {
+                        "nullable": true
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      },
+                      "todoListId": {
+                        "type": "integer"
+                      },
+                      "userId": {
+                        "nullable": true
+                      },
+                      "planId": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": 1061,
+                    "type": "Rect",
+                    "mapId": 659,
+                    "x": 30.0,
+                    "y": 30.0,
+                    "fill": "white",
+                    "stroke": "black",
+                    "name": "test svg",
+                    "displayOrder": 1,
+                    "width": 300.0,
+                    "height": 300.0,
+                    "displayTime": null,
+                    "drawPoints": null,
+                    "createdAt": "2021-12-18T11:14:55.208+09:00",
+                    "updatedAt": "2021-12-18T11:14:55.208+09:00",
+                    "todoListId": 1053,
+                    "userId": null,
+                    "planId": 2260
+                  },
+                  {
+                    "id": 1063,
+                    "type": "Path",
+                    "mapId": 660,
+                    "x": 30.0,
+                    "y": 30.0,
+                    "fill": "white",
+                    "stroke": "black",
+                    "name": "test svg",
+                    "displayOrder": 1,
+                    "width": null,
+                    "height": null,
+                    "displayTime": null,
+                    "drawPoints": "10 20 30 30 20",
+                    "createdAt": "2021-12-18T11:14:55.291+09:00",
+                    "updatedAt": "2021-12-18T11:14:55.291+09:00",
+                    "todoListId": 1055,
+                    "userId": null,
+                    "planId": 2260
+                  },
+                  {
+                    "id": 1065,
+                    "type": "Polyline",
+                    "mapId": 661,
+                    "x": 30.0,
+                    "y": 30.0,
+                    "fill": "white",
+                    "stroke": "black",
+                    "name": "test svg",
+                    "displayOrder": 1,
+                    "width": null,
+                    "height": null,
+                    "displayTime": null,
+                    "drawPoints": "10 20 30 30 20",
+                    "createdAt": "2021-12-18T11:14:55.345+09:00",
+                    "updatedAt": "2021-12-18T11:14:55.345+09:00",
+                    "todoListId": 1057,
+                    "userId": null,
+                    "planId": 2260
+                  },
+                  {
+                    "id": 1062,
+                    "type": "Rect",
+                    "mapId": 659,
+                    "x": 30.0,
+                    "y": 30.0,
+                    "fill": "white",
+                    "stroke": "black",
+                    "name": "test svg",
+                    "displayOrder": 2,
+                    "width": 300.0,
+                    "height": 300.0,
+                    "displayTime": null,
+                    "drawPoints": null,
+                    "createdAt": "2021-12-18T11:14:55.242+09:00",
+                    "updatedAt": "2021-12-18T11:14:55.242+09:00",
+                    "todoListId": 1054,
+                    "userId": null,
+                    "planId": 2260
+                  },
+                  {
+                    "id": 1064,
+                    "type": "Path",
+                    "mapId": 660,
+                    "x": 30.0,
+                    "y": 30.0,
+                    "fill": "white",
+                    "stroke": "black",
+                    "name": "test svg",
+                    "displayOrder": 2,
+                    "width": null,
+                    "height": null,
+                    "displayTime": null,
+                    "drawPoints": "10 20 30 30 20",
+                    "createdAt": "2021-12-18T11:14:55.296+09:00",
+                    "updatedAt": "2021-12-18T11:14:55.296+09:00",
+                    "todoListId": 1056,
+                    "userId": null,
+                    "planId": 2260
+                  },
+                  {
+                    "id": 1066,
+                    "type": "Polyline",
+                    "mapId": 661,
+                    "x": 30.0,
+                    "y": 30.0,
+                    "fill": "white",
+                    "stroke": "black",
+                    "name": "test svg",
+                    "displayOrder": 2,
+                    "width": null,
+                    "height": null,
+                    "displayTime": null,
+                    "drawPoints": "10 20 30 30 20",
+                    "createdAt": "2021-12-18T11:14:55.376+09:00",
+                    "updatedAt": "2021-12-18T11:14:55.376+09:00",
+                    "todoListId": 1058,
+                    "userId": null,
+                    "planId": 2260
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/svgs/{id}": {
+      "patch": {
+        "summary": "update",
+        "tags": [
+          "Api::V1::Svg"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1069
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "svg": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "svg": {
+                  "name": "new Rect"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "有効な属性値の場合、図形を更新できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "mapId": {
+                      "type": "integer"
+                    },
+                    "x": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "y": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "fill": {
+                      "type": "string"
+                    },
+                    "stroke": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "height": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "displayTime": {
+                      "nullable": true
+                    },
+                    "drawPoints": {
+                      "nullable": true
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "displayOrder": {
+                      "type": "integer"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "todoListId": {
+                      "type": "integer"
+                    },
+                    "userId": {
+                      "nullable": true
+                    }
+                  }
+                },
+                "example": {
+                  "id": 1069,
+                  "name": "new Rect",
+                  "mapId": 664,
+                  "x": 30.0,
+                  "y": 30.0,
+                  "fill": "white",
+                  "stroke": "black",
+                  "width": 300.0,
+                  "height": 300.0,
+                  "displayTime": null,
+                  "drawPoints": null,
+                  "type": "Rect",
+                  "displayOrder": 1,
+                  "createdAt": "2021-12-18T11:14:55.618+09:00",
+                  "updatedAt": "2021-12-18T11:14:55.662+09:00",
+                  "todoListId": 1061,
+                  "userId": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "destroy",
+        "tags": [
+          "Api::V1::Svg"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1070
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ヘッダーにトークンがある場合、図形を削除できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "SVG successfully deleted.",
+                  "id": 1070,
+                  "name": "test svg"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/plans/{plan_id}/todo_lists": {
+      "get": {
+        "summary": "index",
+        "tags": [
+          "Api::V1::TodoList"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2275
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "指定した計画のみのTodoリスト一覧を取得できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "planId": {
+                        "type": "integer"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "todos": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "todoListId": {
+                              "type": "integer"
+                            },
+                            "title": {
+                              "type": "string"
+                            },
+                            "body": {
+                              "type": "string"
+                            },
+                            "beginTime": {
+                              "type": "string"
+                            },
+                            "endTime": {
+                              "type": "string"
+                            },
+                            "images": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": 1063,
+                    "planId": 2275,
+                    "title": "todo list title",
+                    "todos": [
+                      {
+                        "id": 1461,
+                        "todoListId": 1063,
+                        "title": "Todo Title",
+                        "body": "Todo body",
+                        "beginTime": "03:27",
+                        "endTime": "03:27",
+                        "images": [
+                          "http://localhost:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZFk9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7489d87a40e16cd42f65357b34764f8207248d61/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwUzJrdCIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--a6274c672ec4ac755a745c2b5d99448a044b3e91/test_img.png"
+                        ]
+                      },
+                      {
+                        "id": 1462,
+                        "todoListId": 1063,
+                        "title": "Todo Title",
+                        "body": "Todo body",
+                        "beginTime": "03:27",
+                        "endTime": "03:27",
+                        "images": [
+                          "http://localhost:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZGM9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d79d55254f970d7efbf3b0b965e9666b011ff214/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwUzJrdCIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--a6274c672ec4ac755a745c2b5d99448a044b3e91/test_img.png"
+                        ]
+                      },
+                      {
+                        "id": 1463,
+                        "todoListId": 1063,
+                        "title": "Todo Title",
+                        "body": "Todo body",
+                        "beginTime": "03:27",
+                        "endTime": "03:27",
+                        "images": [
+                          "http://localhost:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZGc9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bbc8707a6602b3ed59ebc97c2a25f0f41e92c2fa/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwUzJrdCIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--a6274c672ec4ac755a745c2b5d99448a044b3e91/test_img.png"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": 1064,
+                    "planId": 2275,
+                    "title": "todo list title",
+                    "todos": [
+
+                    ]
+                  },
+                  {
+                    "id": 1065,
+                    "planId": 2275,
+                    "title": "todo list title",
+                    "todos": [
+
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create",
+        "tags": [
+          "Api::V1::TodoList"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2278
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "todo_list": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "todo_list": {
+                  "title": "todo list title"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Todoリストを作成できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "planId": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "todos": {
+                      "type": "array",
+                      "items": {
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "id": 1068,
+                  "planId": 2278,
+                  "title": "todo list title",
+                  "todos": [
+
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/todo_lists/{id}": {
+      "patch": {
+        "summary": "update",
+        "tags": [
+          "Api::V1::TodoList"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1069
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "todo_list": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "todo_list": {
+                  "title": "new title"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Todoリストを更新できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "planId": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "todos": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "todoListId": {
+                            "type": "integer"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "body": {
+                            "type": "string"
+                          },
+                          "beginTime": {
+                            "type": "string"
+                          },
+                          "endTime": {
+                            "type": "string"
+                          },
+                          "images": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "id": 1069,
+                  "planId": 2279,
+                  "title": "new title",
+                  "todos": [
+                    {
+                      "id": 1464,
+                      "todoListId": 1069,
+                      "title": "Todo Title",
+                      "body": "Todo body",
+                      "beginTime": "03:27",
+                      "endTime": "03:27",
+                      "images": [
+                        "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZGs9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4cd59b2f3f8cbec803f5f7b864d3aa7b585e0f56/test_img.png",
+                        "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZG89IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cadc3542a7891e360e611aa3e1e56b21eb9d1100/test_img.png"
+                      ]
+                    },
+                    {
+                      "id": 1465,
+                      "todoListId": 1069,
+                      "title": "Todo Title",
+                      "body": "Todo body",
+                      "beginTime": "03:27",
+                      "endTime": "03:27",
+                      "images": null
+                    },
+                    {
+                      "id": 1466,
+                      "todoListId": 1069,
+                      "title": "Todo Title",
+                      "body": "Todo body",
+                      "beginTime": "03:27",
+                      "endTime": "03:27",
+                      "images": null
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "destroy",
+        "tags": [
+          "Api::V1::TodoList"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1070
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Todoリストを削除できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "planId": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 1070,
+                  "planId": 2281,
+                  "title": "todo list title",
+                  "createdAt": "2021-12-18T11:14:56.607+09:00",
+                  "updatedAt": "2021-12-18T11:14:56.607+09:00"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/plans/{plan_id}/todo_statuses": {
+      "get": {
+        "summary": "index",
+        "tags": [
+          "Api::V1::TodoStatus"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 2283
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "todoステータス一覧が返ってくること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "svgId": {
+                        "type": "integer"
+                      },
+                      "todoId": {
+                        "type": "integer"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": 2698,
+                    "svgId": 1071,
+                    "todoId": 1467,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2699,
+                    "svgId": 1071,
+                    "todoId": 1468,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2700,
+                    "svgId": 1071,
+                    "todoId": 1469,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2701,
+                    "svgId": 1071,
+                    "todoId": 1470,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2702,
+                    "svgId": 1071,
+                    "todoId": 1471,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2703,
+                    "svgId": 1072,
+                    "todoId": 1467,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2704,
+                    "svgId": 1072,
+                    "todoId": 1468,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2705,
+                    "svgId": 1072,
+                    "todoId": 1469,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2706,
+                    "svgId": 1072,
+                    "todoId": 1470,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2707,
+                    "svgId": 1072,
+                    "todoId": 1471,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2708,
+                    "svgId": 1073,
+                    "todoId": 1467,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2709,
+                    "svgId": 1073,
+                    "todoId": 1468,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2710,
+                    "svgId": 1073,
+                    "todoId": 1469,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2711,
+                    "svgId": 1073,
+                    "todoId": 1470,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2712,
+                    "svgId": 1073,
+                    "todoId": 1471,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2713,
+                    "svgId": 1074,
+                    "todoId": 1472,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2714,
+                    "svgId": 1074,
+                    "todoId": 1473,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2715,
+                    "svgId": 1074,
+                    "todoId": 1474,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2716,
+                    "svgId": 1074,
+                    "todoId": 1475,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2717,
+                    "svgId": 1074,
+                    "todoId": 1476,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2718,
+                    "svgId": 1075,
+                    "todoId": 1472,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2719,
+                    "svgId": 1075,
+                    "todoId": 1473,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2720,
+                    "svgId": 1075,
+                    "todoId": 1474,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2721,
+                    "svgId": 1075,
+                    "todoId": 1475,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2722,
+                    "svgId": 1075,
+                    "todoId": 1476,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2723,
+                    "svgId": 1076,
+                    "todoId": 1472,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2724,
+                    "svgId": 1076,
+                    "todoId": 1473,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2725,
+                    "svgId": 1076,
+                    "todoId": 1474,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2726,
+                    "svgId": 1076,
+                    "todoId": 1475,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2727,
+                    "svgId": 1076,
+                    "todoId": 1476,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2728,
+                    "svgId": 1077,
+                    "todoId": 1477,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2729,
+                    "svgId": 1077,
+                    "todoId": 1478,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2730,
+                    "svgId": 1077,
+                    "todoId": 1479,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2731,
+                    "svgId": 1077,
+                    "todoId": 1480,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2732,
+                    "svgId": 1077,
+                    "todoId": 1481,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2733,
+                    "svgId": 1078,
+                    "todoId": 1477,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2734,
+                    "svgId": 1078,
+                    "todoId": 1478,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2735,
+                    "svgId": 1078,
+                    "todoId": 1479,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2736,
+                    "svgId": 1078,
+                    "todoId": 1480,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2737,
+                    "svgId": 1078,
+                    "todoId": 1481,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2738,
+                    "svgId": 1079,
+                    "todoId": 1477,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2739,
+                    "svgId": 1079,
+                    "todoId": 1478,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2740,
+                    "svgId": 1079,
+                    "todoId": 1479,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2741,
+                    "svgId": 1079,
+                    "todoId": 1480,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  },
+                  {
+                    "id": 2742,
+                    "svgId": 1079,
+                    "todoId": 1481,
+                    "status": "todo",
+                    "createdAt": "2021-12-18T11:14:57.082+09:00",
+                    "updatedAt": "2021-12-18T11:14:57.082+09:00"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/todo_lists/{todo_list_id}/todos": {
+      "get": {
+        "summary": "index",
+        "tags": [
+          "Api::V1::Todo"
+        ],
+        "parameters": [
+          {
+            "name": "todo_list_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1077
+          },
+          {
+            "name": "todo_list_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1083
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Todoが取得できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "todoListId": {
+                        "type": "integer"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "body": {
+                        "type": "string"
+                      },
+                      "beginTime": {
+                        "type": "string"
+                      },
+                      "endTime": {
+                        "type": "string"
+                      },
+                      "images": {
+                        "nullable": true,
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": 1485,
+                    "todoListId": 1077,
+                    "title": "Todo Title",
+                    "body": "Todo body",
+                    "beginTime": "03:27",
+                    "endTime": "03:27",
+                    "images": null
+                  },
+                  {
+                    "id": 1486,
+                    "todoListId": 1077,
+                    "title": "Todo Title",
+                    "body": "Todo body",
+                    "beginTime": "03:27",
+                    "endTime": "03:27",
+                    "images": null
+                  },
+                  {
+                    "id": 1487,
+                    "todoListId": 1077,
+                    "title": "Todo Title",
+                    "body": "Todo body",
+                    "beginTime": "03:27",
+                    "endTime": "03:27",
+                    "images": null
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create",
+        "tags": [
+          "Api::V1::Todo"
+        ],
+        "parameters": [
+          {
+            "name": "todo_list_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1086
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "todo": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string"
+                      },
+                      "body": {
+                        "type": "string"
+                      },
+                      "begin_time": {
+                        "type": "string"
+                      },
+                      "end_time": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "todo": {
+                  "title": "Todo Title",
+                  "body": "Todo body",
+                  "begin_time": "2021-09-19 03:27:19",
+                  "end_time": "2021-09-19 03:27:19"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Todoが作成できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "todoListId": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "type": "string"
+                    },
+                    "beginTime": {
+                      "type": "string"
+                    },
+                    "endTime": {
+                      "type": "string"
+                    },
+                    "images": {
+                      "nullable": true
+                    }
+                  }
+                },
+                "example": {
+                  "id": 1498,
+                  "todoListId": 1086,
+                  "title": "Todo Title",
+                  "body": "Todo body",
+                  "beginTime": "03:27",
+                  "endTime": "03:27",
+                  "images": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/todos/{id}": {
+      "get": {
+        "summary": "show",
+        "tags": [
+          "Api::V1::Todo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1496
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1497
+          },
+          {
+            "name": "column",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "images"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "columnに何も指定しなければ全カラムが返ってくること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "todoListId": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "type": "string"
+                    },
+                    "beginTime": {
+                      "type": "string"
+                    },
+                    "endTime": {
+                      "type": "string"
+                    },
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "id": 1496,
+                  "todoListId": 1084,
+                  "title": "Todo Title",
+                  "body": "Todo body",
+                  "beginTime": "03:27",
+                  "endTime": "03:27",
+                  "images": [
+                    "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZDA9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--67865f51252c8579eb144fbc3c96a851346ce935/test_img.png",
+                    "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZDQ9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c9caf376c152c7abceb3ed179930fef078bdf0db/test_img.png"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "update",
+        "tags": [
+          "Api::V1::Todo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1499
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1500
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "todo": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "todo": {
+                  "title": "new title"
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "todo": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string"
+                      },
+                      "images": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "format": "binary"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "todo": {
+                  "title": "new title",
+                  "images": [
+                    "#<ActionDispatch::Http::UploadedFile:0x00007f219e7b7b88>",
+                    "#<ActionDispatch::Http::UploadedFile:0x00007f219e7b7ac0>"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Todoが更新できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "todoListId": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "type": "string"
+                    },
+                    "beginTime": {
+                      "type": "string"
+                    },
+                    "endTime": {
+                      "type": "string"
+                    },
+                    "images": {
+                      "nullable": true,
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "id": 1499,
+                  "todoListId": 1087,
+                  "title": "new title",
+                  "body": "Todo body",
+                  "beginTime": "03:27",
+                  "endTime": "03:27",
+                  "images": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "destroy",
+        "tags": [
+          "Api::V1::Todo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1501
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Todoを削除できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "todoListId": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "type": "string"
+                    },
+                    "beginTime": {
+                      "type": "string"
+                    },
+                    "endTime": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 1501,
+                  "todoListId": 1089,
+                  "title": "Todo Title",
+                  "body": "Todo body",
+                  "beginTime": "2000-01-01T03:27:19.000+09:00",
+                  "endTime": "2000-01-01T03:27:19.000+09:00",
+                  "createdAt": "2021-12-18T11:14:58.559+09:00",
+                  "updatedAt": "2021-12-18T11:14:58.559+09:00"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/{id}": {
+      "get": {
+        "summary": "show",
+        "tags": [
+          "Api::V1::User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 3155
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ユーザーを取得できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "provider": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 3155,
+                  "name": "user_268",
+                  "uid": "11699bbd-4626-4088-a0ba-7574b573a67d",
+                  "createdAt": "2021-12-18T11:14:58.634+09:00",
+                  "updatedAt": "2021-12-18T11:14:58.634+09:00",
+                  "provider": "anonymous"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users": {
+      "post": {
+        "summary": "create",
+        "tags": [
+          "Api::V1::User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "nullable": true
+                      },
+                      "uid": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "nullable": true
+                      },
+                      "updated_at": {
+                        "nullable": true
+                      },
+                      "provider": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "user": {
+                  "name": "user_269",
+                  "id": null,
+                  "uid": "f7dd00f7-8ad0-47da-a422-6246add96bd0",
+                  "created_at": null,
+                  "updated_at": null,
+                  "provider": "anonymous"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ユーザーを追加できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "provider": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 3156,
+                  "name": "user_269",
+                  "uid": "EiNNmmDl9mT8icKQDOga5VTSR0t1",
+                  "createdAt": "2021-12-18T11:14:58.708+09:00",
+                  "updatedAt": "2021-12-18T11:14:58.708+09:00",
+                  "provider": "google"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401エラーが返ること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Unauthorized",
+                  "errors": [
+                    "Nil JSON web token"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400エラーが返ること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Bad Request",
+                  "errors": [
+                    "Validation failed: Name can't be blank"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/me": {
+      "patch": {
+        "summary": "update",
+        "tags": [
+          "Api::V1::User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "uid": {
+                        "type": "string"
+                      },
+                      "provider": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "user": {
+                  "name": "update_user",
+                  "uid": "232b0db1-ade3-4e04-8933-adb4a7d1024a",
+                  "provider": "anonymous"
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "uid": {
+                        "type": "string"
+                      },
+                      "provider": {
+                        "type": "string"
+                      },
+                      "avatar": {
+                        "type": "string",
+                        "format": "binary"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "user": {
+                  "name": "update_user",
+                  "uid": "990fee6c-a238-403a-9ffb-93c1248ef5b9",
+                  "provider": "anonymous",
+                  "avatar": "#<ActionDispatch::Http::UploadedFile:0x00007f219df4c7c8>"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ユーザーを更新できること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "avatar": {
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 3157,
+                  "name": "update_user",
+                  "provider": "google",
+                  "uid": "49bcdb7e-c851-44ba-ad81-f54c87236e54",
+                  "avatar": null,
+                  "createdAt": "2021-12-18T11:14:58.798+09:00"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "me",
+        "tags": [
+          "Api::V1::User"
+        ],
+        "responses": {
+          "200": {
+            "description": "トークンのユーザーを返すこと",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "avatar": {
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 3159,
+                  "name": "user_273",
+                  "provider": "anonymous",
+                  "uid": "b8f087cf-0bce-48ce-bf7b-f3dada6a8202",
+                  "avatar": null,
+                  "createdAt": "2021-12-18T11:14:59.033+09:00"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401エラーが返ること",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "destroy",
+        "tags": [
+          "Api::V1::User"
+        ],
+        "responses": {
+          "200": {
+            "description": "ユーザーが削除されること",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "User successfully deleted.",
+                  "id": 3162,
+                  "uid": "4cdde5d7-932c-4594-a730-4c2a19fc646b",
+                  "name": "user_276"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401エラーが返ること",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health-check": {
+      "get": {
+        "summary": "health_check",
+        "tags": [
+          "HealthCheck"
+        ],
+        "responses": {
+          "200": {
+            "description": "/health-checkにGETでアクセスしたら200が返ってくる",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "health check api ok"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
