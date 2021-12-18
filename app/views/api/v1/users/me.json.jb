@@ -3,5 +3,6 @@
   name: @_current_user.name,
   provider: @_current_user.provider,
   uid: @_current_user.uid,
-  avatar: @_current_user.avatar_url(300,300)
+  avatar: @_current_user.avatar_url(300,300),
+  createdAt: @_current_user.created_at
 }

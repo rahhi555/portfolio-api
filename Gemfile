@@ -24,11 +24,9 @@ group :development, :test do
   gem 'bullet'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
-  gem 'rbs', require: false
   gem 'rbs_rails', require: false
   gem 'rspec-rails'
   gem 'steep', require: false
-  gem 'typeprof', require: false
 end
 
 group :development do
@@ -40,6 +38,7 @@ end
 group :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov', require: false
+  gem 'rspec-openapi'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

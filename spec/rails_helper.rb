@@ -77,4 +77,6 @@ RSpec.configure do |config|
   config.after(:suite) do
     FileUtils.rm_rf("#{Rails.root}/tmp/storage")
   end
+
+  RSpec::OpenAPI.path = 'doc/schema.json'
 end
