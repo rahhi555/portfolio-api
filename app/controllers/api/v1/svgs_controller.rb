@@ -28,7 +28,7 @@ module Api
 
       def svg_params
         params.require(:svg).permit(:x, :y, :fill, :stroke, :name, :display_order, :width, :height, :display_time,
-                                    :draw_points, :type, :todo_list_id, :user_id)
+                                    :draw_points, :type, :todo_list_id, :user_id, :rotate)
       end
     end
   end

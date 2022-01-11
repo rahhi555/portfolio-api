@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_140730) do
+ActiveRecord::Schema.define(version: 2022_01_11_062012) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2021_11_29_140730) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_google_map", default: false, comment: "グーグルマップ使用フラグ"
     t.string "address", comment: "住所文字列"
-    t.integer "heading", comment: "マップの回転度数。0~360を範囲とする"
     t.json "bounds", comment: "マップの表示範囲。typescriptのgoogle.maps.LatLngBoundsLiteralと同様"
     t.float "width"
     t.float "height"
@@ -97,6 +96,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_140730) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "todo_list_id"
     t.bigint "user_id"
+    t.float "rotate", default: 0.0, null: false
     t.index ["map_id"], name: "index_svgs_on_map_id"
     t.index ["todo_list_id"], name: "index_svgs_on_todo_list_id"
     t.index ["type"], name: "index_svgs_on_type"

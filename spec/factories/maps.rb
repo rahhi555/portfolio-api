@@ -5,7 +5,6 @@ FactoryBot.define do
     is_google_map { false }
     address { nil }
     bounds { nil }
-    heading { nil }
     height { nil }
     width { nil }
 
@@ -13,7 +12,6 @@ FactoryBot.define do
       is_google_map { true }
       address { '東京都千代田区丸の内１丁目９ JR 東京駅' }
       bounds { { north: 36.164233296653045, south: 36.16299249843693, east: 140.37886504843758, west: 140.3772721515624 } }
-      heading { 30 }
       height { 700 }
       width { 1800 }
     end

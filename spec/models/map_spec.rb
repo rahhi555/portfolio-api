@@ -29,7 +29,6 @@ RSpec.describe Map, type: :model do
     end
 
     context '境界値テスト' do
-      it { is_expected.to validate_length_of(:heading) }
       it { is_expected.to validate_length_of(:name) }
 
       let(:valid_under_boundary) { build(:map, :valid_under_boundary) }

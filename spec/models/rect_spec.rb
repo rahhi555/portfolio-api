@@ -22,6 +22,14 @@ RSpec.describe Rect, type: :model do
         expect{ Rect.create(attr) }.to change{ Rect.count }.by(1)
         expect(Rect.last.stroke).to eq 'black'
       end
+
+      it "rotateがない場合、デフォルト値として0が入っていること" do
+        attr.delete(:rotate)
+        expect{ Rect.create(attr) }.to change{ Rect.count }.by(1)
+        expect(Rect.last.rotate).to eq 0
+      end
+
+      it { is_expected.to validate_presence_of(:rotate) }
     end
 
     context '異常系' do

@@ -290,6 +290,23 @@ class Svg < ApplicationRecord
   def restore_user_id!: () -> void
   def clear_user_id_change: () -> void
 
+  attr_accessor rotate(): Float
+  def rotate_changed?: () -> bool
+  def rotate_change: () -> [ Float?, Float? ]
+  def rotate_will_change!: () -> void
+  def rotate_was: () -> Float?
+  def rotate_previously_changed?: () -> bool
+  def rotate_previous_change: () -> Array[Float?]?
+  def rotate_previously_was: () -> Float?
+  def rotate_before_last_save: () -> Float?
+  def rotate_change_to_be_saved: () -> Array[Float?]?
+  def rotate_in_database: () -> Float?
+  def saved_change_to_rotate: () -> Array[Float?]?
+  def saved_change_to_rotate?: () -> bool
+  def will_save_change_to_rotate?: () -> bool
+  def restore_rotate!: () -> void
+  def clear_rotate_change: () -> void
+
   def todo_statuses: () -> TodoStatus::ActiveRecord_Associations_CollectionProxy
   def todo_statuses=: (TodoStatus::ActiveRecord_Associations_CollectionProxy | Array[TodoStatus]) -> (TodoStatus::ActiveRecord_Associations_CollectionProxy | Array[TodoStatus])
   def todo_status_ids: () -> Array[Integer]

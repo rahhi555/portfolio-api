@@ -6,6 +6,7 @@ class Svg < ApplicationRecord
 
   attribute :fill, default: 'white'
   attribute :stroke, default: 'black'
+  attribute :rotate, default: 0
 
   before_create do
     self.display_order = map.svgs.maximum(:display_order).to_i + 1
@@ -16,4 +17,5 @@ class Svg < ApplicationRecord
   validates :fill, presence: true
   validates :stroke, presence: true
   validates :name, presence: true
+  validates :rotate, presence: true
 end
