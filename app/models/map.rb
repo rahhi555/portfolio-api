@@ -16,6 +16,5 @@ class Map < ApplicationRecord
   }.freeze
 
   validates :name, presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: true, scope: :plan_id }
-  validates :heading, length: { minimum: 0, maximum: 360 }, if: :heading?
   validates :bounds, json: { schema: MAPS_SCHEMA }, if: :bounds?
 end

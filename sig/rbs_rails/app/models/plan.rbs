@@ -146,6 +146,10 @@ class Plan < ApplicationRecord
   def todos=: (Todo::ActiveRecord_Associations_CollectionProxy | Array[Todo]) -> (Todo::ActiveRecord_Associations_CollectionProxy | Array[Todo])
   def todo_ids: () -> Array[Integer]
   def todo_ids=: (Array[Integer]) -> Array[Integer]
+  def todo_statuses: () -> TodoStatus::ActiveRecord_Associations_CollectionProxy
+  def todo_statuses=: (TodoStatus::ActiveRecord_Associations_CollectionProxy | Array[TodoStatus]) -> (TodoStatus::ActiveRecord_Associations_CollectionProxy | Array[TodoStatus])
+  def todo_status_ids: () -> Array[Integer]
+  def todo_status_ids=: (Array[Integer]) -> Array[Integer]
 
   def user: () -> User
   def user=: (User?) -> User?

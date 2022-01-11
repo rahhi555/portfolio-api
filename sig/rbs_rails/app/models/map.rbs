@@ -121,23 +121,6 @@ class Map < ApplicationRecord
   def restore_address!: () -> void
   def clear_address_change: () -> void
 
-  attr_accessor heading(): Integer?
-  def heading_changed?: () -> bool
-  def heading_change: () -> [ Integer?, Integer? ]
-  def heading_will_change!: () -> void
-  def heading_was: () -> Integer?
-  def heading_previously_changed?: () -> bool
-  def heading_previous_change: () -> Array[Integer?]?
-  def heading_previously_was: () -> Integer?
-  def heading_before_last_save: () -> Integer?
-  def heading_change_to_be_saved: () -> Array[Integer?]?
-  def heading_in_database: () -> Integer?
-  def saved_change_to_heading: () -> Array[Integer?]?
-  def saved_change_to_heading?: () -> bool
-  def will_save_change_to_heading?: () -> bool
-  def restore_heading!: () -> void
-  def clear_heading_change: () -> void
-
   attr_accessor bounds(): untyped?
   def bounds_changed?: () -> bool
   def bounds_change: () -> [ untyped?, untyped? ]
