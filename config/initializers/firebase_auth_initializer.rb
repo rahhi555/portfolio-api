@@ -1,5 +1,5 @@
 FirebaseIdToken.configure do |config|
-  config.redis = Redis.new(host: Rails.env.production? ? Rails.application.credentials.redis[:host] : 'redis',
+  config.redis = Redis.new(host: Rails.env.production? ? Rails.application.credentials.dig(:redis, :host) : 'redis',
                            db: 15)
   config.project_ids = ['minimap-dadd2']
 end

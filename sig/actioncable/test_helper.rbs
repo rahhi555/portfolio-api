@@ -1,0 +1,79 @@
+module ActionCable
+  # Provides helper methods for testing Action Cable broadcasting
+  module TestHelper
+    def before_setup: () -> untyped
+
+    def after_teardown: () -> untyped
+
+    # Asserts that the number of broadcasted messages to the stream matches the given number.
+    #
+    #   def test_broadcasts
+    #     assert_broadcasts 'messages', 0
+    #     ActionCable.server.broadcast 'messages', { text: 'hello' }
+    #     assert_broadcasts 'messages', 1
+    #     ActionCable.server.broadcast 'messages', { text: 'world' }
+    #     assert_broadcasts 'messages', 2
+    #   end
+    #
+    # If a block is passed, that block should cause the specified number of
+    # messages to be broadcasted.
+    #
+    #   def test_broadcasts_again
+    #     assert_broadcasts('messages', 1) do
+    #       ActionCable.server.broadcast 'messages', { text: 'hello' }
+    #     end
+    #
+    #     assert_broadcasts('messages', 2) do
+    #       ActionCable.server.broadcast 'messages', { text: 'hi' }
+    #       ActionCable.server.broadcast 'messages', { text: 'how are you?' }
+    #     end
+    #   end
+    #
+    def assert_broadcasts: (untyped stream, untyped number) { () -> untyped } -> untyped
+
+    # Asserts that no messages have been sent to the stream.
+    #
+    #   def test_no_broadcasts
+    #     assert_no_broadcasts 'messages'
+    #     ActionCable.server.broadcast 'messages', { text: 'hi' }
+    #     assert_broadcasts 'messages', 1
+    #   end
+    #
+    # If a block is passed, that block should not cause any message to be sent.
+    #
+    #   def test_broadcasts_again
+    #     assert_no_broadcasts 'messages' do
+    #       # No job messages should be sent from this block
+    #     end
+    #   end
+    #
+    # Note: This assertion is simply a shortcut for:
+    #
+    #   assert_broadcasts 'messages', 0, &block
+    #
+    def assert_no_broadcasts: (untyped stream) { () -> untyped } -> untyped
+
+    # Asserts that the specified message has been sent to the stream.
+    #
+    #   def test_assert_transmitted_message
+    #     ActionCable.server.broadcast 'messages', text: 'hello'
+    #     assert_broadcast_on('messages', text: 'hello')
+    #   end
+    #
+    # If a block is passed, that block should cause a message with the specified data to be sent.
+    #
+    #   def test_assert_broadcast_on_again
+    #     assert_broadcast_on('messages', text: 'hello') do
+    #       ActionCable.server.broadcast 'messages', text: 'hello'
+    #     end
+    #   end
+    #
+    def assert_broadcast_on: (untyped stream, untyped data) { () -> untyped } -> untyped
+
+    def pubsub_adapter: () -> untyped
+
+    private
+
+    def broadcasts_size: (untyped channel) -> untyped
+  end
+end

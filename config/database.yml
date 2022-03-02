@@ -52,6 +52,6 @@ production:
   <<: *default
   <% if Rails.env.production? %>
   database: api_production
-  password: <%=  Rails.application.credentials.db[:password] %>
-  host: <%= Rails.application.credentials.db[:host] %>
+  password: <%=  Rails.application.credentials.dig(:db, :password) %>
+  host: <%= Rails.application.credentials.dig(:db, :password) %>
   <% end %>

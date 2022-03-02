@@ -11,7 +11,6 @@ class PlanChannel < ApplicationCable::Channel
   end
 
   def changeTodoStatus(req)
-    req['id']
     todo_status = TodoStatus.find(req['id'])
     todo_status.update!(status: req['status'])
     PlanChannel.broadcast_to(@plan, { action: req['action'], id: req['id'], status: req['status'] })

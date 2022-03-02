@@ -8,5 +8,5 @@ test:
 
 production:
   adapter: redis
-  host: <%= Rails.application.credentials.redis[:host] %>
+  host: <%= Rails.application.credentials.dig(:redis, :host)%>
   channel_prefix: api_production

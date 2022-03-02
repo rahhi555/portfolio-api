@@ -1,0 +1,23 @@
+module ActionCable
+  module Channel
+    module Callbacks
+      extend ActiveSupport::Concern
+
+      include ActiveSupport::Callbacks
+
+      module ClassMethods
+        def before_subscribe: (*untyped methods) { () -> untyped } -> untyped
+
+        def after_subscribe: (*untyped methods) { () -> untyped } -> untyped
+
+        alias on_subscribe after_subscribe
+
+        def before_unsubscribe: (*untyped methods) { () -> untyped } -> untyped
+
+        def after_unsubscribe: (*untyped methods) { () -> untyped } -> untyped
+
+        alias on_unsubscribe after_unsubscribe
+      end
+    end
+  end
+end
