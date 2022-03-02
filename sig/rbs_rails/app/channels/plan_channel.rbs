@@ -1,15 +1,17 @@
 class PlanChannel < ApplicationCable::Channel
+  @plan: Plan
+
   def subscribed: () -> void
 
   def unsubscribed: () -> void
 
-  def changeTodoStatus: ({id: Integer, status: String} req) -> void
+  def changeTodoStatus: ({'id' => Integer, 'status' => String, 'action' => String} req) -> void
 
-  def beginPlan: (Hash req) -> void
+  def activatePlan: ({'action' => String} req) -> void
 
-  def endPlan: (Hash req) -> void
+  def inactivatePlan: ({'action' => String} req) -> void
 
-  def sendActiveSvg: (Hash req) -> void
+  def sendActiveSvg: ({'action' => String, 'svg' => Svg} req) -> void
 
-  def sendCurrentPosition: (Hash req) -> void
+  def sendCurrentPosition: ({ 'action' => String, 'userId' => Integer, 'lat' => Integer, 'lng' => Integer, 'name' => String } req) -> void
 end

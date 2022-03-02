@@ -1,0 +1,9 @@
+module ActionCable
+  extend ActiveSupport::Autoload
+
+  INTERNAL: ::Hash[untyped, untyped]
+
+  def self?.server: () -> untyped
+end
+
+
